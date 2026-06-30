@@ -1,0 +1,15 @@
+﻿using Microsoft.EntityFrameworkCore;
+using GACHSLApi.Entities;
+
+namespace GACHSLApi.Data
+{
+    public class AppDbContext : DbContext
+    {
+        public AppDbContext(DbContextOptions<AppDbContext> options)
+            : base(options)
+        {
+        }
+
+        public DbSet<User> Users { get; set; }
+    }
+}
