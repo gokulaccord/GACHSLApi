@@ -1,16 +1,30 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using GACHSLApi.Data;
-using Microsoft.EntityFrameworkCore;
 using GACHSLApi.Interfaces;
+using GACHSLApi.Middleware;
 using GACHSLApi.Repositories;
 using GACHSLApi.Services;
-using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Serilog;
+using System.Text;
+
+
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .WriteTo.File("Logs/log-.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Host.UseSerilog();
 
 // Add services to the container.
+
 builder.Services.AddControllers();
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -37,6 +51,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
         ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))
     ));
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IJwtService, JwtService>();
 builder.Services.AddEndpointsApiExplorer();
@@ -71,7 +86,9 @@ builder.Services.AddSwaggerGen(options =>
         });
 });
 var app = builder.Build();
-app.UseMiddleware<GACHSLApi.Middleware.ExceptionMiddleware>();
+app.UseMiddleware<ExceptionMiddleware>();
+
+//app.UseMiddleware<ApiKeyMiddleware>();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

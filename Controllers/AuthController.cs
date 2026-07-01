@@ -22,28 +22,21 @@ namespace GACHSLApi.Controllers
         }
 
         // Register
+        [AllowAnonymous]
         [HttpPost("register")]
         public async Task<IActionResult> Register(RegisterRequestDto request)
         {
             var result = await _authService.RegisterAsync(request);
 
-            if (result == "Email already exists.")
+            if (!result.Success)
             {
-                return BadRequest(new
-                {
-                    success = false,
-                    message = result
-                });
+                return BadRequest(result);
             }
 
-            return Ok(new
-            {
-                success = true,
-                message = result
-            });
+            return Ok(result);
         }
-
         // Login
+        [AllowAnonymous]
         [HttpPost("login")]
         public async Task<IActionResult> Login(LoginRequestDto request)
         {
@@ -68,6 +61,30 @@ namespace GACHSLApi.Controllers
                 Email = User.FindFirst(ClaimTypes.Email)?.Value,
                 FullName = User.FindFirst("FullName")?.Value
             });
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpGet("admin")]
+        public IActionResult AdminOnly()
+        {
+            return Ok(new
+            {
+                Message = "Welcome Admin!",
+                User = User.Identity?.Name
+            });
+        }
+        [AllowAnonymous]
+        [HttpPost("refresh")]
+        public async Task<IActionResult> RefreshToken(RefreshTokenRequestDto request)
+        {
+            var result = await _authService.RefreshTokenAsync(request);
+
+            if (!result.Success)
+            {
+                return Unauthorized(result);
+            }
+
+            return Ok(result);
         }
     }
 }

@@ -5,6 +5,7 @@ using GACHSLApi.Entities;
 using GACHSLApi.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using System.Security.Cryptography;
 
 namespace GACHSLApi.Services
 {
@@ -33,7 +34,8 @@ namespace GACHSLApi.Services
     new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
     new Claim(ClaimTypes.Email, user.Email),
     new Claim(ClaimTypes.Name, user.Username),
-    new Claim("FullName", user.FullName)
+    new Claim("FullName", user.FullName),
+    new Claim(ClaimTypes.Role, user.Role)
 };
 
             var token = new JwtSecurityToken(
@@ -41,10 +43,19 @@ namespace GACHSLApi.Services
                 audience: _configuration["Jwt:Audience"],
                 claims: claims,
                 expires: DateTime.UtcNow.AddMinutes(
-                    Convert.ToDouble(_configuration["Jwt:ExpiryMinutes"])),
+    Convert.ToDouble(_configuration["Jwt:ExpiryInMinutes"])),
                 signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+        public string GenerateRefreshToken()
+        {
+            var randomBytes = new byte[64];
+
+            using var rng = RandomNumberGenerator.Create();
+            rng.GetBytes(randomBytes);
+
+            return Convert.ToBase64String(randomBytes);
         }
     }
 }

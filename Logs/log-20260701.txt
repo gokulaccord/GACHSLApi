@@ -1,0 +1,435 @@
+2026-07-01 10:22:54.381 +05:30 [INF] User profile is available. Using 'C:\Users\ashvi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-01 10:22:55.545 +05:30 [INF] Now listening on: https://localhost:7265
+2026-07-01 10:22:55.548 +05:30 [INF] Now listening on: http://localhost:5278
+2026-07-01 10:22:55.853 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-01 10:22:55.866 +05:30 [INF] Hosting environment: Development
+2026-07-01 10:22:55.935 +05:30 [INF] Content root path: C:\ASHVIN\PERSONAL\gokulaccord\GACHSLApi
+2026-07-01 10:22:58.886 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7265/swagger/index.html - null null
+2026-07-01 10:22:59.570 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7265/swagger/index.html - 200 null text/html;charset=utf-8 707.2189ms
+2026-07-01 10:22:59.744 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7265/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-01 10:22:59.775 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7265/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 31.4382ms
+2026-07-01 10:22:59.849 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7265/_vs/browserLink - null null
+2026-07-01 10:23:00.127 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7265/_vs/browserLink - 200 null text/javascript; charset=UTF-8 279.2596ms
+2026-07-01 10:23:00.168 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7265/swagger/v1/swagger.json - null null
+2026-07-01 10:23:00.251 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7265/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 83.9272ms
+2026-07-01 14:25:39.710 +05:30 [INF] User profile is available. Using 'C:\Users\ashvi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-01 14:25:41.101 +05:30 [INF] Now listening on: https://localhost:7265
+2026-07-01 14:25:41.105 +05:30 [INF] Now listening on: http://localhost:5278
+2026-07-01 14:25:41.430 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-01 14:25:41.439 +05:30 [INF] Hosting environment: Development
+2026-07-01 14:25:41.448 +05:30 [INF] Content root path: C:\ASHVIN\PERSONAL\gokulaccord\GACHSLApi
+2026-07-01 14:25:45.205 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7265/swagger/index.html - null null
+2026-07-01 14:25:45.892 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7265/swagger/index.html - 200 null text/html;charset=utf-8 713.5078ms
+2026-07-01 14:25:46.040 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7265/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-01 14:25:46.068 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7265/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 27.5871ms
+2026-07-01 14:25:46.120 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7265/_vs/browserLink - null null
+2026-07-01 14:25:46.242 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7265/_vs/browserLink - 200 null text/javascript; charset=UTF-8 121.8022ms
+2026-07-01 14:25:46.280 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7265/swagger/v1/swagger.json - null null
+2026-07-01 14:25:46.313 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7265/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 33.9531ms
+2026-07-01 14:31:50.080 +05:30 [INF] User profile is available. Using 'C:\Users\ashvi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-01 14:31:50.409 +05:30 [INF] Now listening on: http://localhost:5278
+2026-07-01 14:31:50.540 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-01 14:31:50.543 +05:30 [INF] Hosting environment: Development
+2026-07-01 14:31:50.545 +05:30 [INF] Content root path: C:\ASHVIN\PERSONAL\gokulaccord\GACHSLApi
+2026-07-01 14:31:52.573 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger - null null
+2026-07-01 14:31:52.990 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger - 301 0 null 433.7076ms
+2026-07-01 14:31:53.013 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/index.html - null null
+2026-07-01 14:31:53.318 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/index.html - 200 null text/html;charset=utf-8 306.2409ms
+2026-07-01 14:31:53.357 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/swagger-ui.css - null null
+2026-07-01 14:31:53.370 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/swagger-ui-bundle.js - null null
+2026-07-01 14:31:53.362 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-01 14:31:53.362 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/swagger-ui-standalone-preset.js - null null
+2026-07-01 14:31:53.524 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 160.6946ms
+2026-07-01 14:31:53.549 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-07-01 14:31:53.513 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-07-01 14:31:53.663 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-07-01 14:31:53.713 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_vs/browserLink - null null
+2026-07-01 14:31:53.723 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 354.3616ms
+2026-07-01 14:31:53.727 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/swagger-ui.css - 200 152034 text/css 369.6749ms
+2026-07-01 14:31:53.731 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 370.1571ms
+2026-07-01 14:31:53.812 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 99.0803ms
+2026-07-01 14:31:53.863 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-01 14:31:53.887 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/favicon-32x32.png - null null
+2026-07-01 14:31:53.896 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 32.9591ms
+2026-07-01 14:31:53.910 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-07-01 14:31:53.934 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/favicon-32x32.png - 200 628 image/png 46.7994ms
+2026-07-01 14:37:25.475 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/login - application/json 68
+2026-07-01 14:37:25.577 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/login - 401 null null 102.7114ms
+2026-07-01 14:50:54.697 +05:30 [INF] User profile is available. Using 'C:\Users\ashvi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-01 14:50:56.032 +05:30 [INF] Now listening on: http://localhost:5278
+2026-07-01 14:50:56.322 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-01 14:50:56.326 +05:30 [INF] Hosting environment: Development
+2026-07-01 14:50:56.328 +05:30 [INF] Content root path: C:\ASHVIN\PERSONAL\gokulaccord\GACHSLApi
+2026-07-01 14:50:58.862 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/index.html - null null
+2026-07-01 14:50:59.637 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/index.html - 200 null text/html;charset=utf-8 793.7033ms
+2026-07-01 14:50:59.693 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-01 14:50:59.707 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 15.2106ms
+2026-07-01 14:50:59.770 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_vs/browserLink - null null
+2026-07-01 14:50:59.929 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 159.1172ms
+2026-07-01 14:51:00.164 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-01 14:51:00.219 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 55.2383ms
+2026-07-01 14:52:13.123 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/login - application/json 68
+2026-07-01 14:52:13.145 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-01 14:52:13.381 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-01 14:52:13.462 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GACHSLApi.DTOs.LoginRequestDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-01 14:52:17.378 +05:30 [INF] Executed DbCommand (87ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-01 14:52:18.921 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.Login (GACHSLApi) in 5444.4032ms
+2026-07-01 14:52:18.931 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-01 14:52:19.319 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/login - 500 null application/json 6196.1965ms
+2026-07-01 14:53:43.407 +05:30 [INF] User profile is available. Using 'C:\Users\ashvi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-01 14:53:43.824 +05:30 [INF] Now listening on: http://localhost:5278
+2026-07-01 14:53:44.000 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-01 14:53:44.050 +05:30 [INF] Hosting environment: Development
+2026-07-01 14:53:44.105 +05:30 [INF] Content root path: C:\ASHVIN\PERSONAL\gokulaccord\GACHSLApi
+2026-07-01 14:53:46.182 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/index.html - null null
+2026-07-01 14:53:46.831 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/index.html - 200 null text/html;charset=utf-8 668.505ms
+2026-07-01 14:53:46.938 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-01 14:53:46.942 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_vs/browserLink - null null
+2026-07-01 14:53:46.979 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 44.3335ms
+2026-07-01 14:53:47.110 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 168.4038ms
+2026-07-01 14:53:47.230 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-01 14:53:47.284 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 54.2113ms
+2026-07-01 14:55:57.804 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/login - application/json 68
+2026-07-01 14:55:57.856 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-01 14:55:58.052 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-01 14:55:58.120 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GACHSLApi.DTOs.LoginRequestDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-01 14:56:00.958 +05:30 [INF] Executed DbCommand (105ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-01 14:56:01.786 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.LoginResponseDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-01 14:56:01.819 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.Login (GACHSLApi) in 3686.2439ms
+2026-07-01 14:56:01.830 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-01 14:56:01.862 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/login - 200 null application/json; charset=utf-8 4058.7165ms
+2026-07-01 14:57:05.520 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Auth/profile - null null
+2026-07-01 14:57:05.690 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.GetProfile (GACHSLApi)'
+2026-07-01 14:57:05.701 +05:30 [INF] Route matched with {action = "GetProfile", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetProfile() on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-01 14:57:05.752 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-01 14:57:05.769 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.GetProfile (GACHSLApi) in 63.0964ms
+2026-07-01 14:57:05.775 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.GetProfile (GACHSLApi)'
+2026-07-01 14:57:05.778 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Auth/profile - 200 null application/json; charset=utf-8 258.2659ms
+2026-07-01 15:02:29.593 +05:30 [INF] Executed DbCommand (113ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='GACHSLDB' AND TABLE_NAME='__EFMigrationsHistory';
+2026-07-01 15:02:29.652 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='GACHSLDB' AND TABLE_NAME='__EFMigrationsHistory';
+2026-07-01 15:02:29.700 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2026-07-01 15:02:29.729 +05:30 [INF] Applying migration '20260701093215_AddUserRole'.
+2026-07-01 15:02:29.938 +05:30 [INF] Executed DbCommand (167ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Users` ADD `Role` longtext CHARACTER SET utf8mb4 NOT NULL;
+2026-07-01 15:02:29.954 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20260701093215_AddUserRole', '8.0.13');
+2026-07-01 15:04:59.439 +05:30 [INF] User profile is available. Using 'C:\Users\ashvi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-01 15:04:59.799 +05:30 [INF] Now listening on: http://localhost:5278
+2026-07-01 15:04:59.984 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-01 15:04:59.989 +05:30 [INF] Hosting environment: Development
+2026-07-01 15:04:59.995 +05:30 [INF] Content root path: C:\ASHVIN\PERSONAL\gokulaccord\GACHSLApi
+2026-07-01 15:05:01.874 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/index.html - null null
+2026-07-01 15:05:02.509 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/index.html - 200 null text/html;charset=utf-8 652.7062ms
+2026-07-01 15:05:02.570 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-01 15:05:02.572 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_vs/browserLink - null null
+2026-07-01 15:05:02.603 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 36.9599ms
+2026-07-01 15:05:02.702 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 129.7824ms
+2026-07-01 15:05:02.767 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-01 15:05:02.850 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 83.2001ms
+2026-07-01 15:05:35.415 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/login - application/json 68
+2026-07-01 15:05:35.433 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-01 15:05:35.552 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-01 15:05:35.627 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GACHSLApi.DTOs.LoginRequestDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-01 15:05:39.014 +05:30 [INF] Executed DbCommand (124ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-01 15:05:40.105 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.LoginResponseDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-01 15:05:40.154 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.Login (GACHSLApi) in 4500.8951ms
+2026-07-01 15:05:40.165 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-01 15:05:40.213 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/login - 200 null application/json; charset=utf-8 4798.1514ms
+2026-07-01 15:06:09.069 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Auth/admin - null null
+2026-07-01 15:06:09.260 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2026-07-01 15:06:09.268 +05:30 [INF] AuthenticationScheme: Bearer was forbidden.
+2026-07-01 15:06:09.270 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Auth/admin - 403 0 null 201.3691ms
+2026-07-01 15:11:36.043 +05:30 [INF] User profile is available. Using 'C:\Users\ashvi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-01 15:11:36.352 +05:30 [INF] Now listening on: http://localhost:5278
+2026-07-01 15:11:36.483 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-01 15:11:36.485 +05:30 [INF] Hosting environment: Development
+2026-07-01 15:11:36.488 +05:30 [INF] Content root path: C:\ASHVIN\PERSONAL\gokulaccord\GACHSLApi
+2026-07-01 15:11:38.608 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/index.html - null null
+2026-07-01 15:11:39.316 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/index.html - 200 null text/html;charset=utf-8 724.2872ms
+2026-07-01 15:11:39.356 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-01 15:11:39.357 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_vs/browserLink - null null
+2026-07-01 15:11:39.371 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 15.2763ms
+2026-07-01 15:11:39.436 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 79.0044ms
+2026-07-01 15:11:39.473 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-01 15:11:39.506 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 32.7202ms
+2026-07-01 15:12:01.964 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/login - application/json 68
+2026-07-01 15:12:01.983 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-01 15:12:02.184 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-01 15:12:02.313 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GACHSLApi.DTOs.LoginRequestDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-01 15:12:05.523 +05:30 [INF] Executed DbCommand (95ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-01 15:12:06.382 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.LoginResponseDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-01 15:12:06.405 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.Login (GACHSLApi) in 4073.5781ms
+2026-07-01 15:12:06.411 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-01 15:12:06.437 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/login - 200 null application/json; charset=utf-8 4473.1702ms
+2026-07-01 15:12:27.660 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Auth/admin - null null
+2026-07-01 15:12:27.791 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.AdminOnly (GACHSLApi)'
+2026-07-01 15:12:27.804 +05:30 [INF] Route matched with {action = "AdminOnly", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AdminOnly() on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-01 15:12:27.851 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-01 15:12:27.871 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.AdminOnly (GACHSLApi) in 59.5286ms
+2026-07-01 15:12:27.875 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.AdminOnly (GACHSLApi)'
+2026-07-01 15:12:27.878 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Auth/admin - 200 null application/json; charset=utf-8 217.9576ms
+2026-07-01 15:15:49.666 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='GACHSLDB' AND TABLE_NAME='__EFMigrationsHistory';
+2026-07-01 15:15:49.726 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='GACHSLDB' AND TABLE_NAME='__EFMigrationsHistory';
+2026-07-01 15:15:49.760 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2026-07-01 15:15:49.776 +05:30 [INF] Applying migration '20260701094530_AddRefreshTokenTable'.
+2026-07-01 15:15:49.953 +05:30 [INF] Executed DbCommand (117ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `RefreshTokens` (
+    `RefreshTokenId` int NOT NULL AUTO_INCREMENT,
+    `Token` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `ExpiryDate` datetime(6) NOT NULL,
+    `IsRevoked` tinyint(1) NOT NULL,
+    `CreatedOn` datetime(6) NOT NULL,
+    `UserId` int NOT NULL,
+    CONSTRAINT `PK_RefreshTokens` PRIMARY KEY (`RefreshTokenId`),
+    CONSTRAINT `FK_RefreshTokens_Users_UserId` FOREIGN KEY (`UserId`) REFERENCES `Users` (`UserId`) ON DELETE CASCADE
+) CHARACTER SET=utf8mb4;
+2026-07-01 15:15:50.046 +05:30 [INF] Executed DbCommand (92ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_RefreshTokens_UserId` ON `RefreshTokens` (`UserId`);
+2026-07-01 15:15:50.054 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20260701094530_AddRefreshTokenTable', '8.0.13');
+2026-07-01 15:18:14.656 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='GACHSLDB' AND TABLE_NAME='__EFMigrationsHistory';
+2026-07-01 15:18:14.698 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='GACHSLDB' AND TABLE_NAME='__EFMigrationsHistory';
+2026-07-01 15:18:14.719 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2026-07-01 15:18:14.729 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-07-01 15:40:12.532 +05:30 [INF] User profile is available. Using 'C:\Users\ashvi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-01 15:40:14.055 +05:30 [INF] Now listening on: http://localhost:5278
+2026-07-01 15:40:14.293 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-01 15:40:14.302 +05:30 [INF] Hosting environment: Development
+2026-07-01 15:40:14.306 +05:30 [INF] Content root path: C:\ASHVIN\PERSONAL\gokulaccord\GACHSLApi
+2026-07-01 15:40:16.881 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/index.html - null null
+2026-07-01 15:40:17.706 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/index.html - 200 null text/html;charset=utf-8 842.6741ms
+2026-07-01 15:40:17.772 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-01 15:40:17.799 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 28.5625ms
+2026-07-01 15:40:17.884 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_vs/browserLink - null null
+2026-07-01 15:40:18.049 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 165.1345ms
+2026-07-01 15:40:18.114 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-01 15:40:18.156 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 42.0634ms
+2026-07-01 15:40:56.213 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/login - application/json 68
+2026-07-01 15:40:56.248 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-01 15:40:56.526 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-01 15:40:56.605 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GACHSLApi.DTOs.LoginRequestDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-01 15:41:01.155 +05:30 [INF] Executed DbCommand (106ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-01 15:41:02.533 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `RefreshTokens` (`CreatedOn`, `ExpiryDate`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `RefreshTokenId`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `RefreshTokenId` = LAST_INSERT_ID();
+2026-07-01 15:41:02.652 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.LoginResponseDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-01 15:41:02.682 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.Login (GACHSLApi) in 6063.7057ms
+2026-07-01 15:41:02.687 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-01 15:41:02.711 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/login - 200 null application/json; charset=utf-8 6498.8032ms
+2026-07-01 15:50:24.836 +05:30 [INF] User profile is available. Using 'C:\Users\ashvi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-01 15:50:25.218 +05:30 [INF] Now listening on: http://localhost:5278
+2026-07-01 15:50:25.539 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-01 15:50:25.574 +05:30 [INF] Hosting environment: Development
+2026-07-01 15:50:25.644 +05:30 [INF] Content root path: C:\ASHVIN\PERSONAL\gokulaccord\GACHSLApi
+2026-07-01 15:50:27.301 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/index.html - null null
+2026-07-01 15:50:27.876 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/index.html - 200 null text/html;charset=utf-8 595.4795ms
+2026-07-01 15:50:27.926 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-01 15:50:27.930 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_vs/browserLink - null null
+2026-07-01 15:50:27.960 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 36.091ms
+2026-07-01 15:50:28.097 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 166.6077ms
+2026-07-01 15:50:28.245 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-01 15:50:28.284 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 39.8464ms
+2026-07-01 15:58:26.705 +05:30 [INF] User profile is available. Using 'C:\Users\ashvi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-01 15:58:27.056 +05:30 [INF] Now listening on: http://localhost:5278
+2026-07-01 15:58:27.160 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-01 15:58:27.162 +05:30 [INF] Hosting environment: Development
+2026-07-01 15:58:27.166 +05:30 [INF] Content root path: C:\ASHVIN\PERSONAL\gokulaccord\GACHSLApi
+2026-07-01 15:58:29.106 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/index.html - null null
+2026-07-01 15:58:29.595 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/index.html - 200 null text/html;charset=utf-8 510.8842ms
+2026-07-01 15:58:29.627 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-01 15:58:29.628 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_vs/browserLink - null null
+2026-07-01 15:58:29.642 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 16.5807ms
+2026-07-01 15:58:29.704 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 75.9374ms
+2026-07-01 15:58:29.752 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-01 15:58:29.795 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 43.9317ms
+2026-07-01 15:58:52.420 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/login - application/json 68
+2026-07-01 15:58:52.440 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-01 15:58:52.577 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-01 15:58:52.658 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GACHSLApi.DTOs.LoginRequestDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-01 15:58:55.971 +05:30 [INF] Executed DbCommand (90ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-01 15:58:57.274 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `RefreshTokens` (`CreatedOn`, `ExpiryDate`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `RefreshTokenId`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `RefreshTokenId` = LAST_INSERT_ID();
+2026-07-01 15:58:57.383 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.LoginResponseDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-01 15:58:57.410 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.Login (GACHSLApi) in 4737.8846ms
+2026-07-01 15:58:57.413 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-01 15:58:57.434 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/login - 200 null application/json; charset=utf-8 5014.2485ms
+2026-07-01 15:59:40.651 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/refresh - application/json 30
+2026-07-01 15:59:40.671 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.RefreshToken (GACHSLApi)'
+2026-07-01 15:59:40.710 +05:30 [INF] Route matched with {action = "RefreshToken", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RefreshToken(GACHSLApi.DTOs.RefreshTokenRequestDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-01 15:59:41.025 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__token_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`RefreshTokenId`, `r`.`CreatedOn`, `r`.`ExpiryDate`, `r`.`IsRevoked`, `r`.`Token`, `r`.`UserId`, `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `RefreshTokens` AS `r`
+INNER JOIN `Users` AS `u` ON `r`.`UserId` = `u`.`UserId`
+WHERE ((`r`.`Token` = @__token_0) AND NOT (`r`.`IsRevoked`)) AND (`r`.`ExpiryDate` > UTC_TIMESTAMP())
+LIMIT 1
+2026-07-01 15:59:41.045 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.LoginResponseDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-01 15:59:41.057 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.RefreshToken (GACHSLApi) in 299.2064ms
+2026-07-01 15:59:41.071 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.RefreshToken (GACHSLApi)'
+2026-07-01 15:59:41.077 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/refresh - 401 null application/json; charset=utf-8 426.7023ms
+2026-07-01 16:00:01.491 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/refresh - application/json 112
+2026-07-01 16:00:01.502 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.RefreshToken (GACHSLApi)'
+2026-07-01 16:00:01.504 +05:30 [INF] Route matched with {action = "RefreshToken", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RefreshToken(GACHSLApi.DTOs.RefreshTokenRequestDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-01 16:00:01.693 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__token_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`RefreshTokenId`, `r`.`CreatedOn`, `r`.`ExpiryDate`, `r`.`IsRevoked`, `r`.`Token`, `r`.`UserId`, `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `RefreshTokens` AS `r`
+INNER JOIN `Users` AS `u` ON `r`.`UserId` = `u`.`UserId`
+WHERE ((`r`.`Token` = @__token_0) AND NOT (`r`.`IsRevoked`)) AND (`r`.`ExpiryDate` > UTC_TIMESTAMP())
+LIMIT 1
+2026-07-01 16:00:01.756 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[@p5='?' (DbType = Int32), @p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (DbType = DateTime), @p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE `RefreshTokens` SET `CreatedOn` = @p0, `ExpiryDate` = @p1, `IsRevoked` = @p2, `Token` = @p3, `UserId` = @p4
+WHERE `RefreshTokenId` = @p5;
+SELECT ROW_COUNT();
+
+INSERT INTO `RefreshTokens` (`CreatedOn`, `ExpiryDate`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p6, @p7, @p8, @p9, @p10);
+SELECT `RefreshTokenId`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `RefreshTokenId` = LAST_INSERT_ID();
+2026-07-01 16:00:01.778 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.LoginResponseDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-01 16:00:01.782 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.RefreshToken (GACHSLApi) in 271.2914ms
+2026-07-01 16:00:01.785 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.RefreshToken (GACHSLApi)'
+2026-07-01 16:00:01.788 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/refresh - 200 null application/json; charset=utf-8 297.3755ms
+2026-07-01 16:00:16.076 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/login - application/json 68
+2026-07-01 16:00:16.083 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-01 16:00:16.088 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GACHSLApi.DTOs.LoginRequestDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-01 16:00:16.137 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-01 16:00:16.586 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `RefreshTokens` (`CreatedOn`, `ExpiryDate`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `RefreshTokenId`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `RefreshTokenId` = LAST_INSERT_ID();
+2026-07-01 16:00:16.614 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.LoginResponseDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-01 16:00:16.632 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.Login (GACHSLApi) in 537.7113ms
+2026-07-01 16:00:16.640 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-01 16:00:16.642 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/login - 200 null application/json; charset=utf-8 566.1778ms
+2026-07-01 16:00:44.965 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/refresh - application/json 112
+2026-07-01 16:00:44.978 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.RefreshToken (GACHSLApi)'
+2026-07-01 16:00:44.983 +05:30 [INF] Route matched with {action = "RefreshToken", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RefreshToken(GACHSLApi.DTOs.RefreshTokenRequestDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-01 16:00:45.052 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__token_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`RefreshTokenId`, `r`.`CreatedOn`, `r`.`ExpiryDate`, `r`.`IsRevoked`, `r`.`Token`, `r`.`UserId`, `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `RefreshTokens` AS `r`
+INNER JOIN `Users` AS `u` ON `r`.`UserId` = `u`.`UserId`
+WHERE ((`r`.`Token` = @__token_0) AND NOT (`r`.`IsRevoked`)) AND (`r`.`ExpiryDate` > UTC_TIMESTAMP())
+LIMIT 1
+2026-07-01 16:00:45.148 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p5='?' (DbType = Int32), @p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (DbType = DateTime), @p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE `RefreshTokens` SET `CreatedOn` = @p0, `ExpiryDate` = @p1, `IsRevoked` = @p2, `Token` = @p3, `UserId` = @p4
+WHERE `RefreshTokenId` = @p5;
+SELECT ROW_COUNT();
+
+INSERT INTO `RefreshTokens` (`CreatedOn`, `ExpiryDate`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p6, @p7, @p8, @p9, @p10);
+SELECT `RefreshTokenId`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `RefreshTokenId` = LAST_INSERT_ID();
+2026-07-01 16:00:45.163 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.LoginResponseDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-01 16:00:45.168 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.RefreshToken (GACHSLApi) in 178.0012ms
+2026-07-01 16:00:45.172 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.RefreshToken (GACHSLApi)'
+2026-07-01 16:00:45.176 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/refresh - 200 null application/json; charset=utf-8 210.8497ms
+2026-07-01 16:01:26.786 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/refresh - application/json 112
+2026-07-01 16:01:26.892 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.RefreshToken (GACHSLApi)'
+2026-07-01 16:01:26.926 +05:30 [INF] Route matched with {action = "RefreshToken", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RefreshToken(GACHSLApi.DTOs.RefreshTokenRequestDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-01 16:01:26.982 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__token_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`RefreshTokenId`, `r`.`CreatedOn`, `r`.`ExpiryDate`, `r`.`IsRevoked`, `r`.`Token`, `r`.`UserId`, `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `RefreshTokens` AS `r`
+INNER JOIN `Users` AS `u` ON `r`.`UserId` = `u`.`UserId`
+WHERE ((`r`.`Token` = @__token_0) AND NOT (`r`.`IsRevoked`)) AND (`r`.`ExpiryDate` > UTC_TIMESTAMP())
+LIMIT 1
+2026-07-01 16:01:27.071 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.LoginResponseDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-01 16:01:27.100 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.RefreshToken (GACHSLApi) in 167.9203ms
+2026-07-01 16:01:27.104 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.RefreshToken (GACHSLApi)'
+2026-07-01 16:01:27.107 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/refresh - 401 null application/json; charset=utf-8 322.1308ms
+2026-07-01 16:01:37.355 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/login - application/json 68
+2026-07-01 16:01:37.366 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-01 16:01:37.372 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GACHSLApi.DTOs.LoginRequestDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-01 16:01:37.431 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-01 16:01:37.740 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `RefreshTokens` (`CreatedOn`, `ExpiryDate`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `RefreshTokenId`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `RefreshTokenId` = LAST_INSERT_ID();
+2026-07-01 16:01:37.751 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.LoginResponseDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-01 16:01:37.755 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.Login (GACHSLApi) in 374.1128ms
+2026-07-01 16:01:37.759 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-01 16:01:37.762 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/login - 200 null application/json; charset=utf-8 406.4609ms
+2026-07-01 16:01:53.337 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/refresh - application/json 112
+2026-07-01 16:01:53.343 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.RefreshToken (GACHSLApi)'
+2026-07-01 16:01:53.346 +05:30 [INF] Route matched with {action = "RefreshToken", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RefreshToken(GACHSLApi.DTOs.RefreshTokenRequestDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-01 16:01:53.395 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__token_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`RefreshTokenId`, `r`.`CreatedOn`, `r`.`ExpiryDate`, `r`.`IsRevoked`, `r`.`Token`, `r`.`UserId`, `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `RefreshTokens` AS `r`
+INNER JOIN `Users` AS `u` ON `r`.`UserId` = `u`.`UserId`
+WHERE ((`r`.`Token` = @__token_0) AND NOT (`r`.`IsRevoked`)) AND (`r`.`ExpiryDate` > UTC_TIMESTAMP())
+LIMIT 1
+2026-07-01 16:01:53.421 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p5='?' (DbType = Int32), @p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (DbType = DateTime), @p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE `RefreshTokens` SET `CreatedOn` = @p0, `ExpiryDate` = @p1, `IsRevoked` = @p2, `Token` = @p3, `UserId` = @p4
+WHERE `RefreshTokenId` = @p5;
+SELECT ROW_COUNT();
+
+INSERT INTO `RefreshTokens` (`CreatedOn`, `ExpiryDate`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p6, @p7, @p8, @p9, @p10);
+SELECT `RefreshTokenId`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `RefreshTokenId` = LAST_INSERT_ID();
+2026-07-01 16:01:53.443 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.LoginResponseDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-01 16:01:53.447 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.RefreshToken (GACHSLApi) in 94.8094ms
+2026-07-01 16:01:53.450 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.RefreshToken (GACHSLApi)'
+2026-07-01 16:01:53.453 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/refresh - 200 null application/json; charset=utf-8 116.1183ms

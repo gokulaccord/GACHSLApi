@@ -26,5 +26,9 @@ namespace GACHSLApi.Entities
         public bool IsActive { get; set; } = true;
 
         public DateTime CreatedOn { get; set; } = DateTime.Now;
+        public string Role { get; set; } = "User";
+
+        public ICollection<RefreshToken> RefreshTokens { get; set; }
+    = new List<RefreshToken>();
     }
 }

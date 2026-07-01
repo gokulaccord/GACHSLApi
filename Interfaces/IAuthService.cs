@@ -5,8 +5,9 @@ namespace GACHSLApi.Interfaces
 {
     public interface IAuthService
     {
-        Task<string> RegisterAsync(RegisterRequestDto request);
+        Task<ApiResponse<object>> RegisterAsync(RegisterRequestDto request);
 
         Task<ApiResponse<LoginResponseDto>> LoginAsync(LoginRequestDto request);
+        Task<ApiResponse<LoginResponseDto>> RefreshTokenAsync(RefreshTokenRequestDto request);
     }
 }
