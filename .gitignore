@@ -1,6 +1,32 @@
+## Build
 bin/
 obj/
+
+## Visual Studio
 .vs/
+
+## Rider
+.idea/
+
+## User files
 *.user
 *.suo
+
+## Logs
+*.log
+
+## Publish
+publish/
+
+## Secrets
 appsettings.Development.json
+
+## Packages
+packages/
+
+## EF
+Migrations/*.Designer.cs
+
+## OS
+Thumbs.db
+.DS_Store
