@@ -3,6 +3,8 @@ using GACHSLApi.Common;
 using GACHSLApi.DTOs;
 using GACHSLApi.Entities;
 using GACHSLApi.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using GACHSLApi.Helpers;
 
 namespace GACHSLApi.Services
 {
@@ -10,14 +12,16 @@ namespace GACHSLApi.Services
     {
         private readonly IUserRepository _userRepository;
         private readonly IJwtService _jwtService;
-
-        public AuthService(
-            IUserRepository userRepository,
-            IJwtService jwtService)
-        {
-            _userRepository = userRepository;
-            _jwtService = jwtService;
-        }
+        private readonly IPasswordResetOtpRepository _otpRepository;
+        private readonly IEmailService _emailService;
+        private readonly IPasswordResetTokenRepository _passwordResetTokenRepository;
+        //public AuthService(
+        //    IUserRepository userRepository,
+        //    IJwtService jwtService)
+        //{
+        //    _userRepository = userRepository;
+        //    _jwtService = jwtService;
+        //}
 
         public async Task<ApiResponse<object>> RegisterAsync(RegisterRequestDto request)
         {
@@ -37,6 +41,7 @@ namespace GACHSLApi.Services
                 FullName = request.FullName,
                 Email = request.Email,
                 PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password),
+                Role = "User",   // FORCE DEFAULT
                 IsActive = true,
                 CreatedOn = DateTime.Now
             };
@@ -110,11 +115,17 @@ namespace GACHSLApi.Services
         public AuthService(
             IUserRepository userRepository,
             IJwtService jwtService,
-            IRefreshTokenRepository refreshTokenRepository)
+            IRefreshTokenRepository refreshTokenRepository,
+            IPasswordResetOtpRepository otpRepository,
+            IPasswordResetTokenRepository passwordResetTokenRepository,
+            IEmailService emailService)
         {
             _userRepository = userRepository;
             _jwtService = jwtService;
             _refreshTokenRepository = refreshTokenRepository;
+            _otpRepository = otpRepository;
+            _passwordResetTokenRepository = passwordResetTokenRepository;
+            _emailService = emailService;
         }
         public async Task<ApiResponse<LoginResponseDto>> RefreshTokenAsync(RefreshTokenRequestDto request)
         {
@@ -165,6 +176,139 @@ namespace GACHSLApi.Services
                 true,
                 "Token refreshed successfully.",
                 response);
+        }
+        public async Task<ApiResponse<object>> LogoutAsync(RefreshTokenRequestDto request)
+        {
+            var storedToken = await _refreshTokenRepository
+                .GetValidRefreshTokenAsync(request.RefreshToken);
+
+            if (storedToken == null)
+            {
+                return new ApiResponse<object>(
+                    false,
+                    "Invalid or expired refresh token.",
+                    null);
+            }
+
+            // Revoke the refresh token
+            storedToken.IsRevoked = true;
+
+            await _refreshTokenRepository.UpdateAsync(storedToken);
+            await _refreshTokenRepository.SaveChangesAsync();
+
+            return new ApiResponse<object>(
+                true,
+                "Logout successful.",
+                null);
+        }
+        private string GenerateOtp()
+        {
+            var random = new Random();
+            return random.Next(100000, 999999).ToString();
+        }
+        public async Task<ApiResponse<object>> ForgotPasswordAsync(ForgotPasswordDto request)
+        {
+            var user = await _userRepository.GetByEmailAsync(request.Email);
+
+            if (user == null)
+                return new ApiResponse<object>(false, "User not found.", null);
+
+            var otp = GenerateOtp();
+
+            var otpEntity = new PasswordResetOtp
+            {
+                UserId = user.UserId,
+                Otp = otp,
+                CreatedOn = DateTime.UtcNow,
+                ExpiryOn = DateTime.UtcNow.AddMinutes(10),
+                IsUsed = false
+            };
+
+            await _otpRepository.AddAsync(otpEntity);
+            await _otpRepository.SaveChangesAsync();
+
+            var subject = "GACHSL Password Reset OTP";
+
+            var body = EmailTemplate.GetOtpTemplate(
+                user.FullName,
+                otp);
+
+            await _emailService.SendEmailAsync(
+                user.Email,
+                subject,
+                body);
+
+            return new ApiResponse<object>(
+                true,
+                "OTP has been sent to your registered email address.",
+                null);
+        }
+        public async Task<ApiResponse<object>> VerifyOtpAsync(VerifyOtpDto request)
+        {
+            var user = await _userRepository.GetByEmailAsync(request.Email);
+
+            if (user == null)
+                return new ApiResponse<object>(false, "User not found.", null);
+
+            var otpRecord = await _otpRepository.GetValidOtpAsync(user.UserId, request.Otp);
+
+            if (otpRecord == null)
+                return new ApiResponse<object>(false, "Invalid or expired OTP.", null);
+
+            otpRecord.IsUsed = true;
+            await _otpRepository.SaveChangesAsync();
+
+            // Generate secure reset token
+            var resetToken = Guid.NewGuid().ToString();
+
+            // Save token
+            var passwordResetToken = new PasswordResetToken
+            {
+                UserId = user.UserId,
+                Token = resetToken,
+                CreatedOn = DateTime.UtcNow,
+                ExpiryOn = DateTime.UtcNow.AddMinutes(15),
+                IsUsed = false
+            };
+
+            await _passwordResetTokenRepository.AddAsync(passwordResetToken);
+            await _passwordResetTokenRepository.SaveChangesAsync();
+
+            return new ApiResponse<object>(
+                true,
+                "OTP verified successfully.",
+                new
+                {
+                    ResetToken = resetToken
+                });
+        }
+        public async Task<ApiResponse<object>> ResetPasswordAsync(ResetPasswordDto request)
+        {
+            var token = await _passwordResetTokenRepository
+                .GetValidTokenAsync(request.ResetToken);
+
+            if (token == null)
+            {
+                return new ApiResponse<object>(
+                    false,
+                    "Invalid or expired reset token.",
+                    null);
+            }
+
+            token.User.PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.NewPassword);
+
+            token.IsUsed = true;
+
+            await _userRepository.UpdateAsync(token.User);
+            await _passwordResetTokenRepository.UpdateAsync(token);
+
+            await _userRepository.SaveChangesAsync();
+            await _passwordResetTokenRepository.SaveChangesAsync();
+
+            return new ApiResponse<object>(
+                true,
+                "Password reset successfully.",
+                null);
         }
     }
 }

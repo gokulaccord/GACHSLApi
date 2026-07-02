@@ -35,5 +35,14 @@ namespace GACHSLApi.Repositories
         {
             await _context.SaveChangesAsync();
         }
+        public Task UpdateAsync(User user)
+        {
+            _context.Users.Update(user);
+            return Task.CompletedTask;
+        }
+        public async Task<List<User>> GetAllAsync()
+        {
+            return await _context.Users.ToListAsync();
+        }
     }
 }

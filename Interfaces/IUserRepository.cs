@@ -11,5 +11,8 @@ namespace GACHSLApi.Interfaces
         Task AddAsync(User user);
 
         Task SaveChangesAsync();
+
+        Task<List<User>> GetAllAsync();
+        Task UpdateAsync(User user);
     }
 }

@@ -86,5 +86,38 @@ namespace GACHSLApi.Controllers
 
             return Ok(result);
         }
+        [AllowAnonymous]
+        [HttpPost("logout")]
+        public async Task<IActionResult> Logout(RefreshTokenRequestDto request)
+        {
+            var result = await _authService.LogoutAsync(request);
+
+            if (!result.Success)
+            {
+                return BadRequest(result);
+            }
+
+            return Ok(result);
+        }
+        [HttpPost("forgot-password")]
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordDto request)
+        {
+            var result = await _authService.ForgotPasswordAsync(request);
+            return Ok(result);
+        }
+
+        [HttpPost("verify-otp")]
+        public async Task<IActionResult> VerifyOtp(VerifyOtpDto request)
+        {
+            var result = await _authService.VerifyOtpAsync(request);
+            return Ok(result);
+        }
+
+        [HttpPost("reset-password")]
+        public async Task<IActionResult> ResetPassword(ResetPasswordDto request)
+        {
+            var result = await _authService.ResetPasswordAsync(request);
+            return Ok(result);
+        }
     }
 }

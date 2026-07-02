@@ -1,0 +1,370 @@
+2026-07-02 10:29:46.880 +05:30 [INF] User profile is available. Using 'C:\Users\ashvi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-02 10:29:47.857 +05:30 [INF] Now listening on: http://localhost:5278
+2026-07-02 10:29:48.265 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-02 10:29:48.271 +05:30 [INF] Hosting environment: Development
+2026-07-02 10:29:48.276 +05:30 [INF] Content root path: C:\ASHVIN\PERSONAL\gokulaccord\GACHSLApi
+2026-07-02 10:29:51.044 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/index.html - null null
+2026-07-02 10:29:51.674 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/index.html - 200 null text/html;charset=utf-8 655.701ms
+2026-07-02 10:29:51.702 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-02 10:29:51.764 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 63.0317ms
+2026-07-02 10:29:51.945 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_vs/browserLink - null null
+2026-07-02 10:29:52.052 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 106.9037ms
+2026-07-02 10:29:52.113 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-02 10:29:52.171 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 58.5362ms
+2026-07-02 10:30:18.414 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/forgot-password - application/json 41
+2026-07-02 10:30:18.493 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-02 10:30:18.739 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.ForgotPassword (GACHSLApi)'
+2026-07-02 10:30:18.885 +05:30 [INF] Route matched with {action = "ForgotPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ForgotPassword(ForgotPasswordDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-02 10:30:23.901 +05:30 [INF] Executed DbCommand (311ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-02 10:30:24.816 +05:30 [INF] Executed DbCommand (46ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `PasswordResetOtps` (`CreatedOn`, `ExpiryOn`, `IsUsed`, `Otp`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `Id`
+FROM `PasswordResetOtps`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-07-02 10:30:30.763 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.ForgotPassword (GACHSLApi) in 11857.7044ms
+2026-07-02 10:30:30.772 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.ForgotPassword (GACHSLApi)'
+2026-07-02 10:30:31.243 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/forgot-password - 500 null application/json 12828.8764ms
+2026-07-02 10:31:02.158 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/login - application/json 64
+2026-07-02 10:31:02.191 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-02 10:31:02.213 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GACHSLApi.DTOs.LoginRequestDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-02 10:31:02.416 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-02 10:31:03.240 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `RefreshTokens` (`CreatedOn`, `ExpiryDate`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `RefreshTokenId`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `RefreshTokenId` = LAST_INSERT_ID();
+2026-07-02 10:31:03.294 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.LoginResponseDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-02 10:31:03.316 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.Login (GACHSLApi) in 1089.2058ms
+2026-07-02 10:31:03.336 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-02 10:31:03.344 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/login - 200 null application/json; charset=utf-8 1185.8692ms
+2026-07-02 10:31:29.425 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/forgot-password - application/json 41
+2026-07-02 10:31:29.676 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10503: Signature validation failed. Token does not have a kid. Keys tried: '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-07-02 10:31:29.694 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10503: Signature validation failed. Token does not have a kid. Keys tried: '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2026-07-02 10:31:29.703 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.ForgotPassword (GACHSLApi)'
+2026-07-02 10:31:29.709 +05:30 [INF] Route matched with {action = "ForgotPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ForgotPassword(ForgotPasswordDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-02 10:31:29.987 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-02 10:31:30.030 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `PasswordResetOtps` (`CreatedOn`, `ExpiryOn`, `IsUsed`, `Otp`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `Id`
+FROM `PasswordResetOtps`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-07-02 10:31:33.242 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.ForgotPassword (GACHSLApi) in 3515.8159ms
+2026-07-02 10:31:33.249 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.ForgotPassword (GACHSLApi)'
+2026-07-02 10:31:33.444 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/forgot-password - 500 null application/json 4019.3683ms
+2026-07-02 10:41:01.811 +05:30 [INF] User profile is available. Using 'C:\Users\ashvi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-02 10:41:03.358 +05:30 [INF] Now listening on: http://localhost:5278
+2026-07-02 10:41:03.628 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-02 10:41:03.631 +05:30 [INF] Hosting environment: Development
+2026-07-02 10:41:03.634 +05:30 [INF] Content root path: C:\ASHVIN\PERSONAL\gokulaccord\GACHSLApi
+2026-07-02 10:41:07.219 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/index.html - null null
+2026-07-02 10:41:08.122 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/index.html - 200 null text/html;charset=utf-8 919.4068ms
+2026-07-02 10:41:08.187 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-02 10:41:08.233 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 47.6775ms
+2026-07-02 10:41:08.304 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_vs/browserLink - null null
+2026-07-02 10:41:08.432 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 128.0035ms
+2026-07-02 10:41:08.491 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-02 10:41:08.547 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 56.1827ms
+2026-07-02 10:41:27.344 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/forgot-password - application/json 41
+2026-07-02 10:41:27.377 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-02 10:41:27.660 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.ForgotPassword (GACHSLApi)'
+2026-07-02 10:41:27.736 +05:30 [INF] Route matched with {action = "ForgotPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ForgotPassword(ForgotPasswordDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-02 10:41:31.635 +05:30 [INF] Executed DbCommand (119ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-02 10:41:32.292 +05:30 [INF] Executed DbCommand (36ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `PasswordResetOtps` (`CreatedOn`, `ExpiryOn`, `IsUsed`, `Otp`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `Id`
+FROM `PasswordResetOtps`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-07-02 10:41:36.580 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.ForgotPassword (GACHSLApi) in 8829.9001ms
+2026-07-02 10:41:36.586 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.ForgotPassword (GACHSLApi)'
+2026-07-02 10:41:36.967 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/forgot-password - 500 null application/json 9623.4607ms
+2026-07-02 10:42:22.848 +05:30 [INF] User profile is available. Using 'C:\Users\ashvi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-02 10:42:24.428 +05:30 [INF] Now listening on: http://localhost:5278
+2026-07-02 10:42:24.969 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-02 10:42:24.973 +05:30 [INF] Hosting environment: Development
+2026-07-02 10:42:24.976 +05:30 [INF] Content root path: C:\ASHVIN\PERSONAL\gokulaccord\GACHSLApi
+2026-07-02 10:42:27.733 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/index.html - null null
+2026-07-02 10:42:28.480 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/index.html - 200 null text/html;charset=utf-8 769.1095ms
+2026-07-02 10:42:28.508 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-02 10:42:28.536 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 30.6864ms
+2026-07-02 10:42:28.571 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_vs/browserLink - null null
+2026-07-02 10:42:28.717 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 146.0716ms
+2026-07-02 10:42:28.766 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-02 10:42:28.811 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 44.6717ms
+2026-07-02 10:42:42.563 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/forgot-password - application/json 41
+2026-07-02 10:42:42.585 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-02 10:42:42.810 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.ForgotPassword (GACHSLApi)'
+2026-07-02 10:42:42.874 +05:30 [INF] Route matched with {action = "ForgotPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ForgotPassword(ForgotPasswordDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-02 10:42:46.376 +05:30 [INF] Executed DbCommand (84ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-02 10:42:46.946 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `PasswordResetOtps` (`CreatedOn`, `ExpiryOn`, `IsUsed`, `Otp`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `Id`
+FROM `PasswordResetOtps`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-07-02 10:42:51.695 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-02 10:42:51.729 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.ForgotPassword (GACHSLApi) in 8833.1435ms
+2026-07-02 10:42:51.738 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.ForgotPassword (GACHSLApi)'
+2026-07-02 10:42:51.780 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/forgot-password - 200 null application/json; charset=utf-8 9216.7705ms
+2026-07-02 10:47:43.736 +05:30 [INF] Executed DbCommand (83ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='GACHSLDB' AND TABLE_NAME='__EFMigrationsHistory';
+2026-07-02 10:47:43.784 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='GACHSLDB' AND TABLE_NAME='__EFMigrationsHistory';
+2026-07-02 10:47:43.806 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2026-07-02 10:47:43.817 +05:30 [INF] Applying migration '20260702051548_AddPasswordResetToken'.
+2026-07-02 10:47:44.038 +05:30 [INF] Executed DbCommand (174ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `PasswordResetTokens` (
+    `Id` int NOT NULL AUTO_INCREMENT,
+    `UserId` int NOT NULL,
+    `Token` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `CreatedOn` datetime(6) NOT NULL,
+    `ExpiryOn` datetime(6) NOT NULL,
+    `IsUsed` tinyint(1) NOT NULL,
+    CONSTRAINT `PK_PasswordResetTokens` PRIMARY KEY (`Id`),
+    CONSTRAINT `FK_PasswordResetTokens_Users_UserId` FOREIGN KEY (`UserId`) REFERENCES `Users` (`UserId`) ON DELETE CASCADE
+) CHARACTER SET=utf8mb4;
+2026-07-02 10:47:44.138 +05:30 [INF] Executed DbCommand (99ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_PasswordResetTokens_UserId` ON `PasswordResetTokens` (`UserId`);
+2026-07-02 10:47:44.151 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20260702051548_AddPasswordResetToken', '8.0.13');
+2026-07-02 10:54:48.619 +05:30 [INF] User profile is available. Using 'C:\Users\ashvi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-02 10:54:49.310 +05:30 [INF] Now listening on: http://localhost:5278
+2026-07-02 10:54:49.629 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-02 10:54:49.633 +05:30 [INF] Hosting environment: Development
+2026-07-02 10:54:49.647 +05:30 [INF] Content root path: C:\ASHVIN\PERSONAL\gokulaccord\GACHSLApi
+2026-07-02 10:54:52.399 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/index.html - null null
+2026-07-02 10:54:53.175 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/index.html - 200 null text/html;charset=utf-8 808.1074ms
+2026-07-02 10:54:53.438 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_vs/browserLink - null null
+2026-07-02 10:54:53.438 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-02 10:54:53.464 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 27.3998ms
+2026-07-02 10:54:53.522 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 83.7811ms
+2026-07-02 10:54:53.583 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-02 10:54:53.665 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 82.5676ms
+2026-07-02 10:55:22.072 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/verify-otp - application/json 60
+2026-07-02 10:55:22.153 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-02 10:55:22.373 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.VerifyOtp (GACHSLApi)'
+2026-07-02 10:55:22.492 +05:30 [INF] Route matched with {action = "VerifyOtp", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] VerifyOtp(VerifyOtpDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-02 10:55:26.638 +05:30 [INF] Executed DbCommand (104ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-02 10:55:26.984 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__otp_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`CreatedOn`, `p`.`ExpiryOn`, `p`.`IsUsed`, `p`.`Otp`, `p`.`UserId`
+FROM `PasswordResetOtps` AS `p`
+WHERE (((`p`.`UserId` = @__userId_0) AND (`p`.`Otp` = @__otp_1)) AND NOT (`p`.`IsUsed`)) AND (`p`.`ExpiryOn` > UTC_TIMESTAMP())
+LIMIT 1
+2026-07-02 10:55:27.024 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-02 10:55:27.059 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.VerifyOtp (GACHSLApi) in 4547.3562ms
+2026-07-02 10:55:27.068 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.VerifyOtp (GACHSLApi)'
+2026-07-02 10:55:27.104 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/verify-otp - 200 null application/json; charset=utf-8 5032.0256ms
+2026-07-02 10:55:43.725 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/forgot-password - application/json 41
+2026-07-02 10:55:43.744 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.ForgotPassword (GACHSLApi)'
+2026-07-02 10:55:43.763 +05:30 [INF] Route matched with {action = "ForgotPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ForgotPassword(ForgotPasswordDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-02 10:55:43.876 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-02 10:55:44.367 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `PasswordResetOtps` (`CreatedOn`, `ExpiryOn`, `IsUsed`, `Otp`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `Id`
+FROM `PasswordResetOtps`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-07-02 10:55:49.331 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-02 10:55:49.338 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.ForgotPassword (GACHSLApi) in 5565.1105ms
+2026-07-02 10:55:49.342 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.ForgotPassword (GACHSLApi)'
+2026-07-02 10:55:49.346 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/forgot-password - 200 null application/json; charset=utf-8 5620.738ms
+2026-07-02 10:56:03.261 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/verify-otp - application/json 60
+2026-07-02 10:56:03.274 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.VerifyOtp (GACHSLApi)'
+2026-07-02 10:56:03.279 +05:30 [INF] Route matched with {action = "VerifyOtp", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] VerifyOtp(VerifyOtpDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-02 10:56:03.491 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-02 10:56:03.516 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__otp_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`CreatedOn`, `p`.`ExpiryOn`, `p`.`IsUsed`, `p`.`Otp`, `p`.`UserId`
+FROM `PasswordResetOtps` AS `p`
+WHERE (((`p`.`UserId` = @__userId_0) AND (`p`.`Otp` = @__otp_1)) AND NOT (`p`.`IsUsed`)) AND (`p`.`ExpiryOn` > UTC_TIMESTAMP())
+LIMIT 1
+2026-07-02 10:56:03.557 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `PasswordResetOtps` SET `IsUsed` = @p0
+WHERE `Id` = @p1;
+SELECT ROW_COUNT();
+2026-07-02 10:56:03.644 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `PasswordResetTokens` (`CreatedOn`, `ExpiryOn`, `IsUsed`, `Token`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `Id`
+FROM `PasswordResetTokens`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-07-02 10:56:03.665 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-02 10:56:03.692 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.VerifyOtp (GACHSLApi) in 406.602ms
+2026-07-02 10:56:03.697 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.VerifyOtp (GACHSLApi)'
+2026-07-02 10:56:03.702 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/verify-otp - 200 null application/json; charset=utf-8 441.9084ms
+2026-07-02 10:58:06.940 +05:30 [INF] User profile is available. Using 'C:\Users\ashvi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-02 10:58:07.308 +05:30 [INF] Now listening on: http://localhost:5278
+2026-07-02 10:58:07.633 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-02 10:58:07.636 +05:30 [INF] Hosting environment: Development
+2026-07-02 10:58:07.639 +05:30 [INF] Content root path: C:\ASHVIN\PERSONAL\gokulaccord\GACHSLApi
+2026-07-02 10:58:09.357 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/index.html - null null
+2026-07-02 10:58:10.042 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/index.html - 200 null text/html;charset=utf-8 705.1652ms
+2026-07-02 10:58:10.063 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-02 10:58:10.064 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_vs/browserLink - null null
+2026-07-02 10:58:10.078 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 16.026ms
+2026-07-02 10:58:10.140 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 76.0562ms
+2026-07-02 10:58:10.173 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-02 10:58:10.212 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 39.574ms
+2026-07-02 10:58:39.241 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/login - application/json 64
+2026-07-02 10:58:39.309 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-02 10:58:39.477 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-02 10:58:39.546 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GACHSLApi.DTOs.LoginRequestDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-02 10:58:42.855 +05:30 [INF] Executed DbCommand (95ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-02 10:58:44.099 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `RefreshTokens` (`CreatedOn`, `ExpiryDate`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `RefreshTokenId`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `RefreshTokenId` = LAST_INSERT_ID();
+2026-07-02 10:58:44.236 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.LoginResponseDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-02 10:58:44.266 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.Login (GACHSLApi) in 4704.8621ms
+2026-07-02 10:58:44.270 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-02 10:58:44.289 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/login - 200 null application/json; charset=utf-8 5048.4154ms
+2026-07-02 10:59:10.905 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/reset-password - application/json 643
+2026-07-02 10:59:10.932 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.ResetPassword (GACHSLApi)'
+2026-07-02 10:59:10.952 +05:30 [INF] Route matched with {action = "ResetPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ResetPassword(GACHSLApi.DTOs.ResetPasswordDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-02 10:59:11.228 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__token_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`CreatedOn`, `p`.`ExpiryOn`, `p`.`IsUsed`, `p`.`Token`, `p`.`UserId`, `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `PasswordResetTokens` AS `p`
+INNER JOIN `Users` AS `u` ON `p`.`UserId` = `u`.`UserId`
+WHERE ((`p`.`Token` = @__token_0) AND NOT (`p`.`IsUsed`)) AND (`p`.`ExpiryOn` > UTC_TIMESTAMP())
+LIMIT 1
+2026-07-02 10:59:11.272 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-02 10:59:11.288 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.ResetPassword (GACHSLApi) in 329.8368ms
+2026-07-02 10:59:11.297 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.ResetPassword (GACHSLApi)'
+2026-07-02 10:59:11.305 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/reset-password - 200 null application/json; charset=utf-8 399.6725ms
+2026-07-02 10:59:44.346 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/reset-password - application/json 134
+2026-07-02 10:59:44.369 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.ResetPassword (GACHSLApi)'
+2026-07-02 10:59:44.372 +05:30 [INF] Route matched with {action = "ResetPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ResetPassword(GACHSLApi.DTOs.ResetPasswordDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-02 10:59:44.577 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__token_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`CreatedOn`, `p`.`ExpiryOn`, `p`.`IsUsed`, `p`.`Token`, `p`.`UserId`, `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `PasswordResetTokens` AS `p`
+INNER JOIN `Users` AS `u` ON `p`.`UserId` = `u`.`UserId`
+WHERE ((`p`.`Token` = @__token_0) AND NOT (`p`.`IsUsed`)) AND (`p`.`ExpiryOn` > UTC_TIMESTAMP())
+LIMIT 1
+2026-07-02 10:59:44.591 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-02 10:59:44.595 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.ResetPassword (GACHSLApi) in 217.0081ms
+2026-07-02 10:59:44.599 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.ResetPassword (GACHSLApi)'
+2026-07-02 10:59:44.602 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/reset-password - 200 null application/json; charset=utf-8 256.6899ms
+2026-07-02 11:00:30.815 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/forgot-password - application/json 41
+2026-07-02 11:00:30.874 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.ForgotPassword (GACHSLApi)'
+2026-07-02 11:00:30.933 +05:30 [INF] Route matched with {action = "ForgotPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ForgotPassword(ForgotPasswordDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-02 11:00:31.013 +05:30 [INF] Executed DbCommand (28ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-02 11:00:31.240 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `PasswordResetOtps` (`CreatedOn`, `ExpiryOn`, `IsUsed`, `Otp`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `Id`
+FROM `PasswordResetOtps`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-07-02 11:00:38.563 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-02 11:00:38.567 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.ForgotPassword (GACHSLApi) in 7626.1589ms
+2026-07-02 11:00:38.571 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.ForgotPassword (GACHSLApi)'
+2026-07-02 11:00:38.574 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/forgot-password - 200 null application/json; charset=utf-8 7759.2627ms
+2026-07-02 11:01:07.800 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/verify-otp - application/json 60
+2026-07-02 11:01:07.827 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.VerifyOtp (GACHSLApi)'
+2026-07-02 11:01:07.842 +05:30 [INF] Route matched with {action = "VerifyOtp", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] VerifyOtp(VerifyOtpDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-02 11:01:07.934 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-02 11:01:07.974 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__otp_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`CreatedOn`, `p`.`ExpiryOn`, `p`.`IsUsed`, `p`.`Otp`, `p`.`UserId`
+FROM `PasswordResetOtps` AS `p`
+WHERE (((`p`.`UserId` = @__userId_0) AND (`p`.`Otp` = @__otp_1)) AND NOT (`p`.`IsUsed`)) AND (`p`.`ExpiryOn` > UTC_TIMESTAMP())
+LIMIT 1
+2026-07-02 11:01:08.013 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `PasswordResetOtps` SET `IsUsed` = @p0
+WHERE `Id` = @p1;
+SELECT ROW_COUNT();
+2026-07-02 11:01:08.087 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `PasswordResetTokens` (`CreatedOn`, `ExpiryOn`, `IsUsed`, `Token`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `Id`
+FROM `PasswordResetTokens`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-07-02 11:01:08.106 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-02 11:01:08.119 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.VerifyOtp (GACHSLApi) in 267.5578ms
+2026-07-02 11:01:08.125 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.VerifyOtp (GACHSLApi)'
+2026-07-02 11:01:08.128 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/verify-otp - 200 null application/json; charset=utf-8 329.2839ms
+2026-07-02 11:01:23.156 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/reset-password - application/json 82
+2026-07-02 11:01:23.170 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.ResetPassword (GACHSLApi)'
+2026-07-02 11:01:23.176 +05:30 [INF] Route matched with {action = "ResetPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ResetPassword(GACHSLApi.DTOs.ResetPasswordDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-02 11:01:23.240 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__token_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`CreatedOn`, `p`.`ExpiryOn`, `p`.`IsUsed`, `p`.`Token`, `p`.`UserId`, `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `PasswordResetTokens` AS `p`
+INNER JOIN `Users` AS `u` ON `p`.`UserId` = `u`.`UserId`
+WHERE ((`p`.`Token` = @__token_0) AND NOT (`p`.`IsUsed`)) AND (`p`.`ExpiryOn` > UTC_TIMESTAMP())
+LIMIT 1
+2026-07-02 11:01:23.771 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p5='?' (DbType = Int32), @p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p13='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 100), @p8='?' (Size = 100), @p9='?' (DbType = Boolean), @p10='?' (Size = 255), @p11='?' (Size = 4000), @p12='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+UPDATE `PasswordResetTokens` SET `CreatedOn` = @p0, `ExpiryOn` = @p1, `IsUsed` = @p2, `Token` = @p3, `UserId` = @p4
+WHERE `Id` = @p5;
+SELECT ROW_COUNT();
+
+UPDATE `Users` SET `CreatedOn` = @p6, `Email` = @p7, `FullName` = @p8, `IsActive` = @p9, `PasswordHash` = @p10, `Role` = @p11, `Username` = @p12
+WHERE `UserId` = @p13;
+SELECT ROW_COUNT();
+2026-07-02 11:01:23.791 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-02 11:01:23.795 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.ResetPassword (GACHSLApi) in 610.3066ms
+2026-07-02 11:01:23.800 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.ResetPassword (GACHSLApi)'
+2026-07-02 11:01:23.803 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/reset-password - 200 null application/json; charset=utf-8 646.5222ms
