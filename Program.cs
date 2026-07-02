@@ -12,6 +12,7 @@ using Serilog;
 using System.Text;
 using GACHSLApi.Configurations;
 
+
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
     .WriteTo.File("Logs/log-.txt", rollingInterval: RollingInterval.Day)
@@ -63,6 +64,12 @@ builder.Services.AddScoped<IEmailService, EmailService>();
 
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<INoticeRepository, NoticeRepository>();
+builder.Services.AddScoped<INoticeService, NoticeService>();
+builder.Services.AddScoped<IMemberService, MemberService>();
+builder.Services.AddScoped<IMemberRepository, MemberRepository>();
+
+
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>

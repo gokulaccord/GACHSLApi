@@ -368,3 +368,327 @@ SELECT ROW_COUNT();
 2026-07-02 11:01:23.795 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.ResetPassword (GACHSLApi) in 610.3066ms
 2026-07-02 11:01:23.800 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.ResetPassword (GACHSLApi)'
 2026-07-02 11:01:23.803 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/reset-password - 200 null application/json; charset=utf-8 646.5222ms
+2026-07-02 14:43:40.218 +05:30 [INF] User profile is available. Using 'C:\Users\ashvi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-02 14:43:41.580 +05:30 [INF] Now listening on: http://localhost:5278
+2026-07-02 14:43:41.870 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-02 14:43:41.876 +05:30 [INF] Hosting environment: Development
+2026-07-02 14:43:41.881 +05:30 [INF] Content root path: C:\ASHVIN\PERSONAL\gokulaccord\GACHSLApi
+2026-07-02 14:43:45.408 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/index.html - null null
+2026-07-02 14:43:46.240 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/index.html - 200 null text/html;charset=utf-8 850.7635ms
+2026-07-02 14:43:46.301 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-02 14:43:46.350 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 50.7293ms
+2026-07-02 14:43:46.411 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_vs/browserLink - null null
+2026-07-02 14:43:46.552 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 141.1438ms
+2026-07-02 14:43:46.613 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-02 14:43:46.666 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 53.8688ms
+2026-07-02 15:07:22.074 +05:30 [INF] Executed DbCommand (185ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='GACHSLDB' AND TABLE_NAME='__EFMigrationsHistory';
+2026-07-02 15:07:22.132 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='GACHSLDB' AND TABLE_NAME='__EFMigrationsHistory';
+2026-07-02 15:07:22.156 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2026-07-02 15:07:22.168 +05:30 [INF] Applying migration '20260702093704_AddNoticeTable'.
+2026-07-02 15:07:22.322 +05:30 [INF] Executed DbCommand (103ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `Notices` (
+    `NoticeId` int NOT NULL AUTO_INCREMENT,
+    `Title` varchar(200) CHARACTER SET utf8mb4 NOT NULL,
+    `Description` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `PublishDate` datetime(6) NOT NULL,
+    `IsActive` tinyint(1) NOT NULL,
+    `CreatedOn` datetime(6) NOT NULL,
+    `CreatedBy` int NOT NULL,
+    CONSTRAINT `PK_Notices` PRIMARY KEY (`NoticeId`)
+) CHARACTER SET=utf8mb4;
+2026-07-02 15:07:22.330 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20260702093704_AddNoticeTable', '8.0.13');
+2026-07-02 15:16:58.774 +05:30 [INF] User profile is available. Using 'C:\Users\ashvi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-02 15:16:59.579 +05:30 [INF] Now listening on: http://localhost:5278
+2026-07-02 15:16:59.887 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-02 15:16:59.890 +05:30 [INF] Hosting environment: Development
+2026-07-02 15:16:59.891 +05:30 [INF] Content root path: C:\ASHVIN\PERSONAL\gokulaccord\GACHSLApi
+2026-07-02 15:17:02.475 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/index.html - null null
+2026-07-02 15:17:04.179 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/index.html - 200 null text/html;charset=utf-8 1731.667ms
+2026-07-02 15:17:04.219 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-02 15:17:04.220 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_vs/browserLink - null null
+2026-07-02 15:17:04.233 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 14.6625ms
+2026-07-02 15:17:04.298 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 77.6721ms
+2026-07-02 15:17:04.340 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-02 15:17:04.757 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 417.3007ms
+2026-07-02 15:17:38.822 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Notices - null null
+2026-07-02 15:17:38.861 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-02 15:17:39.038 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-07-02 15:17:39.053 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2026-07-02 15:17:39.058 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Notices - 401 0 null 236.0998ms
+2026-07-02 15:18:07.806 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/login - application/json 62
+2026-07-02 15:18:07.863 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-02 15:18:07.978 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GACHSLApi.DTOs.LoginRequestDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-02 15:18:11.607 +05:30 [INF] Executed DbCommand (104ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-02 15:18:12.879 +05:30 [INF] Executed DbCommand (65ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `RefreshTokens` (`CreatedOn`, `ExpiryDate`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `RefreshTokenId`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `RefreshTokenId` = LAST_INSERT_ID();
+2026-07-02 15:18:12.991 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.LoginResponseDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-02 15:18:13.012 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.Login (GACHSLApi) in 5021.3628ms
+2026-07-02 15:18:13.018 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-02 15:18:13.036 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/login - 200 null application/json; charset=utf-8 5230.4472ms
+2026-07-02 15:18:28.710 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Notices - null null
+2026-07-02 15:18:28.853 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.NoticesController.GetAll (GACHSLApi)'
+2026-07-02 15:18:28.871 +05:30 [INF] Route matched with {action = "GetAll", controller = "Notices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.NoticesController (GACHSLApi).
+2026-07-02 15:18:29.001 +05:30 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `n`.`NoticeId`, `n`.`CreatedBy`, `n`.`CreatedOn`, `n`.`Description`, `n`.`IsActive`, `n`.`PublishDate`, `n`.`Title`
+FROM `Notices` AS `n`
+ORDER BY `n`.`PublishDate` DESC
+2026-07-02 15:18:29.024 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GACHSLApi.DTOs.Notice.NoticeDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-02 15:18:29.036 +05:30 [INF] Executed action GACHSLApi.Controllers.NoticesController.GetAll (GACHSLApi) in 157.7803ms
+2026-07-02 15:18:29.040 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.NoticesController.GetAll (GACHSLApi)'
+2026-07-02 15:18:29.042 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Notices - 200 null application/json; charset=utf-8 332.7135ms
+2026-07-02 15:19:21.896 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Notices - application/json 196
+2026-07-02 15:19:21.924 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.NoticesController.Create (GACHSLApi)'
+2026-07-02 15:19:21.943 +05:30 [INF] Route matched with {action = "Create", controller = "Notices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(GACHSLApi.DTOs.Notice.CreateNoticeDto) on controller GACHSLApi.Controllers.NoticesController (GACHSLApi).
+2026-07-02 15:19:22.337 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 4000), @p3='?' (DbType = Boolean), @p4='?' (DbType = DateTime), @p5='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Notices` (`CreatedBy`, `CreatedOn`, `Description`, `IsActive`, `PublishDate`, `Title`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT `NoticeId`
+FROM `Notices`
+WHERE ROW_COUNT() = 1 AND `NoticeId` = LAST_INSERT_ID();
+2026-07-02 15:19:22.386 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-02 15:19:22.406 +05:30 [INF] Executed action GACHSLApi.Controllers.NoticesController.Create (GACHSLApi) in 454.1743ms
+2026-07-02 15:19:22.411 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.NoticesController.Create (GACHSLApi)'
+2026-07-02 15:19:22.415 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Notices - 200 null application/json; charset=utf-8 518.5893ms
+2026-07-02 15:19:30.456 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Notices - null null
+2026-07-02 15:19:30.468 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.NoticesController.GetAll (GACHSLApi)'
+2026-07-02 15:19:30.474 +05:30 [INF] Route matched with {action = "GetAll", controller = "Notices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.NoticesController (GACHSLApi).
+2026-07-02 15:19:30.544 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `n`.`NoticeId`, `n`.`CreatedBy`, `n`.`CreatedOn`, `n`.`Description`, `n`.`IsActive`, `n`.`PublishDate`, `n`.`Title`
+FROM `Notices` AS `n`
+ORDER BY `n`.`PublishDate` DESC
+2026-07-02 15:19:30.553 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GACHSLApi.DTOs.Notice.NoticeDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-02 15:19:30.563 +05:30 [INF] Executed action GACHSLApi.Controllers.NoticesController.GetAll (GACHSLApi) in 81.6946ms
+2026-07-02 15:19:30.566 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.NoticesController.GetAll (GACHSLApi)'
+2026-07-02 15:19:30.569 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Notices - 200 null application/json; charset=utf-8 112.166ms
+2026-07-02 15:19:59.586 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Notices/1 - null null
+2026-07-02 15:19:59.607 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.NoticesController.GetById (GACHSLApi)'
+2026-07-02 15:19:59.626 +05:30 [INF] Route matched with {action = "GetById", controller = "Notices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int32) on controller GACHSLApi.Controllers.NoticesController (GACHSLApi).
+2026-07-02 15:19:59.719 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `n`.`NoticeId`, `n`.`CreatedBy`, `n`.`CreatedOn`, `n`.`Description`, `n`.`IsActive`, `n`.`PublishDate`, `n`.`Title`
+FROM `Notices` AS `n`
+WHERE `n`.`NoticeId` = @__id_0
+LIMIT 1
+2026-07-02 15:19:59.733 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Notice.NoticeDto'.
+2026-07-02 15:19:59.738 +05:30 [INF] Executed action GACHSLApi.Controllers.NoticesController.GetById (GACHSLApi) in 105.331ms
+2026-07-02 15:19:59.743 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.NoticesController.GetById (GACHSLApi)'
+2026-07-02 15:19:59.747 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Notices/1 - 200 null application/json; charset=utf-8 161.325ms
+2026-07-02 15:20:48.404 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5278/api/Notices/1 - application/json 216
+2026-07-02 15:20:48.424 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.NoticesController.Update (GACHSLApi)'
+2026-07-02 15:20:48.439 +05:30 [INF] Route matched with {action = "Update", controller = "Notices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, GACHSLApi.DTOs.Notice.UpdateNoticeDto) on controller GACHSLApi.Controllers.NoticesController (GACHSLApi).
+2026-07-02 15:20:48.526 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `n`.`NoticeId`, `n`.`CreatedBy`, `n`.`CreatedOn`, `n`.`Description`, `n`.`IsActive`, `n`.`PublishDate`, `n`.`Title`
+FROM `Notices` AS `n`
+WHERE `n`.`NoticeId` = @__id_0
+LIMIT 1
+2026-07-02 15:20:48.605 +05:30 [INF] Executed DbCommand (45ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 4000), @p3='?' (DbType = Boolean), @p4='?' (DbType = DateTime), @p5='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Notices` SET `CreatedBy` = @p0, `CreatedOn` = @p1, `Description` = @p2, `IsActive` = @p3, `PublishDate` = @p4, `Title` = @p5
+WHERE `NoticeId` = @p6;
+SELECT ROW_COUNT();
+2026-07-02 15:20:48.620 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-02 15:20:48.624 +05:30 [INF] Executed action GACHSLApi.Controllers.NoticesController.Update (GACHSLApi) in 178.3244ms
+2026-07-02 15:20:48.628 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.NoticesController.Update (GACHSLApi)'
+2026-07-02 15:20:48.632 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5278/api/Notices/1 - 200 null application/json; charset=utf-8 229.0341ms
+2026-07-02 15:21:17.255 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Notices - application/json 58
+2026-07-02 15:21:17.262 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.NoticesController.Create (GACHSLApi)'
+2026-07-02 15:21:17.266 +05:30 [INF] Route matched with {action = "Create", controller = "Notices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(GACHSLApi.DTOs.Notice.CreateNoticeDto) on controller GACHSLApi.Controllers.NoticesController (GACHSLApi).
+2026-07-02 15:21:17.324 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 4000), @p3='?' (DbType = Boolean), @p4='?' (DbType = DateTime), @p5='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Notices` (`CreatedBy`, `CreatedOn`, `Description`, `IsActive`, `PublishDate`, `Title`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT `NoticeId`
+FROM `Notices`
+WHERE ROW_COUNT() = 1 AND `NoticeId` = LAST_INSERT_ID();
+2026-07-02 15:21:17.340 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-02 15:21:17.347 +05:30 [INF] Executed action GACHSLApi.Controllers.NoticesController.Create (GACHSLApi) in 74.4553ms
+2026-07-02 15:21:17.352 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.NoticesController.Create (GACHSLApi)'
+2026-07-02 15:21:17.357 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Notices - 200 null application/json; charset=utf-8 101.9651ms
+2026-07-02 15:21:28.476 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Notices/2 - null null
+2026-07-02 15:21:28.484 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.NoticesController.GetById (GACHSLApi)'
+2026-07-02 15:21:28.487 +05:30 [INF] Route matched with {action = "GetById", controller = "Notices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int32) on controller GACHSLApi.Controllers.NoticesController (GACHSLApi).
+2026-07-02 15:21:28.544 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `n`.`NoticeId`, `n`.`CreatedBy`, `n`.`CreatedOn`, `n`.`Description`, `n`.`IsActive`, `n`.`PublishDate`, `n`.`Title`
+FROM `Notices` AS `n`
+WHERE `n`.`NoticeId` = @__id_0
+LIMIT 1
+2026-07-02 15:21:28.570 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Notice.NoticeDto'.
+2026-07-02 15:21:28.576 +05:30 [INF] Executed action GACHSLApi.Controllers.NoticesController.GetById (GACHSLApi) in 85.2076ms
+2026-07-02 15:21:28.583 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.NoticesController.GetById (GACHSLApi)'
+2026-07-02 15:21:28.588 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Notices/2 - 200 null application/json; charset=utf-8 111.7124ms
+2026-07-02 15:22:30.756 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5278/api/Notices/1 - null null
+2026-07-02 15:22:30.776 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.NoticesController.Delete (GACHSLApi)'
+2026-07-02 15:22:30.786 +05:30 [INF] Route matched with {action = "Delete", controller = "Notices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller GACHSLApi.Controllers.NoticesController (GACHSLApi).
+2026-07-02 15:22:30.841 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `n`.`NoticeId`, `n`.`CreatedBy`, `n`.`CreatedOn`, `n`.`Description`, `n`.`IsActive`, `n`.`PublishDate`, `n`.`Title`
+FROM `Notices` AS `n`
+WHERE `n`.`NoticeId` = @__id_0
+LIMIT 1
+2026-07-02 15:22:30.891 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+DELETE FROM `Notices`
+WHERE `NoticeId` = @p0;
+SELECT ROW_COUNT();
+2026-07-02 15:22:30.906 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-02 15:22:30.912 +05:30 [INF] Executed action GACHSLApi.Controllers.NoticesController.Delete (GACHSLApi) in 120.228ms
+2026-07-02 15:22:30.915 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.NoticesController.Delete (GACHSLApi)'
+2026-07-02 15:22:30.917 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5278/api/Notices/1 - 200 null application/json; charset=utf-8 161.8884ms
+2026-07-02 15:26:29.247 +05:30 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='GACHSLDB' AND TABLE_NAME='__EFMigrationsHistory';
+2026-07-02 15:26:29.307 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='GACHSLDB' AND TABLE_NAME='__EFMigrationsHistory';
+2026-07-02 15:26:29.327 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2026-07-02 15:26:29.339 +05:30 [INF] Applying migration '20260702095620_AddDocumentTable'.
+2026-07-02 15:26:29.464 +05:30 [INF] Executed DbCommand (73ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `Documents` (
+    `DocumentId` int NOT NULL AUTO_INCREMENT,
+    `Title` varchar(200) CHARACTER SET utf8mb4 NOT NULL,
+    `Category` varchar(100) CHARACTER SET utf8mb4 NOT NULL,
+    `GoogleDriveUrl` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `PublishDate` datetime(6) NOT NULL,
+    `IsActive` tinyint(1) NOT NULL,
+    `CreatedOn` datetime(6) NOT NULL,
+    `CreatedBy` int NOT NULL,
+    CONSTRAINT `PK_Documents` PRIMARY KEY (`DocumentId`)
+) CHARACTER SET=utf8mb4;
+2026-07-02 15:26:29.472 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20260702095620_AddDocumentTable', '8.0.13');
+2026-07-02 15:29:00.475 +05:30 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='GACHSLDB' AND TABLE_NAME='__EFMigrationsHistory';
+2026-07-02 15:29:00.537 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='GACHSLDB' AND TABLE_NAME='__EFMigrationsHistory';
+2026-07-02 15:29:00.557 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2026-07-02 15:29:00.569 +05:30 [INF] Applying migration '20260702095853_AddFlatNumberToUser'.
+2026-07-02 15:29:00.793 +05:30 [INF] Executed DbCommand (170ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Users` ADD `FlatNumber` varchar(20) CHARACTER SET utf8mb4 NOT NULL DEFAULT '';
+2026-07-02 15:29:00.813 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20260702095853_AddFlatNumberToUser', '8.0.13');
+2026-07-02 15:40:14.039 +05:30 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='GACHSLDB' AND TABLE_NAME='__EFMigrationsHistory';
+2026-07-02 15:40:14.128 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='GACHSLDB' AND TABLE_NAME='__EFMigrationsHistory';
+2026-07-02 15:40:14.154 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2026-07-02 15:40:14.165 +05:30 [INF] Applying migration '20260702101005_AddDocumentCategory'.
+2026-07-02 15:40:14.274 +05:30 [INF] Executed DbCommand (59ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `DocumentCategories` (
+    `CategoryId` int NOT NULL AUTO_INCREMENT,
+    `CategoryName` varchar(100) CHARACTER SET utf8mb4 NOT NULL,
+    `IsActive` tinyint(1) NOT NULL,
+    CONSTRAINT `PK_DocumentCategories` PRIMARY KEY (`CategoryId`)
+) CHARACTER SET=utf8mb4;
+2026-07-02 15:40:14.281 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20260702101005_AddDocumentCategory', '8.0.13');
+2026-07-02 15:42:19.608 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='GACHSLDB' AND TABLE_NAME='__EFMigrationsHistory';
+2026-07-02 15:42:19.687 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='GACHSLDB' AND TABLE_NAME='__EFMigrationsHistory';
+2026-07-02 15:42:19.717 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2026-07-02 15:42:19.734 +05:30 [INF] Applying migration '20260702101213_SeedDocumentCategories'.
+2026-07-02 15:42:19.803 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `DocumentCategories` (`CategoryId`, `CategoryName`, `IsActive`)
+VALUES (1, 'Agreement', TRUE),
+(2, 'Meeting Minutes', TRUE),
+(3, 'Legal', TRUE),
+(4, 'Financial', TRUE),
+(5, 'Architect', TRUE),
+(6, 'Government Approval', TRUE),
+(7, 'General', TRUE);
+2026-07-02 15:42:19.804 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20260702101213_SeedDocumentCategories', '8.0.13');
+2026-07-02 16:40:36.074 +05:30 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='GACHSLDB' AND TABLE_NAME='__EFMigrationsHistory';
+2026-07-02 16:40:36.176 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='GACHSLDB' AND TABLE_NAME='__EFMigrationsHistory';
+2026-07-02 16:40:36.238 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2026-07-02 16:40:36.269 +05:30 [INF] Applying migration '20260702102856_UpdateDocumentEntity'.
+2026-07-02 16:40:36.679 +05:30 [INF] Executed DbCommand (307ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Documents` DROP COLUMN `Category`;
+2026-07-02 16:40:36.799 +05:30 [INF] Executed DbCommand (119ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Documents` DROP COLUMN `GoogleDriveUrl`;
+2026-07-02 16:40:36.907 +05:30 [INF] Executed DbCommand (107ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Documents` ADD `CategoryId` int NOT NULL DEFAULT 0;
+2026-07-02 16:40:37.009 +05:30 [INF] Executed DbCommand (101ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Documents` ADD `Description` varchar(1000) CHARACTER SET utf8mb4 NULL;
+2026-07-02 16:40:37.111 +05:30 [INF] Executed DbCommand (102ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Documents` ADD `DisplayOrder` int NOT NULL DEFAULT 0;
+2026-07-02 16:40:37.272 +05:30 [INF] Executed DbCommand (160ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Documents` ADD `GoogleDriveFileId` varchar(200) CHARACTER SET utf8mb4 NOT NULL DEFAULT '';
+2026-07-02 16:40:37.395 +05:30 [INF] Executed DbCommand (122ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_Documents_CategoryId` ON `Documents` (`CategoryId`);
+2026-07-02 16:40:37.665 +05:30 [INF] Executed DbCommand (269ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Documents` ADD CONSTRAINT `FK_Documents_DocumentCategories_CategoryId` FOREIGN KEY (`CategoryId`) REFERENCES `DocumentCategories` (`CategoryId`) ON DELETE CASCADE;
+2026-07-02 16:40:37.680 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20260702102856_UpdateDocumentEntity', '8.0.13');
+2026-07-02 16:40:37.689 +05:30 [INF] Applying migration '20260702111003_AddMembersTable'.
+2026-07-02 16:40:37.782 +05:30 [INF] Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `Members` (
+    `MemberId` int NOT NULL AUTO_INCREMENT,
+    `FlatNumber` varchar(10) CHARACTER SET utf8mb4 NOT NULL,
+    `FullName` varchar(100) CHARACTER SET utf8mb4 NOT NULL,
+    `Phone` varchar(15) CHARACTER SET utf8mb4 NULL,
+    `Email` varchar(100) CHARACTER SET utf8mb4 NULL,
+    `IsOwner` tinyint(1) NOT NULL,
+    `IsActive` tinyint(1) NOT NULL,
+    `UserId` int NULL,
+    `CreatedOn` datetime(6) NOT NULL,
+    CONSTRAINT `PK_Members` PRIMARY KEY (`MemberId`)
+) CHARACTER SET=utf8mb4;
+2026-07-02 16:40:37.789 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20260702111003_AddMembersTable', '8.0.13');
+2026-07-02 16:45:32.452 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='GACHSLDB' AND TABLE_NAME='__EFMigrationsHistory';
+2026-07-02 16:45:32.567 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='GACHSLDB' AND TABLE_NAME='__EFMigrationsHistory';
+2026-07-02 16:45:32.589 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2026-07-02 16:45:32.605 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-07-02 17:00:30.024 +05:30 [INF] User profile is available. Using 'C:\Users\ashvi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-02 17:00:31.075 +05:30 [INF] Now listening on: http://localhost:5278
+2026-07-02 17:00:31.860 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-02 17:00:31.864 +05:30 [INF] Hosting environment: Development
+2026-07-02 17:00:31.867 +05:30 [INF] Content root path: C:\ASHVIN\PERSONAL\gokulaccord\GACHSLApi
+2026-07-02 17:00:35.902 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/index.html - null null
+2026-07-02 17:00:36.506 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/index.html - 200 null text/html;charset=utf-8 624.4678ms
+2026-07-02 17:00:36.549 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-02 17:00:36.649 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 101.7162ms
+2026-07-02 17:00:36.707 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_vs/browserLink - null null
+2026-07-02 17:00:36.822 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 114.8193ms
+2026-07-02 17:00:36.870 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-02 17:00:36.931 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 61.2738ms

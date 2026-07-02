@@ -22,6 +22,195 @@ namespace GACHSLApi.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
+            modelBuilder.Entity("GACHSLApi.Entities.Document", b =>
+                {
+                    b.Property<int>("DocumentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("DocumentId"));
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(1000)
+                        .HasColumnType("varchar(1000)");
+
+                    b.Property<int>("DisplayOrder")
+                        .HasColumnType("int");
+
+                    b.Property<string>("GoogleDriveFileId")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTime>("PublishDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
+
+                    b.HasKey("DocumentId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("Documents");
+                });
+
+            modelBuilder.Entity("GACHSLApi.Entities.DocumentCategory", b =>
+                {
+                    b.Property<int>("CategoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("CategoryId"));
+
+                    b.Property<string>("CategoryName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("tinyint(1)");
+
+                    b.HasKey("CategoryId");
+
+                    b.ToTable("DocumentCategories");
+
+                    b.HasData(
+                        new
+                        {
+                            CategoryId = 1,
+                            CategoryName = "Agreement",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            CategoryId = 2,
+                            CategoryName = "Meeting Minutes",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            CategoryId = 3,
+                            CategoryName = "Legal",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            CategoryId = 4,
+                            CategoryName = "Financial",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            CategoryId = 5,
+                            CategoryName = "Architect",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            CategoryId = 6,
+                            CategoryName = "Government Approval",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            CategoryId = 7,
+                            CategoryName = "General",
+                            IsActive = true
+                        });
+                });
+
+            modelBuilder.Entity("GACHSLApi.Entities.Member", b =>
+                {
+                    b.Property<int>("MemberId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("MemberId"));
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("FlatNumber")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("varchar(10)");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("IsOwner")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("Phone")
+                        .HasMaxLength(15)
+                        .HasColumnType("varchar(15)");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("MemberId");
+
+                    b.ToTable("Members");
+                });
+
+            modelBuilder.Entity("GACHSLApi.Entities.Notice", b =>
+                {
+                    b.Property<int>("NoticeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("NoticeId"));
+
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTime>("PublishDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
+
+                    b.HasKey("NoticeId");
+
+                    b.ToTable("Notices");
+                });
+
             modelBuilder.Entity("GACHSLApi.Entities.PasswordResetOtp", b =>
                 {
                     b.Property<int>("Id")
@@ -131,6 +320,11 @@ namespace GACHSLApi.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("varchar(100)");
 
+                    b.Property<string>("FlatNumber")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("varchar(20)");
+
                     b.Property<string>("FullName")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -156,6 +350,17 @@ namespace GACHSLApi.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("GACHSLApi.Entities.Document", b =>
+                {
+                    b.HasOne("GACHSLApi.Entities.DocumentCategory", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
                 });
 
             modelBuilder.Entity("GACHSLApi.Entities.PasswordResetOtp", b =>
