@@ -14,5 +14,6 @@ namespace GACHSLApi.DTOs.Member
         public string? Email { get; set; }
 
         public bool IsOwner { get; set; } = true;
+        public bool IsActive { get; set; } = true;
     }
 }

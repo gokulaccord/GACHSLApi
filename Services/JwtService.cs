@@ -43,7 +43,7 @@ namespace GACHSLApi.Services
                 audience: _configuration["Jwt:Audience"],
                 claims: claims,
                 expires: DateTime.UtcNow.AddMinutes(
-    Convert.ToDouble(_configuration["Jwt:ExpiryInMinutes"])),
+    Convert.ToDouble(_configuration["Jwt:ExpiryMinutes"])),
                 signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);

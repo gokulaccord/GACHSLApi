@@ -304,6 +304,74 @@ namespace GACHSLApi.Migrations
                     b.ToTable("RefreshTokens");
                 });
 
+            modelBuilder.Entity("GACHSLApi.Entities.SocietySettings", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Address")
+                        .HasMaxLength(500)
+                        .HasColumnType("varchar(500)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("CurrentStage")
+                        .HasColumnType("int");
+
+                    b.Property<string>("DeveloperName")
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
+
+                    b.Property<string>("LogoUrl")
+                        .HasMaxLength(500)
+                        .HasColumnType("varchar(500)");
+
+                    b.Property<string>("PMCName")
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
+
+                    b.Property<string>("Phone")
+                        .HasMaxLength(20)
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<string>("RegistrationNumber")
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("SocietyName")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
+
+                    b.Property<string>("SocietyShortName")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<int>("TotalFlats")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TotalShops")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TotalStages")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedOn")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SocietySettings");
+                });
+
             modelBuilder.Entity("GACHSLApi.Entities.User", b =>
                 {
                     b.Property<int>("UserId")

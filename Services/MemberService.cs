@@ -84,7 +84,7 @@ namespace GACHSLApi.Services
                 Phone = dto.Phone,
                 Email = dto.Email,
                 IsOwner = dto.IsOwner,
-                IsActive = true,
+                IsActive = dto.IsActive,
                 UserId = user.UserId,
                 CreatedOn = DateTime.UtcNow
             };

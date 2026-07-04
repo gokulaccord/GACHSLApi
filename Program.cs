@@ -1,5 +1,6 @@
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using GACHSLApi.Configurations;
 using GACHSLApi.Data;
 using GACHSLApi.Interfaces;
 using GACHSLApi.Middleware;
@@ -10,8 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Serilog;
 using System.Text;
-using GACHSLApi.Configurations;
-
+using GACHSLApi.Mappings;
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
@@ -19,15 +19,31 @@ Log.Logger = new LoggerConfiguration()
     .CreateLogger();
 
 var builder = WebApplication.CreateBuilder(args);
+
 builder.Host.UseSerilog();
 
 // Add services to the container.
-
 builder.Services.AddControllers();
+
+// =======================
+// CORS Configuration
+// =======================
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngular", policy =>
+    {
+        policy.WithOrigins("http://localhost:4200")
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddValidatorsFromAssemblyContaining<Program>();
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.Configure<EmailSettings>(
     builder.Configuration.GetSection("EmailSettings"));
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -47,31 +63,35 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 
 builder.Services.AddAuthorization();
+
 // MySQL Connection
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(
         builder.Configuration.GetConnectionString("DefaultConnection"),
-        ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))
+        ServerVersion.AutoDetect(
+            builder.Configuration.GetConnectionString("DefaultConnection"))
     ));
 
+// Repositories
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
 builder.Services.AddScoped<IPasswordResetOtpRepository, PasswordResetOtpRepository>();
 builder.Services.AddScoped<IPasswordResetTokenRepository, PasswordResetTokenRepository>();
-
+builder.Services.AddScoped<INoticeRepository, NoticeRepository>();
+builder.Services.AddScoped<IMemberRepository, MemberRepository>();
+builder.Services.AddScoped<ISocietySettingsRepository, SocietySettingsRepository>();
+// Services
 builder.Services.AddScoped<IJwtService, JwtService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
-
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<INoticeRepository, NoticeRepository>();
 builder.Services.AddScoped<INoticeService, NoticeService>();
 builder.Services.AddScoped<IMemberService, MemberService>();
-builder.Services.AddScoped<IMemberRepository, MemberRepository>();
-
-
-
+builder.Services.AddScoped<IDashboardRepository, DashboardRepository>();
+builder.Services.AddScoped<IDashboardService, DashboardService>();
+builder.Services.AddScoped<ISocietySettingsService, SocietySettingsService>();
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen(options =>
 {
     options.AddSecurityDefinition("Bearer",
@@ -91,22 +111,23 @@ builder.Services.AddSwaggerGen(options =>
             {
                 new Microsoft.OpenApi.Models.OpenApiSecurityScheme
                 {
-                    Reference =
-                        new Microsoft.OpenApi.Models.OpenApiReference
-                        {
-                            Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
-                            Id = "Bearer"
-                        }
+                    Reference = new Microsoft.OpenApi.Models.OpenApiReference
+                    {
+                        Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
+                        Id = "Bearer"
+                    }
                 },
                 Array.Empty<string>()
             }
         });
 });
+
 var app = builder.Build();
+
 app.UseMiddleware<ExceptionMiddleware>();
 
-//app.UseMiddleware<ApiKeyMiddleware>();
-// Configure the HTTP request pipeline.
+// app.UseMiddleware<ApiKeyMiddleware>();
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -114,6 +135,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// =======================
+// Enable CORS
+// =======================
+app.UseCors("AllowAngular");
 
 app.UseAuthentication();
 app.UseAuthorization();

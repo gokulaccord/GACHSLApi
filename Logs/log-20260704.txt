@@ -1,0 +1,1150 @@
+2026-07-04 13:11:29.963 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Auth/login - null null
+2026-07-04 13:11:30.334 +05:30 [INF] CORS policy execution successful.
+2026-07-04 13:11:30.344 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Auth/login - 204 null null 385.8062ms
+2026-07-04 13:11:30.361 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/login - application/json 53
+2026-07-04 13:11:30.373 +05:30 [INF] CORS policy execution successful.
+2026-07-04 13:11:30.392 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-04 13:11:30.403 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GACHSLApi.DTOs.LoginRequestDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-04 13:11:31.398 +05:30 [INF] Executed DbCommand (78ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FlatNumber`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-04 13:11:31.874 +05:30 [INF] Executed DbCommand (77ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `RefreshTokens` (`CreatedOn`, `ExpiryDate`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `RefreshTokenId`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `RefreshTokenId` = LAST_INSERT_ID();
+2026-07-04 13:11:31.906 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.LoginResponseDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-04 13:11:31.915 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.Login (GACHSLApi) in 1501.2301ms
+2026-07-04 13:11:31.921 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-04 13:11:31.926 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/login - 200 null application/json; charset=utf-8 1565.6519ms
+2026-07-04 13:11:32.308 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Members - null null
+2026-07-04 13:11:32.317 +05:30 [INF] CORS policy execution successful.
+2026-07-04 13:11:32.320 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Members - 204 null null 11.3874ms
+2026-07-04 13:11:32.330 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Members - null null
+2026-07-04 13:11:32.339 +05:30 [INF] CORS policy execution successful.
+2026-07-04 13:11:32.347 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-04 13:11:32.353 +05:30 [INF] Route matched with {action = "GetAll", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-04 13:11:32.402 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MemberId`, `m`.`CreatedOn`, `m`.`Email`, `m`.`FlatNumber`, `m`.`FullName`, `m`.`IsActive`, `m`.`IsOwner`, `m`.`Phone`, `m`.`UserId`
+FROM `Members` AS `m`
+2026-07-04 13:11:32.420 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Member.MemberDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-04 13:11:32.432 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi) in 72.8261ms
+2026-07-04 13:11:32.440 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-04 13:11:32.447 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Members - 200 null application/json; charset=utf-8 116.9489ms
+2026-07-04 13:11:36.409 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Members - null null
+2026-07-04 13:11:36.426 +05:30 [INF] CORS policy execution successful.
+2026-07-04 13:11:36.432 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-04 13:11:36.438 +05:30 [INF] Route matched with {action = "GetAll", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-04 13:11:36.514 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MemberId`, `m`.`CreatedOn`, `m`.`Email`, `m`.`FlatNumber`, `m`.`FullName`, `m`.`IsActive`, `m`.`IsOwner`, `m`.`Phone`, `m`.`UserId`
+FROM `Members` AS `m`
+2026-07-04 13:11:36.527 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Member.MemberDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-04 13:11:36.530 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi) in 81.725ms
+2026-07-04 13:11:36.535 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-04 13:11:36.539 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Members - 200 null application/json; charset=utf-8 130.6243ms
+2026-07-04 13:11:51.702 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Members - null null
+2026-07-04 13:11:51.713 +05:30 [INF] CORS policy execution successful.
+2026-07-04 13:11:51.718 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Members - 204 null null 16.5218ms
+2026-07-04 13:11:51.730 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Members - application/json 95
+2026-07-04 13:11:51.741 +05:30 [INF] CORS policy execution successful.
+2026-07-04 13:11:51.746 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.Create (GACHSLApi)'
+2026-07-04 13:11:51.750 +05:30 [INF] Route matched with {action = "Create", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(GACHSLApi.DTOs.Member.CreateMemberDto) on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-04 13:11:52.149 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 100), @p2='?' (Size = 20), @p3='?' (Size = 100), @p4='?' (DbType = Boolean), @p5='?' (Size = 255), @p6='?' (Size = 4000), @p7='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Users` (`CreatedOn`, `Email`, `FlatNumber`, `FullName`, `IsActive`, `PasswordHash`, `Role`, `Username`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT `UserId`
+FROM `Users`
+WHERE ROW_COUNT() = 1 AND `UserId` = LAST_INSERT_ID();
+2026-07-04 13:11:52.206 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 100), @p2='?' (Size = 10), @p3='?' (Size = 100), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (Size = 15), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Members` (`CreatedOn`, `Email`, `FlatNumber`, `FullName`, `IsActive`, `IsOwner`, `Phone`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT `MemberId`
+FROM `Members`
+WHERE ROW_COUNT() = 1 AND `MemberId` = LAST_INSERT_ID();
+2026-07-04 13:11:52.228 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-04 13:11:52.233 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.Create (GACHSLApi) in 476.7111ms
+2026-07-04 13:11:52.238 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.Create (GACHSLApi)'
+2026-07-04 13:11:52.240 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Members - 200 null application/json; charset=utf-8 510.3661ms
+2026-07-04 13:11:52.255 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Members - null null
+2026-07-04 13:11:52.289 +05:30 [INF] CORS policy execution successful.
+2026-07-04 13:11:52.297 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-04 13:11:52.304 +05:30 [INF] Route matched with {action = "GetAll", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-04 13:11:52.373 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MemberId`, `m`.`CreatedOn`, `m`.`Email`, `m`.`FlatNumber`, `m`.`FullName`, `m`.`IsActive`, `m`.`IsOwner`, `m`.`Phone`, `m`.`UserId`
+FROM `Members` AS `m`
+2026-07-04 13:11:52.388 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Member.MemberDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-04 13:11:52.392 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi) in 77.8931ms
+2026-07-04 13:11:52.397 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-04 13:11:52.399 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Members - 200 null application/json; charset=utf-8 144.2923ms
+2026-07-04 13:12:06.383 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Members/167 - null null
+2026-07-04 13:12:06.396 +05:30 [INF] CORS policy execution successful.
+2026-07-04 13:12:06.399 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Members/167 - 204 null null 15.5967ms
+2026-07-04 13:12:06.412 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5278/api/Members/167 - application/json 96
+2026-07-04 13:12:06.426 +05:30 [INF] CORS policy execution successful.
+2026-07-04 13:12:06.431 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.Update (GACHSLApi)'
+2026-07-04 13:12:06.438 +05:30 [INF] Route matched with {action = "Update", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, GACHSLApi.DTOs.Member.UpdateMemberDto) on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-04 13:12:06.520 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MemberId`, `m`.`CreatedOn`, `m`.`Email`, `m`.`FlatNumber`, `m`.`FullName`, `m`.`IsActive`, `m`.`IsOwner`, `m`.`Phone`, `m`.`UserId`
+FROM `Members` AS `m`
+WHERE `m`.`MemberId` = @__id_0
+LIMIT 1
+2026-07-04 13:12:06.570 +05:30 [INF] Executed DbCommand (26ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = DateTime), @p1='?' (Size = 100), @p2='?' (Size = 10), @p3='?' (Size = 100), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (Size = 15), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Members` SET `CreatedOn` = @p0, `Email` = @p1, `FlatNumber` = @p2, `FullName` = @p3, `IsActive` = @p4, `IsOwner` = @p5, `Phone` = @p6, `UserId` = @p7
+WHERE `MemberId` = @p8;
+SELECT ROW_COUNT();
+2026-07-04 13:12:06.581 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-04 13:12:06.585 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.Update (GACHSLApi) in 138.8867ms
+2026-07-04 13:12:06.591 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.Update (GACHSLApi)'
+2026-07-04 13:12:06.595 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5278/api/Members/167 - 200 null application/json; charset=utf-8 183.1607ms
+2026-07-04 13:12:06.611 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Members - null null
+2026-07-04 13:12:06.622 +05:30 [INF] CORS policy execution successful.
+2026-07-04 13:12:06.628 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Members - 204 null null 15.7603ms
+2026-07-04 13:12:06.646 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Members - null null
+2026-07-04 13:12:06.658 +05:30 [INF] CORS policy execution successful.
+2026-07-04 13:12:06.661 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-04 13:12:06.664 +05:30 [INF] Route matched with {action = "GetAll", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-04 13:12:06.714 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MemberId`, `m`.`CreatedOn`, `m`.`Email`, `m`.`FlatNumber`, `m`.`FullName`, `m`.`IsActive`, `m`.`IsOwner`, `m`.`Phone`, `m`.`UserId`
+FROM `Members` AS `m`
+2026-07-04 13:12:06.728 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Member.MemberDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-04 13:12:06.734 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi) in 61.6509ms
+2026-07-04 13:12:06.740 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-04 13:12:06.744 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Members - 200 null application/json; charset=utf-8 97.6197ms
+2026-07-04 13:12:12.449 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Members/167 - null null
+2026-07-04 13:12:12.462 +05:30 [INF] CORS policy execution successful.
+2026-07-04 13:12:12.467 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Members/167 - 204 null null 18.1776ms
+2026-07-04 13:12:12.480 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5278/api/Members/167 - null null
+2026-07-04 13:12:12.490 +05:30 [INF] CORS policy execution successful.
+2026-07-04 13:12:12.493 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.Delete (GACHSLApi)'
+2026-07-04 13:12:12.497 +05:30 [INF] Route matched with {action = "Delete", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-04 13:12:12.553 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MemberId`, `m`.`CreatedOn`, `m`.`Email`, `m`.`FlatNumber`, `m`.`FullName`, `m`.`IsActive`, `m`.`IsOwner`, `m`.`Phone`, `m`.`UserId`
+FROM `Members` AS `m`
+WHERE `m`.`MemberId` = @__id_0
+LIMIT 1
+2026-07-04 13:12:12.597 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+DELETE FROM `Members`
+WHERE `MemberId` = @p0;
+SELECT ROW_COUNT();
+2026-07-04 13:12:12.604 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-04 13:12:12.609 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.Delete (GACHSLApi) in 104.5857ms
+2026-07-04 13:12:12.614 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.Delete (GACHSLApi)'
+2026-07-04 13:12:12.619 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5278/api/Members/167 - 200 null application/json; charset=utf-8 139.1585ms
+2026-07-04 13:12:12.634 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Members - null null
+2026-07-04 13:12:12.646 +05:30 [INF] CORS policy execution successful.
+2026-07-04 13:12:12.650 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Members - 204 null null 15.7457ms
+2026-07-04 13:12:12.666 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Members - null null
+2026-07-04 13:12:12.676 +05:30 [INF] CORS policy execution successful.
+2026-07-04 13:12:12.679 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-04 13:12:12.682 +05:30 [INF] Route matched with {action = "GetAll", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-04 13:12:12.729 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MemberId`, `m`.`CreatedOn`, `m`.`Email`, `m`.`FlatNumber`, `m`.`FullName`, `m`.`IsActive`, `m`.`IsOwner`, `m`.`Phone`, `m`.`UserId`
+FROM `Members` AS `m`
+2026-07-04 13:12:12.746 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Member.MemberDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-04 13:12:12.754 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi) in 66.0469ms
+2026-07-04 13:12:12.759 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-04 13:12:12.766 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Members - 200 null application/json; charset=utf-8 100.75ms
+2026-07-04 14:27:59.928 +05:30 [INF] User profile is available. Using 'C:\Users\ashvi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-04 14:28:01.463 +05:30 [INF] Now listening on: http://localhost:5278
+2026-07-04 14:28:02.055 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-04 14:28:02.058 +05:30 [INF] Hosting environment: Development
+2026-07-04 14:28:02.061 +05:30 [INF] Content root path: C:\ASHVIN\PERSONAL\gokulaccord\GACHSLApi
+2026-07-04 14:28:05.141 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/index.html - null null
+2026-07-04 14:28:05.910 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/index.html - 200 null text/html;charset=utf-8 787.0767ms
+2026-07-04 14:28:06.256 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-04 14:28:06.305 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 50.276ms
+2026-07-04 14:28:06.353 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_vs/browserLink - null null
+2026-07-04 14:28:06.420 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 67.4721ms
+2026-07-04 14:28:06.455 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-04 14:28:06.499 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 43.9238ms
+2026-07-04 14:28:28.484 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/login - application/json 62
+2026-07-04 14:28:28.520 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-04 14:28:28.528 +05:30 [INF] CORS policy execution failed.
+2026-07-04 14:28:28.532 +05:30 [INF] Request origin http://localhost:5278 does not have permission to access the resource.
+2026-07-04 14:28:28.904 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-04 14:28:29.034 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GACHSLApi.DTOs.LoginRequestDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-04 14:28:34.189 +05:30 [INF] Executed DbCommand (143ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FlatNumber`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-04 14:28:35.545 +05:30 [INF] Executed DbCommand (32ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `RefreshTokens` (`CreatedOn`, `ExpiryDate`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `RefreshTokenId`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `RefreshTokenId` = LAST_INSERT_ID();
+2026-07-04 14:28:35.654 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.LoginResponseDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-04 14:28:35.682 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.Login (GACHSLApi) in 6624.1662ms
+2026-07-04 14:28:35.696 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-04 14:28:35.723 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/login - 200 null application/json; charset=utf-8 7238.9093ms
+2026-07-04 14:30:36.326 +05:30 [INF] User profile is available. Using 'C:\Users\ashvi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-04 14:30:37.018 +05:30 [INF] Now listening on: http://localhost:5278
+2026-07-04 14:30:37.587 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-04 14:30:37.592 +05:30 [INF] Hosting environment: Development
+2026-07-04 14:30:37.594 +05:30 [INF] Content root path: C:\ASHVIN\PERSONAL\gokulaccord\GACHSLApi
+2026-07-04 14:30:39.165 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/index.html - null null
+2026-07-04 14:30:39.805 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/index.html - 200 null text/html;charset=utf-8 660.2711ms
+2026-07-04 14:30:40.400 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_vs/browserLink - null null
+2026-07-04 14:30:40.400 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-04 14:30:40.421 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 21.769ms
+2026-07-04 14:30:40.489 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 90.2164ms
+2026-07-04 14:30:40.544 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-04 14:30:40.589 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 45.3ms
+2026-07-04 14:31:15.225 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/login - application/json 62
+2026-07-04 14:31:15.352 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-04 14:31:15.408 +05:30 [INF] CORS policy execution failed.
+2026-07-04 14:31:15.413 +05:30 [INF] Request origin http://localhost:5278 does not have permission to access the resource.
+2026-07-04 14:31:15.618 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-04 14:31:15.715 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GACHSLApi.DTOs.LoginRequestDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-04 14:31:19.725 +05:30 [INF] Executed DbCommand (164ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FlatNumber`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-04 14:31:21.420 +05:30 [INF] Executed DbCommand (42ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `RefreshTokens` (`CreatedOn`, `ExpiryDate`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `RefreshTokenId`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `RefreshTokenId` = LAST_INSERT_ID();
+2026-07-04 14:31:21.546 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.LoginResponseDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-04 14:31:21.584 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.Login (GACHSLApi) in 5847.334ms
+2026-07-04 14:31:21.590 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-04 14:31:21.621 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/login - 200 null application/json; charset=utf-8 6395.4174ms
+2026-07-04 14:31:46.827 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Dashboard/summary - null null
+2026-07-04 14:31:47.026 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 14:31:47.041 +05:30 [INF] Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller GACHSLApi.Controllers.DashboardController (GACHSLApi).
+2026-07-04 14:31:47.271 +05:30 [INF] Executed DbCommand (61ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+2026-07-04 14:31:47.310 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsOwner`
+2026-07-04 14:31:47.351 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsOwner`)
+2026-07-04 14:31:47.383 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsActive`
+2026-07-04 14:31:47.426 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsActive`)
+2026-07-04 14:31:47.439 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Dashboard.DashboardSummaryDto'.
+2026-07-04 14:31:47.450 +05:30 [INF] Executed action GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi) in 403.4283ms
+2026-07-04 14:31:47.458 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 14:31:47.463 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Dashboard/summary - 200 null application/json; charset=utf-8 636.3077ms
+2026-07-04 14:45:53.849 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Auth/login - null null
+2026-07-04 14:45:54.025 +05:30 [INF] CORS policy execution successful.
+2026-07-04 14:45:54.110 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Auth/login - 204 null null 292.5593ms
+2026-07-04 14:45:54.139 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/login - application/json 53
+2026-07-04 14:45:54.157 +05:30 [INF] CORS policy execution successful.
+2026-07-04 14:45:54.218 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-04 14:45:54.247 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GACHSLApi.DTOs.LoginRequestDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-04 14:45:55.227 +05:30 [INF] Executed DbCommand (65ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FlatNumber`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-04 14:45:55.868 +05:30 [INF] Executed DbCommand (28ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `RefreshTokens` (`CreatedOn`, `ExpiryDate`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `RefreshTokenId`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `RefreshTokenId` = LAST_INSERT_ID();
+2026-07-04 14:45:55.900 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.LoginResponseDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-04 14:45:55.910 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.Login (GACHSLApi) in 1656.2391ms
+2026-07-04 14:45:55.914 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-04 14:45:55.919 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/login - 200 null application/json; charset=utf-8 1779.8185ms
+2026-07-04 14:45:56.024 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 14:45:56.045 +05:30 [INF] CORS policy execution successful.
+2026-07-04 14:45:56.051 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - 204 null null 26.9587ms
+2026-07-04 14:45:56.073 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 14:45:56.093 +05:30 [INF] CORS policy execution successful.
+2026-07-04 14:45:56.116 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 14:45:56.128 +05:30 [INF] Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller GACHSLApi.Controllers.DashboardController (GACHSLApi).
+2026-07-04 14:45:56.219 +05:30 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+2026-07-04 14:45:56.247 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsOwner`
+2026-07-04 14:45:56.273 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsOwner`)
+2026-07-04 14:45:56.297 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsActive`
+2026-07-04 14:45:56.326 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsActive`)
+2026-07-04 14:45:56.338 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Dashboard.DashboardSummaryDto'.
+2026-07-04 14:45:56.343 +05:30 [INF] Executed action GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi) in 208.5848ms
+2026-07-04 14:45:56.350 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 14:45:56.358 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - 200 null application/json; charset=utf-8 284.4913ms
+2026-07-04 14:46:00.849 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 14:46:00.861 +05:30 [INF] CORS policy execution successful.
+2026-07-04 14:46:00.869 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 14:46:00.914 +05:30 [INF] Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller GACHSLApi.Controllers.DashboardController (GACHSLApi).
+2026-07-04 14:46:01.171 +05:30 [INF] Executed DbCommand (46ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+2026-07-04 14:46:01.185 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsOwner`
+2026-07-04 14:46:01.199 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsOwner`)
+2026-07-04 14:46:01.249 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsActive`
+2026-07-04 14:46:01.517 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsActive`)
+2026-07-04 14:46:01.524 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Dashboard.DashboardSummaryDto'.
+2026-07-04 14:46:01.528 +05:30 [INF] Executed action GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi) in 495.0681ms
+2026-07-04 14:46:01.535 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 14:46:01.539 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - 200 null application/json; charset=utf-8 690.4503ms
+2026-07-04 14:46:02.502 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 14:46:02.514 +05:30 [INF] CORS policy execution successful.
+2026-07-04 14:46:02.519 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - 204 null null 16.3902ms
+2026-07-04 14:46:02.540 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 14:46:02.559 +05:30 [INF] CORS policy execution successful.
+2026-07-04 14:46:02.567 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 14:46:02.575 +05:30 [INF] Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller GACHSLApi.Controllers.DashboardController (GACHSLApi).
+2026-07-04 14:46:02.655 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+2026-07-04 14:46:02.675 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsOwner`
+2026-07-04 14:46:02.691 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsOwner`)
+2026-07-04 14:46:02.708 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsActive`
+2026-07-04 14:46:02.724 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsActive`)
+2026-07-04 14:46:02.731 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Dashboard.DashboardSummaryDto'.
+2026-07-04 14:46:02.737 +05:30 [INF] Executed action GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi) in 152.7754ms
+2026-07-04 14:46:02.743 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 14:46:02.748 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - 200 null application/json; charset=utf-8 208.1133ms
+2026-07-04 14:46:03.446 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 14:46:03.470 +05:30 [INF] CORS policy execution successful.
+2026-07-04 14:46:03.483 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 14:46:03.489 +05:30 [INF] Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller GACHSLApi.Controllers.DashboardController (GACHSLApi).
+2026-07-04 14:46:03.541 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+2026-07-04 14:46:03.569 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsOwner`
+2026-07-04 14:46:03.598 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsOwner`)
+2026-07-04 14:46:03.621 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsActive`
+2026-07-04 14:46:03.636 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsActive`)
+2026-07-04 14:46:03.642 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Dashboard.DashboardSummaryDto'.
+2026-07-04 14:46:03.647 +05:30 [INF] Executed action GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi) in 151.3816ms
+2026-07-04 14:46:03.652 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 14:46:03.656 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - 200 null application/json; charset=utf-8 210.2373ms
+2026-07-04 14:46:09.286 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Members - null null
+2026-07-04 14:46:09.303 +05:30 [INF] CORS policy execution successful.
+2026-07-04 14:46:09.308 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Members - 204 null null 22.0875ms
+2026-07-04 14:46:09.328 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Members - null null
+2026-07-04 14:46:09.346 +05:30 [INF] CORS policy execution successful.
+2026-07-04 14:46:09.370 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-04 14:46:09.440 +05:30 [INF] Route matched with {action = "GetAll", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-04 14:46:09.645 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MemberId`, `m`.`CreatedOn`, `m`.`Email`, `m`.`FlatNumber`, `m`.`FullName`, `m`.`IsActive`, `m`.`IsOwner`, `m`.`Phone`, `m`.`UserId`
+FROM `Members` AS `m`
+2026-07-04 14:46:09.778 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Member.MemberDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-04 14:46:09.840 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi) in 390.7627ms
+2026-07-04 14:46:09.851 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-04 14:46:09.858 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Members - 200 null application/json; charset=utf-8 530.0063ms
+2026-07-04 14:48:25.974 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 14:48:25.984 +05:30 [INF] CORS policy execution successful.
+2026-07-04 14:48:25.988 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - 204 null null 14.2702ms
+2026-07-04 14:48:26.018 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 14:48:26.035 +05:30 [INF] CORS policy execution successful.
+2026-07-04 14:48:26.042 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 14:48:26.050 +05:30 [INF] Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller GACHSLApi.Controllers.DashboardController (GACHSLApi).
+2026-07-04 14:48:26.115 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+2026-07-04 14:48:26.135 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsOwner`
+2026-07-04 14:48:26.158 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsOwner`)
+2026-07-04 14:48:26.183 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsActive`
+2026-07-04 14:48:26.213 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsActive`)
+2026-07-04 14:48:26.224 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Dashboard.DashboardSummaryDto'.
+2026-07-04 14:48:26.230 +05:30 [INF] Executed action GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi) in 167.0957ms
+2026-07-04 14:48:26.235 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 14:48:26.243 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - 200 null application/json; charset=utf-8 224.8657ms
+2026-07-04 14:48:40.764 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 14:48:40.784 +05:30 [INF] CORS policy execution successful.
+2026-07-04 14:48:40.792 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - 204 null null 27.8237ms
+2026-07-04 14:48:40.811 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 14:48:40.822 +05:30 [INF] CORS policy execution successful.
+2026-07-04 14:48:40.828 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 14:48:40.834 +05:30 [INF] Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller GACHSLApi.Controllers.DashboardController (GACHSLApi).
+2026-07-04 14:48:40.897 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+2026-07-04 14:48:40.948 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsOwner`
+2026-07-04 14:48:40.975 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsOwner`)
+2026-07-04 14:48:40.999 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsActive`
+2026-07-04 14:48:41.019 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsActive`)
+2026-07-04 14:48:41.034 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Dashboard.DashboardSummaryDto'.
+2026-07-04 14:48:41.074 +05:30 [INF] Executed action GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi) in 230.0632ms
+2026-07-04 14:48:41.079 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 14:48:41.120 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - 499 null application/json; charset=utf-8 309.1732ms
+2026-07-04 14:48:41.388 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 14:48:41.403 +05:30 [INF] CORS policy execution successful.
+2026-07-04 14:48:41.408 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 14:48:41.412 +05:30 [INF] Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller GACHSLApi.Controllers.DashboardController (GACHSLApi).
+2026-07-04 14:48:41.483 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+2026-07-04 14:48:41.510 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsOwner`
+2026-07-04 14:48:41.531 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsOwner`)
+2026-07-04 14:48:41.553 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsActive`
+2026-07-04 14:48:41.577 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsActive`)
+2026-07-04 14:48:41.586 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Dashboard.DashboardSummaryDto'.
+2026-07-04 14:48:41.590 +05:30 [INF] Executed action GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi) in 171.2231ms
+2026-07-04 14:48:41.595 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 14:48:41.598 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - 200 null application/json; charset=utf-8 210.248ms
+2026-07-04 14:48:51.108 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Members - null null
+2026-07-04 14:48:51.121 +05:30 [INF] CORS policy execution successful.
+2026-07-04 14:48:51.124 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Members - 204 null null 16.664ms
+2026-07-04 14:48:51.139 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Members - null null
+2026-07-04 14:48:51.152 +05:30 [INF] CORS policy execution successful.
+2026-07-04 14:48:51.156 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-04 14:48:51.161 +05:30 [INF] Route matched with {action = "GetAll", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-04 14:48:51.233 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MemberId`, `m`.`CreatedOn`, `m`.`Email`, `m`.`FlatNumber`, `m`.`FullName`, `m`.`IsActive`, `m`.`IsOwner`, `m`.`Phone`, `m`.`UserId`
+FROM `Members` AS `m`
+2026-07-04 14:48:51.254 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Member.MemberDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-04 14:48:51.261 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi) in 92.3022ms
+2026-07-04 14:48:51.269 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-04 14:48:51.275 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Members - 200 null application/json; charset=utf-8 136.0193ms
+2026-07-04 14:48:52.284 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 14:48:52.291 +05:30 [INF] CORS policy execution successful.
+2026-07-04 14:48:52.294 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - 204 null null 10.0409ms
+2026-07-04 14:48:52.304 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 14:48:52.311 +05:30 [INF] CORS policy execution successful.
+2026-07-04 14:48:52.315 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 14:48:52.319 +05:30 [INF] Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller GACHSLApi.Controllers.DashboardController (GACHSLApi).
+2026-07-04 14:48:52.363 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+2026-07-04 14:48:52.379 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsOwner`
+2026-07-04 14:48:52.391 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsOwner`)
+2026-07-04 14:48:52.402 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsActive`
+2026-07-04 14:48:52.420 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsActive`)
+2026-07-04 14:48:52.430 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Dashboard.DashboardSummaryDto'.
+2026-07-04 14:48:52.435 +05:30 [INF] Executed action GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi) in 108.4738ms
+2026-07-04 14:48:52.439 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 14:48:52.443 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - 200 null application/json; charset=utf-8 139.1598ms
+2026-07-04 14:55:15.728 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 14:55:15.780 +05:30 [INF] CORS policy execution successful.
+2026-07-04 14:55:15.806 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - 204 null null 82.4738ms
+2026-07-04 14:55:15.868 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 14:55:15.883 +05:30 [INF] CORS policy execution successful.
+2026-07-04 14:55:15.913 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 14:55:15.925 +05:30 [INF] Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller GACHSLApi.Controllers.DashboardController (GACHSLApi).
+2026-07-04 14:55:16.331 +05:30 [INF] Executed DbCommand (84ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+2026-07-04 14:55:16.356 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsOwner`
+2026-07-04 14:55:16.374 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsOwner`)
+2026-07-04 14:55:16.389 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsActive`
+2026-07-04 14:55:16.404 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsActive`)
+2026-07-04 14:55:16.418 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Dashboard.DashboardSummaryDto'.
+2026-07-04 14:55:16.431 +05:30 [INF] Executed action GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi) in 500.2084ms
+2026-07-04 14:55:16.437 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 14:55:16.443 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - 200 null application/json; charset=utf-8 575.4311ms
+2026-07-04 14:59:40.291 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 14:59:40.312 +05:30 [INF] CORS policy execution successful.
+2026-07-04 14:59:40.320 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - 204 null null 34.1944ms
+2026-07-04 14:59:40.336 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 14:59:40.347 +05:30 [INF] CORS policy execution successful.
+2026-07-04 14:59:40.368 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 14:59:40.383 +05:30 [INF] Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller GACHSLApi.Controllers.DashboardController (GACHSLApi).
+2026-07-04 14:59:40.780 +05:30 [INF] Executed DbCommand (80ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+2026-07-04 14:59:40.814 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsOwner`
+2026-07-04 14:59:40.842 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsOwner`)
+2026-07-04 14:59:40.866 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsActive`
+2026-07-04 14:59:40.889 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsActive`)
+2026-07-04 14:59:40.900 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Dashboard.DashboardSummaryDto'.
+2026-07-04 14:59:40.908 +05:30 [INF] Executed action GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi) in 519.5935ms
+2026-07-04 14:59:40.914 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 14:59:40.918 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - 200 null application/json; charset=utf-8 582.4668ms
+2026-07-04 15:02:18.338 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 15:02:18.370 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:02:18.378 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - 204 null null 38.7964ms
+2026-07-04 15:02:18.412 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 15:02:18.429 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:02:18.433 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 15:02:18.449 +05:30 [INF] Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller GACHSLApi.Controllers.DashboardController (GACHSLApi).
+2026-07-04 15:02:18.511 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+2026-07-04 15:02:18.570 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsOwner`
+2026-07-04 15:02:18.587 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsOwner`)
+2026-07-04 15:02:18.604 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsActive`
+2026-07-04 15:02:18.621 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsActive`)
+2026-07-04 15:02:18.636 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Dashboard.DashboardSummaryDto'.
+2026-07-04 15:02:18.641 +05:30 [INF] Executed action GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi) in 186.1036ms
+2026-07-04 15:02:18.647 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 15:02:18.651 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - 200 null application/json; charset=utf-8 240.0494ms
+2026-07-04 15:03:14.429 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 15:03:14.461 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:03:14.468 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - 204 null null 39.3729ms
+2026-07-04 15:03:14.537 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 15:03:14.551 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:03:14.567 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 15:03:14.576 +05:30 [INF] Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller GACHSLApi.Controllers.DashboardController (GACHSLApi).
+2026-07-04 15:03:14.651 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+2026-07-04 15:03:14.692 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsOwner`
+2026-07-04 15:03:14.719 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsOwner`)
+2026-07-04 15:03:14.741 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsActive`
+2026-07-04 15:03:14.768 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsActive`)
+2026-07-04 15:03:14.781 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Dashboard.DashboardSummaryDto'.
+2026-07-04 15:03:14.789 +05:30 [INF] Executed action GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi) in 202.2752ms
+2026-07-04 15:03:14.799 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 15:03:14.806 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - 200 null application/json; charset=utf-8 270.943ms
+2026-07-04 15:03:26.515 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 15:03:26.536 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:03:26.541 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - 204 null null 25.3836ms
+2026-07-04 15:03:26.555 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 15:03:26.569 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:03:26.577 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 15:03:26.584 +05:30 [INF] Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller GACHSLApi.Controllers.DashboardController (GACHSLApi).
+2026-07-04 15:03:26.666 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+2026-07-04 15:03:26.693 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsOwner`
+2026-07-04 15:03:26.722 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsOwner`)
+2026-07-04 15:03:26.742 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsActive`
+2026-07-04 15:03:26.762 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsActive`)
+2026-07-04 15:03:26.771 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Dashboard.DashboardSummaryDto'.
+2026-07-04 15:03:26.776 +05:30 [INF] Executed action GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi) in 177.4604ms
+2026-07-04 15:03:26.780 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 15:03:26.784 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - 200 null application/json; charset=utf-8 229.7549ms
+2026-07-04 15:03:36.990 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 15:03:37.008 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:03:37.016 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - 204 null null 26.6566ms
+2026-07-04 15:03:37.041 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 15:03:37.057 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:03:37.067 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 15:03:37.073 +05:30 [INF] Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller GACHSLApi.Controllers.DashboardController (GACHSLApi).
+2026-07-04 15:03:37.119 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+2026-07-04 15:03:37.136 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsOwner`
+2026-07-04 15:03:37.154 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsOwner`)
+2026-07-04 15:03:37.171 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsActive`
+2026-07-04 15:03:37.195 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsActive`)
+2026-07-04 15:03:37.210 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Dashboard.DashboardSummaryDto'.
+2026-07-04 15:03:37.216 +05:30 [INF] Executed action GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi) in 132.5834ms
+2026-07-04 15:03:37.228 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 15:03:37.232 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - 200 null application/json; charset=utf-8 191.0855ms
+2026-07-04 15:05:26.191 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 15:05:26.204 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:05:26.209 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - 204 null null 17.4298ms
+2026-07-04 15:05:26.228 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 15:05:26.236 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:05:26.239 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 15:05:26.242 +05:30 [INF] Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller GACHSLApi.Controllers.DashboardController (GACHSLApi).
+2026-07-04 15:05:26.282 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+2026-07-04 15:05:26.302 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsOwner`
+2026-07-04 15:05:26.313 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsOwner`)
+2026-07-04 15:05:26.327 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsActive`
+2026-07-04 15:05:26.342 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsActive`)
+2026-07-04 15:05:26.350 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Dashboard.DashboardSummaryDto'.
+2026-07-04 15:05:26.353 +05:30 [INF] Executed action GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi) in 106.623ms
+2026-07-04 15:05:26.357 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 15:05:26.360 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - 200 null application/json; charset=utf-8 132.2155ms
+2026-07-04 15:05:40.209 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 15:05:40.220 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:05:40.225 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - 204 null null 16.6733ms
+2026-07-04 15:05:40.239 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 15:05:40.254 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:05:40.260 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 15:05:40.266 +05:30 [INF] Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller GACHSLApi.Controllers.DashboardController (GACHSLApi).
+2026-07-04 15:05:40.335 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+2026-07-04 15:05:40.380 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsOwner`
+2026-07-04 15:05:40.402 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsOwner`)
+2026-07-04 15:05:40.415 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsActive`
+2026-07-04 15:05:40.431 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsActive`)
+2026-07-04 15:05:40.436 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Dashboard.DashboardSummaryDto'.
+2026-07-04 15:05:40.442 +05:30 [INF] Executed action GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi) in 166.7819ms
+2026-07-04 15:05:40.446 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 15:05:40.450 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - 200 null application/json; charset=utf-8 210.3431ms
+2026-07-04 15:07:56.776 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 15:07:56.797 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:07:56.801 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - 204 null null 24.6761ms
+2026-07-04 15:07:56.823 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 15:07:56.836 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:07:56.843 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 15:07:56.852 +05:30 [INF] Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller GACHSLApi.Controllers.DashboardController (GACHSLApi).
+2026-07-04 15:07:56.924 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+2026-07-04 15:07:56.946 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsOwner`
+2026-07-04 15:07:56.962 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsOwner`)
+2026-07-04 15:07:56.981 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsActive`
+2026-07-04 15:07:57.003 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsActive`)
+2026-07-04 15:07:57.013 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Dashboard.DashboardSummaryDto'.
+2026-07-04 15:07:57.022 +05:30 [INF] Executed action GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi) in 164.407ms
+2026-07-04 15:07:57.026 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 15:07:57.033 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - 200 null application/json; charset=utf-8 210.5613ms
+2026-07-04 15:10:03.526 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 15:10:03.542 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:10:03.548 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - 204 null null 22.4751ms
+2026-07-04 15:10:03.564 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 15:10:03.580 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:10:03.603 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 15:10:03.618 +05:30 [INF] Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller GACHSLApi.Controllers.DashboardController (GACHSLApi).
+2026-07-04 15:10:03.852 +05:30 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+2026-07-04 15:10:03.870 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsOwner`
+2026-07-04 15:10:03.887 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsOwner`)
+2026-07-04 15:10:03.911 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsActive`
+2026-07-04 15:10:03.929 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsActive`)
+2026-07-04 15:10:03.938 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Dashboard.DashboardSummaryDto'.
+2026-07-04 15:10:03.947 +05:30 [INF] Executed action GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi) in 323.5855ms
+2026-07-04 15:10:03.952 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 15:10:03.957 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - 200 null application/json; charset=utf-8 392.4422ms
+2026-07-04 15:11:41.719 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Members - null null
+2026-07-04 15:11:41.740 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:11:41.745 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Members - 204 null null 25.058ms
+2026-07-04 15:11:41.765 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Members - null null
+2026-07-04 15:11:41.776 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:11:41.784 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-04 15:11:41.791 +05:30 [INF] Route matched with {action = "GetAll", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-04 15:11:41.897 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MemberId`, `m`.`CreatedOn`, `m`.`Email`, `m`.`FlatNumber`, `m`.`FullName`, `m`.`IsActive`, `m`.`IsOwner`, `m`.`Phone`, `m`.`UserId`
+FROM `Members` AS `m`
+2026-07-04 15:11:41.941 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Member.MemberDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-04 15:11:41.954 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi) in 156.7093ms
+2026-07-04 15:11:41.959 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-04 15:11:41.962 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Members - 200 null application/json; charset=utf-8 197.4934ms
+2026-07-04 15:11:43.347 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 15:11:43.355 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:11:43.358 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - 204 null null 10.9411ms
+2026-07-04 15:11:43.369 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 15:11:43.375 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:11:43.378 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 15:11:43.381 +05:30 [INF] Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller GACHSLApi.Controllers.DashboardController (GACHSLApi).
+2026-07-04 15:11:43.427 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+2026-07-04 15:11:43.458 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsOwner`
+2026-07-04 15:11:43.490 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsOwner`)
+2026-07-04 15:11:43.510 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsActive`
+2026-07-04 15:11:43.532 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsActive`)
+2026-07-04 15:11:43.538 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Dashboard.DashboardSummaryDto'.
+2026-07-04 15:11:43.542 +05:30 [INF] Executed action GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi) in 155.8304ms
+2026-07-04 15:11:43.547 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 15:11:43.550 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - 200 null application/json; charset=utf-8 181.346ms
+2026-07-04 15:11:45.545 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Members - null null
+2026-07-04 15:11:45.558 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:11:45.561 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-04 15:11:45.564 +05:30 [INF] Route matched with {action = "GetAll", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-04 15:11:45.631 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MemberId`, `m`.`CreatedOn`, `m`.`Email`, `m`.`FlatNumber`, `m`.`FullName`, `m`.`IsActive`, `m`.`IsOwner`, `m`.`Phone`, `m`.`UserId`
+FROM `Members` AS `m`
+2026-07-04 15:11:45.645 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Member.MemberDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-04 15:11:45.654 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi) in 81.8295ms
+2026-07-04 15:11:45.658 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-04 15:11:45.661 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Members - 200 null application/json; charset=utf-8 117.4536ms
+2026-07-04 15:11:59.333 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Members - null null
+2026-07-04 15:11:59.348 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:11:59.355 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Members - 204 null null 23.238ms
+2026-07-04 15:11:59.369 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Members - application/json 101
+2026-07-04 15:11:59.387 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:11:59.395 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.Create (GACHSLApi)'
+2026-07-04 15:11:59.510 +05:30 [INF] Route matched with {action = "Create", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(GACHSLApi.DTOs.Member.CreateMemberDto) on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-04 15:12:00.219 +05:30 [INF] Executed DbCommand (49ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 100), @p2='?' (Size = 20), @p3='?' (Size = 100), @p4='?' (DbType = Boolean), @p5='?' (Size = 255), @p6='?' (Size = 4000), @p7='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Users` (`CreatedOn`, `Email`, `FlatNumber`, `FullName`, `IsActive`, `PasswordHash`, `Role`, `Username`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT `UserId`
+FROM `Users`
+WHERE ROW_COUNT() = 1 AND `UserId` = LAST_INSERT_ID();
+2026-07-04 15:12:00.341 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 100), @p2='?' (Size = 10), @p3='?' (Size = 100), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (Size = 15), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Members` (`CreatedOn`, `Email`, `FlatNumber`, `FullName`, `IsActive`, `IsOwner`, `Phone`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT `MemberId`
+FROM `Members`
+WHERE ROW_COUNT() = 1 AND `MemberId` = LAST_INSERT_ID();
+2026-07-04 15:12:00.359 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-04 15:12:00.371 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.Create (GACHSLApi) in 852.3808ms
+2026-07-04 15:12:00.374 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.Create (GACHSLApi)'
+2026-07-04 15:12:00.377 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Members - 200 null application/json; charset=utf-8 1008.1822ms
+2026-07-04 15:12:00.387 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Members - null null
+2026-07-04 15:12:00.400 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:12:00.407 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-04 15:12:00.412 +05:30 [INF] Route matched with {action = "GetAll", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-04 15:12:00.478 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MemberId`, `m`.`CreatedOn`, `m`.`Email`, `m`.`FlatNumber`, `m`.`FullName`, `m`.`IsActive`, `m`.`IsOwner`, `m`.`Phone`, `m`.`UserId`
+FROM `Members` AS `m`
+2026-07-04 15:12:00.500 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Member.MemberDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-04 15:12:00.508 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi) in 86.271ms
+2026-07-04 15:12:00.515 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-04 15:12:00.519 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Members - 200 null application/json; charset=utf-8 132.4525ms
+2026-07-04 15:12:02.068 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 15:12:02.080 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:12:02.084 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - 204 null null 15.8052ms
+2026-07-04 15:12:02.099 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 15:12:02.111 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:12:02.114 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 15:12:02.118 +05:30 [INF] Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller GACHSLApi.Controllers.DashboardController (GACHSLApi).
+2026-07-04 15:12:02.177 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+2026-07-04 15:12:02.195 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsOwner`
+2026-07-04 15:12:02.211 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsOwner`)
+2026-07-04 15:12:02.229 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsActive`
+2026-07-04 15:12:02.249 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsActive`)
+2026-07-04 15:12:02.256 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Dashboard.DashboardSummaryDto'.
+2026-07-04 15:12:02.260 +05:30 [INF] Executed action GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi) in 129.1503ms
+2026-07-04 15:12:02.266 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 15:12:02.278 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - 200 null application/json; charset=utf-8 179.1955ms
+2026-07-04 15:12:04.296 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Members - null null
+2026-07-04 15:12:04.305 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:12:04.311 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-04 15:12:04.315 +05:30 [INF] Route matched with {action = "GetAll", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-04 15:12:04.377 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MemberId`, `m`.`CreatedOn`, `m`.`Email`, `m`.`FlatNumber`, `m`.`FullName`, `m`.`IsActive`, `m`.`IsOwner`, `m`.`Phone`, `m`.`UserId`
+FROM `Members` AS `m`
+2026-07-04 15:12:04.404 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Member.MemberDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-04 15:12:04.416 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi) in 92.6222ms
+2026-07-04 15:12:04.425 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-04 15:12:04.432 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Members - 200 null application/json; charset=utf-8 136.3653ms
+2026-07-04 15:12:19.351 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Members/168 - null null
+2026-07-04 15:12:19.367 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:12:19.371 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Members/168 - 204 null null 20.0184ms
+2026-07-04 15:12:19.384 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5278/api/Members/168 - null null
+2026-07-04 15:12:19.396 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:12:19.402 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.Delete (GACHSLApi)'
+2026-07-04 15:12:19.431 +05:30 [INF] Route matched with {action = "Delete", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-04 15:12:19.592 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MemberId`, `m`.`CreatedOn`, `m`.`Email`, `m`.`FlatNumber`, `m`.`FullName`, `m`.`IsActive`, `m`.`IsOwner`, `m`.`Phone`, `m`.`UserId`
+FROM `Members` AS `m`
+WHERE `m`.`MemberId` = @__id_0
+LIMIT 1
+2026-07-04 15:12:19.691 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+DELETE FROM `Members`
+WHERE `MemberId` = @p0;
+SELECT ROW_COUNT();
+2026-07-04 15:12:19.720 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-04 15:12:19.724 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.Delete (GACHSLApi) in 287.2986ms
+2026-07-04 15:12:19.728 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.Delete (GACHSLApi)'
+2026-07-04 15:12:19.736 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5278/api/Members/168 - 200 null application/json; charset=utf-8 352.0168ms
+2026-07-04 15:12:19.747 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Members - null null
+2026-07-04 15:12:19.755 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:12:19.757 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Members - 204 null null 10.1673ms
+2026-07-04 15:12:19.771 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Members - null null
+2026-07-04 15:12:19.777 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:12:19.780 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-04 15:12:19.783 +05:30 [INF] Route matched with {action = "GetAll", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-04 15:12:19.824 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MemberId`, `m`.`CreatedOn`, `m`.`Email`, `m`.`FlatNumber`, `m`.`FullName`, `m`.`IsActive`, `m`.`IsOwner`, `m`.`Phone`, `m`.`UserId`
+FROM `Members` AS `m`
+2026-07-04 15:12:19.834 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Member.MemberDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-04 15:12:19.840 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi) in 52.6862ms
+2026-07-04 15:12:19.846 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-04 15:12:19.850 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Members - 200 null application/json; charset=utf-8 78.9865ms
+2026-07-04 15:12:20.408 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 15:12:20.418 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:12:20.422 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - 204 null null 14.0616ms
+2026-07-04 15:12:20.434 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 15:12:20.443 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:12:20.445 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 15:12:20.450 +05:30 [INF] Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller GACHSLApi.Controllers.DashboardController (GACHSLApi).
+2026-07-04 15:12:20.497 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+2026-07-04 15:12:20.524 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsOwner`
+2026-07-04 15:12:20.548 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsOwner`)
+2026-07-04 15:12:20.573 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsActive`
+2026-07-04 15:12:20.595 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsActive`)
+2026-07-04 15:12:20.603 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Dashboard.DashboardSummaryDto'.
+2026-07-04 15:12:20.608 +05:30 [INF] Executed action GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi) in 153.0891ms
+2026-07-04 15:12:20.614 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 15:12:20.621 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - 200 null application/json; charset=utf-8 187.1306ms
+2026-07-04 15:12:33.821 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Members - null null
+2026-07-04 15:12:33.830 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:12:33.831 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Members - 204 null null 10.1484ms
+2026-07-04 15:12:33.840 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Members - null null
+2026-07-04 15:12:33.854 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:12:33.860 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-04 15:12:33.865 +05:30 [INF] Route matched with {action = "GetAll", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-04 15:12:33.921 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MemberId`, `m`.`CreatedOn`, `m`.`Email`, `m`.`FlatNumber`, `m`.`FullName`, `m`.`IsActive`, `m`.`IsOwner`, `m`.`Phone`, `m`.`UserId`
+FROM `Members` AS `m`
+2026-07-04 15:12:33.934 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Member.MemberDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-04 15:12:33.940 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi) in 68.374ms
+2026-07-04 15:12:33.945 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-04 15:12:33.949 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Members - 200 null application/json; charset=utf-8 108.4185ms
+2026-07-04 15:12:34.630 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 15:12:34.638 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:12:34.641 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - 204 null null 11.1994ms
+2026-07-04 15:12:34.651 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - null null
+2026-07-04 15:12:34.660 +05:30 [INF] CORS policy execution successful.
+2026-07-04 15:12:34.665 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 15:12:34.668 +05:30 [INF] Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller GACHSLApi.Controllers.DashboardController (GACHSLApi).
+2026-07-04 15:12:34.715 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+2026-07-04 15:12:34.732 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsOwner`
+2026-07-04 15:12:34.749 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsOwner`)
+2026-07-04 15:12:34.761 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsActive`
+2026-07-04 15:12:34.774 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsActive`)
+2026-07-04 15:12:34.781 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Dashboard.DashboardSummaryDto'.
+2026-07-04 15:12:34.784 +05:30 [INF] Executed action GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi) in 110.5988ms
+2026-07-04 15:12:34.787 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-04 15:12:34.789 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - 200 null application/json; charset=utf-8 138.0344ms
+2026-07-04 15:37:56.985 +05:30 [INF] Executed DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='GACHSLDB' AND TABLE_NAME='__EFMigrationsHistory';
+2026-07-04 15:37:57.093 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='GACHSLDB' AND TABLE_NAME='__EFMigrationsHistory';
+2026-07-04 15:37:57.206 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2026-07-04 15:37:57.227 +05:30 [INF] Applying migration '20260704100719_AddSocietySettings'.
+2026-07-04 15:37:57.609 +05:30 [INF] Executed DbCommand (205ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `SocietySettings` (
+    `Id` int NOT NULL AUTO_INCREMENT,
+    `SocietyName` varchar(200) CHARACTER SET utf8mb4 NOT NULL,
+    `SocietyShortName` varchar(50) CHARACTER SET utf8mb4 NULL,
+    `TotalFlats` int NOT NULL,
+    `TotalShops` int NOT NULL,
+    `CurrentStage` int NOT NULL,
+    `TotalStages` int NOT NULL,
+    `PMCName` varchar(200) CHARACTER SET utf8mb4 NULL,
+    `DeveloperName` varchar(200) CHARACTER SET utf8mb4 NULL,
+    `RegistrationNumber` varchar(100) CHARACTER SET utf8mb4 NULL,
+    `Address` varchar(500) CHARACTER SET utf8mb4 NULL,
+    `Email` varchar(200) CHARACTER SET utf8mb4 NULL,
+    `Phone` varchar(20) CHARACTER SET utf8mb4 NULL,
+    `LogoUrl` varchar(500) CHARACTER SET utf8mb4 NULL,
+    `CreatedOn` datetime(6) NOT NULL,
+    `UpdatedOn` datetime(6) NULL,
+    CONSTRAINT `PK_SocietySettings` PRIMARY KEY (`Id`)
+) CHARACTER SET=utf8mb4;
+2026-07-04 15:37:57.621 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20260704100719_AddSocietySettings', '8.0.13');
+2026-07-04 16:14:36.147 +05:30 [INF] User profile is available. Using 'C:\Users\ashvi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-04 16:14:37.970 +05:30 [INF] Now listening on: http://localhost:5278
+2026-07-04 16:14:38.427 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-04 16:14:38.431 +05:30 [INF] Hosting environment: Development
+2026-07-04 16:14:38.433 +05:30 [INF] Content root path: C:\ASHVIN\PERSONAL\gokulaccord\GACHSLApi
+2026-07-04 16:14:48.453 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/index.html - null null
+2026-07-04 16:14:50.559 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/index.html - 200 null text/html;charset=utf-8 2122.2995ms
+2026-07-04 16:14:51.194 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-04 16:14:51.220 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_vs/browserLink - null null
+2026-07-04 16:14:51.268 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 78.589ms
+2026-07-04 16:14:51.764 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 540.0968ms
+2026-07-04 16:14:52.152 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-04 16:14:52.468 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 320.1606ms
+2026-07-04 16:15:47.625 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/login - application/json 62
+2026-07-04 16:15:47.639 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-04 16:15:47.643 +05:30 [INF] CORS policy execution failed.
+2026-07-04 16:15:47.645 +05:30 [INF] Request origin http://localhost:5278 does not have permission to access the resource.
+2026-07-04 16:15:47.895 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-04 16:15:47.966 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GACHSLApi.DTOs.LoginRequestDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-04 16:15:52.238 +05:30 [INF] Executed DbCommand (136ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FlatNumber`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-04 16:15:53.546 +05:30 [INF] Executed DbCommand (31ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `RefreshTokens` (`CreatedOn`, `ExpiryDate`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `RefreshTokenId`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `RefreshTokenId` = LAST_INSERT_ID();
+2026-07-04 16:15:53.652 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.LoginResponseDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-04 16:15:53.684 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.Login (GACHSLApi) in 5706.4105ms
+2026-07-04 16:15:53.689 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-04 16:15:53.804 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/login - 200 null application/json; charset=utf-8 6178.6202ms
+2026-07-04 16:16:21.432 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/SocietySettings - null null
+2026-07-04 16:16:21.706 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10503: Signature validation failed. Token does not have a kid. Keys tried: '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-07-04 16:16:21.721 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10503: Signature validation failed. Token does not have a kid. Keys tried: '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2026-07-04 16:16:21.741 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-07-04 16:16:21.760 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2026-07-04 16:16:21.763 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/SocietySettings - 401 0 null 331.1241ms
