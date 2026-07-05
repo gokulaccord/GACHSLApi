@@ -1,11 +1,12 @@
-﻿using GACHSLApi.DTOs.SocietySettings;
+﻿using GACHSLApi.Common;
+using GACHSLApi.DTOs.SocietySettings;
 
 namespace GACHSLApi.Interfaces
 {
     public interface ISocietySettingsService
     {
-        Task<SocietySettingsDto?> GetAsync();
+        Task<ApiResponse<SocietySettingsDto>> GetAsync();
 
-        Task<SocietySettingsDto?> UpdateAsync(UpdateSocietySettingsDto dto);
+        Task<ApiResponse<SocietySettingsDto>> UpdateAsync(UpdateSocietySettingsDto dto);
     }
 }

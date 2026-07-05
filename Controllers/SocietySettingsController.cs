@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GACHSLApi.Controllers
 {
-    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize(Roles = "Admin")]
     public class SocietySettingsController : ControllerBase
     {
         private readonly ISocietySettingsService _service;
@@ -18,28 +18,25 @@ namespace GACHSLApi.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<SocietySettingsDto>> Get()
+        public async Task<IActionResult> Get()
         {
-            var settings = await _service.GetAsync();
+            var result = await _service.GetAsync();
 
-            if (settings == null)
-                return NotFound();
+            if (!result.Success)
+                return NotFound(result);
 
-            return Ok(settings);
+            return Ok(result);
         }
 
         [HttpPut]
-        public async Task<ActionResult<SocietySettingsDto>> Update(UpdateSocietySettingsDto dto)
+        public async Task<IActionResult> Update(UpdateSocietySettingsDto dto)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+            var result = await _service.UpdateAsync(dto);
 
-            var updated = await _service.UpdateAsync(dto);
+            if (!result.Success)
+                return BadRequest(result);
 
-            if (updated == null)
-                return NotFound();
-
-            return Ok(updated);
+            return Ok(result);
         }
     }
 }

@@ -420,6 +420,52 @@ namespace GACHSLApi.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("Meeting", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Agenda")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("MeetingDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<TimeSpan>("MeetingTime")
+                        .HasColumnType("time(6)");
+
+                    b.Property<string>("MeetingTitle")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("MeetingType")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedOn")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Venue")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Meetings");
+                });
+
             modelBuilder.Entity("GACHSLApi.Entities.Document", b =>
                 {
                     b.HasOne("GACHSLApi.Entities.DocumentCategory", "Category")

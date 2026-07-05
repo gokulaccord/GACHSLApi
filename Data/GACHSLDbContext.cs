@@ -19,6 +19,7 @@ namespace GACHSLApi.Data
         public DbSet<DocumentCategory> DocumentCategories { get; set; }
         public DbSet<Member> Members { get; set; }
         public DbSet<SocietySettings> SocietySettings { get; set; }
+        public DbSet<Meeting> Meetings { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
