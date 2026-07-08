@@ -15,9 +15,17 @@ namespace GACHSLApi.Entities
         [MaxLength(1000)]
         public string? Description { get; set; }
 
-        [Required]
-        [MaxLength(200)]
         public string GoogleDriveFileId { get; set; } = string.Empty;
+
+        public string GoogleDriveFileName { get; set; } = string.Empty;
+
+        public string? GoogleDriveUrl { get; set; }
+
+        public long FileSize { get; set; }
+
+        public string FileExtension { get; set; } = string.Empty;
+
+        public string MimeType { get; set; } = string.Empty;
 
         [Required]
         public int CategoryId { get; set; }
@@ -34,5 +42,6 @@ namespace GACHSLApi.Entities
         public int CreatedBy { get; set; }
 
         public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
+
     }
 }

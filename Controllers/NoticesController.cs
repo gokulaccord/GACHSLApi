@@ -1,14 +1,13 @@
-﻿using GACHSLApi.DTOs.Notice;
+﻿using GACHSLApi.DTOs;
 using GACHSLApi.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
 
 namespace GACHSLApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class NoticesController : ControllerBase
     {
         private readonly INoticeService _noticeService;
@@ -18,7 +17,6 @@ namespace GACHSLApi.Controllers
             _noticeService = noticeService;
         }
 
-        // All logged-in members
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -26,57 +24,48 @@ namespace GACHSLApi.Controllers
             return Ok(result);
         }
 
-        // All logged-in members
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
             var result = await _noticeService.GetByIdAsync(id);
 
-            if (result == null)
-                return NotFound();
+            if (!result.Success)
+                return NotFound(result);
 
             return Ok(result);
         }
 
-        // Admin only
-        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Create(CreateNoticeDto dto)
         {
-            var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+            var result = await _noticeService.CreateAsync(dto);
 
-            await _noticeService.CreateAsync(dto, userId);
+            if (!result.Success)
+                return BadRequest(result);
 
-            return Ok(new
-            {
-                message = "Notice created successfully."
-            });
+            return Ok(result);
         }
 
-        // Admin only
-        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, UpdateNoticeDto dto)
         {
-            await _noticeService.UpdateAsync(id, dto);
+            var result = await _noticeService.UpdateAsync(id, dto);
 
-            return Ok(new
-            {
-                message = "Notice updated successfully."
-            });
+            if (!result.Success)
+                return BadRequest(result);
+
+            return Ok(result);
         }
 
-        // Admin only
-        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            await _noticeService.DeleteAsync(id);
+            var result = await _noticeService.DeleteAsync(id);
 
-            return Ok(new
-            {
-                message = "Notice deleted successfully."
-            });
+            if (!result.Success)
+                return BadRequest(result);
+
+            return Ok(result);
         }
     }
 }

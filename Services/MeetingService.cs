@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using GACHSLApi.Common;
+﻿using GACHSLApi.Common;
 using GACHSLApi.DTOs.Meeting;
 using GACHSLApi.Entities;
 using GACHSLApi.Interfaces;
@@ -9,26 +8,31 @@ namespace GACHSLApi.Services
     public class MeetingService : IMeetingService
     {
         private readonly IMeetingRepository _meetingRepository;
-        private readonly IMapper _mapper;
 
-        public MeetingService(
-            IMeetingRepository meetingRepository,
-            IMapper mapper)
+        public MeetingService(IMeetingRepository meetingRepository)
         {
             _meetingRepository = meetingRepository;
-            _mapper = mapper;
         }
 
         public async Task<ApiResponse<List<MeetingDto>>> GetAllAsync()
         {
             var meetings = await _meetingRepository.GetAllAsync();
 
-            var result = _mapper.Map<List<MeetingDto>>(meetings);
+            var result = meetings.Select(m => new MeetingDto
+            {
+                MeetingId = m.MeetingId,
+                MeetingTitle = m.MeetingTitle,
+                MeetingType = m.MeetingType,
+                MeetingDate = m.MeetingDate,
+                MeetingTime = m.MeetingTime,
+                Venue = m.Venue,
+                Description = m.Description,
+                Status = m.Status,
+                IsActive = m.IsActive,
+                CreatedOn = m.CreatedOn
+            }).ToList();
 
-            return new ApiResponse<List<MeetingDto>>(
-                true,
-                "Success",
-                result);
+            return new ApiResponse<List<MeetingDto>>(true, "Success", result);
         }
 
         public async Task<ApiResponse<MeetingDto>> GetByIdAsync(int id)
@@ -36,33 +40,67 @@ namespace GACHSLApi.Services
             var meeting = await _meetingRepository.GetByIdAsync(id);
 
             if (meeting == null)
+                return new ApiResponse<MeetingDto>(false, "Meeting not found", null);
+
+            var dto = new MeetingDto
             {
-                return new ApiResponse<MeetingDto>(
-                    false,
-                    "Meeting not found",
-                    null);
-            }
+                MeetingId = meeting.MeetingId,
+                MeetingTitle = meeting.MeetingTitle,
+                MeetingType = meeting.MeetingType,
+                MeetingDate = meeting.MeetingDate,
+                MeetingTime = meeting.MeetingTime,
+                Venue = meeting.Venue,
+                Description = meeting.Description,
+                Status = meeting.Status,
+                IsActive = meeting.IsActive,
+                CreatedOn = meeting.CreatedOn
+            };
 
-            var result = _mapper.Map<MeetingDto>(meeting);
-
-            return new ApiResponse<MeetingDto>(
-                true,
-                "Success",
-                result);
+            return new ApiResponse<MeetingDto>(true, "Success", dto);
         }
 
         public async Task<ApiResponse<object>> CreateAsync(CreateMeetingDto dto)
         {
-            var meeting = _mapper.Map<Meeting>(dto);
+            if (dto.MeetingDate.Date < DateTime.Today)
+            {
+                return new ApiResponse<object>(
+                    false,
+                    "Meeting date cannot be in the past.",
+                    null);
+            }
 
-            meeting.CreatedOn = DateTime.UtcNow;
+            bool exists = await _meetingRepository.ExistsAsync(
+                dto.MeetingDate,
+                dto.MeetingTime,
+                dto.Venue);
+
+            if (exists)
+            {
+                return new ApiResponse<object>(
+                    false,
+                    "Another meeting is already scheduled at the same venue, date and time.",
+                    null);
+            }
+
+            var meeting = new Meeting
+            {
+                MeetingTitle = dto.MeetingTitle,
+                MeetingType = dto.MeetingType,
+                MeetingDate = dto.MeetingDate,
+                MeetingTime = dto.MeetingTime,
+                Venue = dto.Venue,
+                Description = dto.Description,
+                Status = dto.Status,
+                IsActive = dto.IsActive,
+                CreatedOn = DateTime.UtcNow
+            };
 
             await _meetingRepository.AddAsync(meeting);
             await _meetingRepository.SaveChangesAsync();
 
             return new ApiResponse<object>(
                 true,
-                "Meeting created successfully",
+                "Meeting scheduled successfully.",
                 null);
         }
 
@@ -74,12 +112,18 @@ namespace GACHSLApi.Services
             {
                 return new ApiResponse<object>(
                     false,
-                    "Meeting not found",
+                    "Meeting not found.",
                     null);
             }
 
-            _mapper.Map(dto, meeting);
-
+            meeting.MeetingTitle = dto.MeetingTitle;
+            meeting.MeetingType = dto.MeetingType;
+            meeting.MeetingDate = dto.MeetingDate;
+            meeting.MeetingTime = dto.MeetingTime;
+            meeting.Venue = dto.Venue;
+            meeting.Description = dto.Description;
+            meeting.Status = dto.Status;
+            meeting.IsActive = dto.IsActive;
             meeting.UpdatedOn = DateTime.UtcNow;
 
             await _meetingRepository.UpdateAsync(meeting);
@@ -87,7 +131,7 @@ namespace GACHSLApi.Services
 
             return new ApiResponse<object>(
                 true,
-                "Meeting updated successfully",
+                "Meeting updated successfully.",
                 null);
         }
 
@@ -99,7 +143,7 @@ namespace GACHSLApi.Services
             {
                 return new ApiResponse<object>(
                     false,
-                    "Meeting not found",
+                    "Meeting not found.",
                     null);
             }
 
@@ -108,7 +152,7 @@ namespace GACHSLApi.Services
 
             return new ApiResponse<object>(
                 true,
-                "Meeting deleted successfully",
+                "Meeting deleted successfully.",
                 null);
         }
     }

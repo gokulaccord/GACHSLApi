@@ -7,7 +7,7 @@ namespace GACHSLApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class MeetingsController : ControllerBase
     {
         private readonly IMeetingService _meetingService;
@@ -36,7 +36,6 @@ namespace GACHSLApi.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create(CreateMeetingDto dto)
         {
             var result = await _meetingService.CreateAsync(dto);
@@ -48,7 +47,6 @@ namespace GACHSLApi.Controllers
         }
 
         [HttpPut("{id}")]
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Update(int id, UpdateMeetingDto dto)
         {
             var result = await _meetingService.UpdateAsync(id, dto);
@@ -60,7 +58,6 @@ namespace GACHSLApi.Controllers
         }
 
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int id)
         {
             var result = await _meetingService.DeleteAsync(id);

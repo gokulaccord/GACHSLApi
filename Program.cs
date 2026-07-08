@@ -83,6 +83,7 @@ builder.Services.AddScoped<IMemberRepository, MemberRepository>();
 builder.Services.AddScoped<ISocietySettingsRepository, SocietySettingsRepository>();
 builder.Services.AddScoped<IMeetingRepository, MeetingRepository>();
 builder.Services.AddScoped<IMeetingService, MeetingService>();
+builder.Services.AddScoped<INoticeService, NoticeService>();
 // Services
 builder.Services.AddScoped<IJwtService, JwtService>();
 builder.Services.AddScoped<IEmailService, EmailService>();

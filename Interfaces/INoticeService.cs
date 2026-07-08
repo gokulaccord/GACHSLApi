@@ -1,17 +1,18 @@
-﻿using GACHSLApi.DTOs.Notice;
+﻿using GACHSLApi.Common;
+using GACHSLApi.DTOs;
 
 namespace GACHSLApi.Interfaces
 {
     public interface INoticeService
     {
-        Task<List<NoticeDto>> GetAllAsync();
+        Task<ApiResponse<List<NoticeDto>>> GetAllAsync();
 
-        Task<NoticeDto?> GetByIdAsync(int id);
+        Task<ApiResponse<NoticeDto>> GetByIdAsync(int id);
 
-        Task CreateAsync(CreateNoticeDto dto, int createdBy);
+        Task<ApiResponse<object>> CreateAsync(CreateNoticeDto dto);
 
-        Task UpdateAsync(int id, UpdateNoticeDto dto);
+        Task<ApiResponse<object>> UpdateAsync(int id, UpdateNoticeDto dto);
 
-        Task DeleteAsync(int id);
+        Task<ApiResponse<object>> DeleteAsync(int id);
     }
 }

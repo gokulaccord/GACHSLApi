@@ -30,3 +30,6 @@ Migrations/*.Designer.cs
 ## OS
 Thumbs.db
 .DS_Store
+
+GoogleDrive/
+*.json

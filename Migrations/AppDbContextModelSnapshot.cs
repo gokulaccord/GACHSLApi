@@ -134,6 +134,58 @@ namespace GACHSLApi.Migrations
                         });
                 });
 
+            modelBuilder.Entity("GACHSLApi.Entities.Meeting", b =>
+                {
+                    b.Property<int>("MeetingId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("MeetingId"));
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(1000)
+                        .HasColumnType("varchar(1000)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTime>("MeetingDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<TimeSpan>("MeetingTime")
+                        .HasColumnType("time(6)");
+
+                    b.Property<string>("MeetingTitle")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
+
+                    b.Property<string>("MeetingType")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTime?>("UpdatedOn")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Venue")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
+
+                    b.HasKey("MeetingId");
+
+                    b.ToTable("Meetings");
+                });
+
             modelBuilder.Entity("GACHSLApi.Entities.Member", b =>
                 {
                     b.Property<int>("MemberId")
@@ -418,52 +470,6 @@ namespace GACHSLApi.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("Meeting", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Agenda")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("longtext");
-
-                    b.Property<DateTime>("MeetingDate")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<TimeSpan>("MeetingTime")
-                        .HasColumnType("time(6)");
-
-                    b.Property<string>("MeetingTitle")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<int>("MeetingType")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("UpdatedOn")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<string>("Venue")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Meetings");
                 });
 
             modelBuilder.Entity("GACHSLApi.Entities.Document", b =>

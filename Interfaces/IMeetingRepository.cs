@@ -14,6 +14,11 @@ namespace GACHSLApi.Interfaces
 
         Task DeleteAsync(Meeting meeting);
 
+        Task<bool> ExistsAsync(
+            DateTime meetingDate,
+            TimeSpan meetingTime,
+            string venue);
+
         Task SaveChangesAsync();
     }
 }

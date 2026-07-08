@@ -1,12 +1,12 @@
-﻿using GACHSLApi.Enums;
-
-namespace GACHSLApi.DTOs.Meeting
+﻿namespace GACHSLApi.DTOs.Meeting
 {
     public class MeetingDto
     {
-        public int Id { get; set; }
+        public int MeetingId { get; set; }
 
         public string MeetingTitle { get; set; } = string.Empty;
+
+        public string MeetingType { get; set; } = string.Empty;
 
         public DateTime MeetingDate { get; set; }
 
@@ -14,12 +14,12 @@ namespace GACHSLApi.DTOs.Meeting
 
         public string Venue { get; set; } = string.Empty;
 
-        public string Agenda { get; set; } = string.Empty;
-
         public string? Description { get; set; }
 
-        public MeetingType MeetingType { get; set; }
+        public string Status { get; set; } = string.Empty;
 
-        public MeetingStatus Status { get; set; }
+        public bool IsActive { get; set; }
+
+        public DateTime CreatedOn { get; set; }
     }
 }

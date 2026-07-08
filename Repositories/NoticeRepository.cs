@@ -14,22 +14,23 @@ namespace GACHSLApi.Repositories
             _context = context;
         }
 
-        public async Task<List<Notice>> GetAllAsync()
+        public async Task<IEnumerable<Notice>> GetAllAsync()
         {
             return await _context.Notices
-                .OrderByDescending(n => n.PublishDate)
+                .OrderByDescending(x => x.PublishDate)
                 .ToListAsync();
         }
 
         public async Task<Notice?> GetByIdAsync(int id)
         {
             return await _context.Notices
-                .FirstOrDefaultAsync(n => n.NoticeId == id);
+                .FirstOrDefaultAsync(x => x.NoticeId == id);
         }
 
-        public async Task AddAsync(Notice notice)
+        public async Task<Notice> AddAsync(Notice notice)
         {
             await _context.Notices.AddAsync(notice);
+            return notice;
         }
 
         public Task UpdateAsync(Notice notice)
