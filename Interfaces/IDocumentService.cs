@@ -14,5 +14,6 @@ namespace GACHSLApi.Interfaces
         Task<ApiResponse<object>> UpdateAsync(int id, UpdateDocumentDto dto);
 
         Task<ApiResponse<object>> DeleteAsync(int id);
+        Task<Stream> DownloadFileAsync(int documentId);
     }
 }

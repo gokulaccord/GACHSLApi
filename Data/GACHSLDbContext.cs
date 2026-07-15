@@ -20,6 +20,8 @@ namespace GACHSLApi.Data
         public DbSet<Member> Members { get; set; }
         public DbSet<SocietySettings> SocietySettings { get; set; }
         public DbSet<Meeting> Meetings { get; set; }
+        public DbSet<MeetingDocument> MeetingDocuments { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -33,6 +35,11 @@ namespace GACHSLApi.Data
                 new DocumentCategory { CategoryId = 6, CategoryName = "Government Approval", IsActive = true },
                 new DocumentCategory { CategoryId = 7, CategoryName = "General", IsActive = true }
             );
+
+            modelBuilder.Entity<MeetingDocument>()
+                .HasOne(md => md.Meeting)
+                .WithMany(m => m.Documents)
+                .HasForeignKey(md => md.MeetingId);
         }
     }
 }

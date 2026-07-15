@@ -37,5 +37,7 @@ namespace GACHSLApi.Entities
         public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
 
         public DateTime? UpdatedOn { get; set; }
+        public virtual ICollection<MeetingDocument> Documents { get; set; }
+    = new List<MeetingDocument>();
     }
 }

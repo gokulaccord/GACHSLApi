@@ -269,6 +269,17 @@ namespace GACHSLApi.Services
                 "Document deleted successfully.",
                 null);
         }
+        public async Task<Stream> DownloadFileAsync(int documentId)
+        {
+            var document = await _documentRepository.GetByIdAsync(documentId);
+
+            if (document == null)
+            {
+                throw new Exception("Document not found.");
+            }
+
+            return await _googleDriveService.DownloadFileAsync(document.GoogleDriveFileId);
+        }
     }
     
 }

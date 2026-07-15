@@ -115,21 +115,21 @@ namespace GACHSLApi.Controllers
 
             return Ok(result);
         }
-        //[HttpGet("{id}/download")]
-        //[AllowAnonymous]
-        //public async Task<IActionResult> Download(int id)
-        //{
-        //    var document = await _documentService.GetByIdAsync(id);
+        [HttpGet("download/{id}")]
+        [AllowAnonymous]
+        public async Task<IActionResult> Download(int id)
+        {
+            var document = await _documentService.GetByIdAsync(id);
 
-        //    if (!document.Success || document.Data == null)
-        //        return NotFound();
+            if (!document.Success || document.Data == null)
+                return NotFound();
 
-        //    var stream = await _googleDriveService.DownloadFileAsync(document.Data.GoogleDriveFileId);
+            var stream = await _documentService.DownloadFileAsync(id);
 
-        //    return File(
-        //        stream,
-        //        document.Data.MimeType ?? "application/octet-stream",
-        //        document.Data.FileName ?? "Document");
-        //}
+            return File(
+                stream,
+                document.Data.MimeType!,
+                document.Data.FileName);
+        }
     }
 }

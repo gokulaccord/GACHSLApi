@@ -122,9 +122,9 @@ builder.Services.AddScoped<IMemberRepository, MemberRepository>();
 builder.Services.AddScoped<ISocietySettingsRepository, SocietySettingsRepository>();
 builder.Services.AddScoped<IMeetingRepository, MeetingRepository>();
 builder.Services.AddScoped<IDocumentRepository, DocumentRepository>();
-
+builder.Services.AddScoped<IMeetingDocumentRepository, MeetingDocumentRepository>();
 builder.Services.AddScoped<IDashboardRepository, DashboardRepository>();
-
+builder.Services.AddScoped<IMeetingDocumentService, MeetingDocumentService>();
 
 // =======================
 // Services
