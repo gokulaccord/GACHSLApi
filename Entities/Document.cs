@@ -5,43 +5,38 @@ namespace GACHSLApi.Entities
 {
     public class Document
     {
-        [Key]
         public int DocumentId { get; set; }
 
-        [Required]
-        [MaxLength(200)]
         public string Title { get; set; } = string.Empty;
 
-        [MaxLength(1000)]
         public string? Description { get; set; }
+
+        public int CategoryId { get; set; }
+       
 
         public string GoogleDriveFileId { get; set; } = string.Empty;
 
-        public string GoogleDriveFileName { get; set; } = string.Empty;
-
-        public string? GoogleDriveUrl { get; set; }
-
-        public long FileSize { get; set; }
+        public string FileName { get; set; } = string.Empty;
 
         public string FileExtension { get; set; } = string.Empty;
 
         public string MimeType { get; set; } = string.Empty;
 
-        [Required]
-        public int CategoryId { get; set; }
+        public long FileSize { get; set; }
 
-        [ForeignKey(nameof(CategoryId))]
-        public DocumentCategory? Category { get; set; }
+        public DateTime PublishDate { get; set; }
 
-        public DateTime PublishDate { get; set; } = DateTime.UtcNow;
+        public int DisplayOrder { get; set; }
 
-        public int DisplayOrder { get; set; } = 0;
+        public bool IsPublished { get; set; }
 
-        public bool IsActive { get; set; } = true;
+        public bool IsActive { get; set; }
 
         public int CreatedBy { get; set; }
 
-        public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
+        public DateTime CreatedOn { get; set; }
 
+        public DateTime? UpdatedOn { get; set; }
+        public DocumentCategory? Category { get; set; }
     }
 }

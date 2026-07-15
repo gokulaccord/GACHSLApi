@@ -2242,3 +2242,195 @@ ORDER BY `n`.`PublishDate` DESC
 2026-07-08 17:07:30.501 +05:30 [INF] Executed action GACHSLApi.Controllers.NoticesController.GetAll (GACHSLApi) in 61.6135ms
 2026-07-08 17:07:30.507 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.NoticesController.GetAll (GACHSLApi)'
 2026-07-08 17:07:30.510 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Notices - 200 null application/json; charset=utf-8 91.0354ms
+2026-07-08 20:00:04.251 +05:30 [INF] User profile is available. Using 'C:\Users\ashvi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-08 20:00:05.355 +05:30 [INF] Now listening on: http://localhost:5278
+2026-07-08 20:00:06.316 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-08 20:00:06.318 +05:30 [INF] Hosting environment: Development
+2026-07-08 20:00:06.320 +05:30 [INF] Content root path: C:\ASHVIN\PERSONAL\gokulaccord\GACHSLApi
+2026-07-08 20:00:09.507 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/index.html - null null
+2026-07-08 20:00:10.528 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/index.html - 200 null text/html;charset=utf-8 1043.3832ms
+2026-07-08 20:00:10.573 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 20:00:10.587 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 16.1087ms
+2026-07-08 20:00:10.745 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_vs/browserLink - null null
+2026-07-08 20:00:11.351 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 605.9778ms
+2026-07-08 20:00:11.401 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-08 20:00:11.446 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 46.0667ms
+2026-07-08 20:01:21.934 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/login - application/json 62
+2026-07-08 20:01:21.969 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-08 20:01:22.011 +05:30 [INF] CORS policy execution failed.
+2026-07-08 20:01:22.039 +05:30 [INF] Request origin http://localhost:5278 does not have permission to access the resource.
+2026-07-08 20:01:22.253 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-08 20:01:22.324 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GACHSLApi.DTOs.LoginRequestDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-08 20:01:25.901 +05:30 [INF] Executed DbCommand (101ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FlatNumber`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-08 20:01:27.168 +05:30 [INF] Executed DbCommand (29ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `RefreshTokens` (`CreatedOn`, `ExpiryDate`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `RefreshTokenId`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `RefreshTokenId` = LAST_INSERT_ID();
+2026-07-08 20:01:27.295 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.LoginResponseDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-08 20:01:27.313 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.Login (GACHSLApi) in 4980.4665ms
+2026-07-08 20:01:27.317 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-08 20:01:27.333 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/login - 200 null application/json; charset=utf-8 5399.1478ms
+2026-07-08 20:02:50.021 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Documents - multipart/form-data; boundary=----WebKitFormBoundaryRsQUYqUZ5OgvHinH 589266
+2026-07-08 20:02:50.087 +05:30 [INF] CORS policy execution failed.
+2026-07-08 20:02:50.142 +05:30 [INF] Request origin http://localhost:5278 does not have permission to access the resource.
+2026-07-08 20:02:50.315 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.Create (GACHSLApi)'
+2026-07-08 20:02:50.333 +05:30 [INF] Route matched with {action = "Create", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(GACHSLApi.DTOs.Document.CreateDocumentDto) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-08 20:02:50.344 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.Create (GACHSLApi) in 6.4949ms
+2026-07-08 20:02:50.349 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.Create (GACHSLApi)'
+2026-07-08 20:02:50.537 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Documents - 500 null application/json 516.2172ms
+2026-07-08 20:07:44.729 +05:30 [INF] User profile is available. Using 'C:\Users\ashvi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-08 20:07:45.131 +05:30 [INF] Now listening on: http://localhost:5278
+2026-07-08 20:07:45.442 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-08 20:07:45.724 +05:30 [INF] Hosting environment: Development
+2026-07-08 20:07:46.012 +05:30 [INF] Content root path: C:\ASHVIN\PERSONAL\gokulaccord\GACHSLApi
+2026-07-08 20:07:48.242 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/index.html - null null
+2026-07-08 20:07:49.437 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/index.html - 200 null text/html;charset=utf-8 1196.2524ms
+2026-07-08 20:07:49.466 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_vs/browserLink - null null
+2026-07-08 20:07:49.486 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 20:07:49.618 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 130.5682ms
+2026-07-08 20:07:49.667 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 201.8267ms
+2026-07-08 20:07:49.719 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-08 20:07:49.905 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 185.8866ms
+2026-07-08 20:08:07.928 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/login - application/json 62
+2026-07-08 20:08:07.946 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-08 20:08:07.951 +05:30 [INF] CORS policy execution failed.
+2026-07-08 20:08:07.953 +05:30 [INF] Request origin http://localhost:5278 does not have permission to access the resource.
+2026-07-08 20:08:08.064 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-08 20:08:08.126 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GACHSLApi.DTOs.LoginRequestDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-08 20:08:11.701 +05:30 [INF] Executed DbCommand (77ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FlatNumber`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-08 20:08:13.100 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `RefreshTokens` (`CreatedOn`, `ExpiryDate`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `RefreshTokenId`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `RefreshTokenId` = LAST_INSERT_ID();
+2026-07-08 20:08:13.205 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.LoginResponseDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-08 20:08:13.235 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.Login (GACHSLApi) in 5096.8935ms
+2026-07-08 20:08:13.239 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-08 20:08:13.261 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/login - 200 null application/json; charset=utf-8 5332.6532ms
+2026-07-08 20:08:56.202 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Documents - multipart/form-data; boundary=----WebKitFormBoundaryiiAlmh4Ce7WyYUlc 589266
+2026-07-08 20:08:56.278 +05:30 [INF] CORS policy execution failed.
+2026-07-08 20:08:56.304 +05:30 [INF] Request origin http://localhost:5278 does not have permission to access the resource.
+2026-07-08 20:08:56.406 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.Create (GACHSLApi)'
+2026-07-08 20:08:56.425 +05:30 [INF] Route matched with {action = "Create", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(GACHSLApi.DTOs.Document.CreateDocumentDto) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-08 20:09:38.907 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.Create (GACHSLApi) in 42478.5453ms
+2026-07-08 20:09:38.994 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.Create (GACHSLApi)'
+2026-07-08 20:09:39.129 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Documents - 500 null application/json 42927.1299ms
+2026-07-08 20:09:43.702 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Documents - multipart/form-data; boundary=----WebKitFormBoundaryJj7Bj7suHbGfY6b3 589266
+2026-07-08 20:09:43.718 +05:30 [INF] CORS policy execution failed.
+2026-07-08 20:09:43.721 +05:30 [INF] Request origin http://localhost:5278 does not have permission to access the resource.
+2026-07-08 20:09:43.733 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.Create (GACHSLApi)'
+2026-07-08 20:09:43.737 +05:30 [INF] Route matched with {action = "Create", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(GACHSLApi.DTOs.Document.CreateDocumentDto) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-08 20:17:01.851 +05:30 [INF] User profile is available. Using 'C:\Users\ashvi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-08 20:17:02.208 +05:30 [INF] Now listening on: http://localhost:5278
+2026-07-08 20:17:02.288 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-08 20:17:02.349 +05:30 [INF] Hosting environment: Development
+2026-07-08 20:17:02.356 +05:30 [INF] Content root path: C:\ASHVIN\PERSONAL\gokulaccord\GACHSLApi
+2026-07-08 20:17:05.228 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/index.html - null null
+2026-07-08 20:17:05.771 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/index.html - 200 null text/html;charset=utf-8 560.86ms
+2026-07-08 20:17:05.824 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 20:17:05.825 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_vs/browserLink - null null
+2026-07-08 20:17:05.848 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 23.3551ms
+2026-07-08 20:17:05.908 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 84.5919ms
+2026-07-08 20:17:05.950 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-08 20:17:05.999 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 49.791ms
+2026-07-08 20:17:34.993 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/login - application/json 62
+2026-07-08 20:17:35.009 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-08 20:17:35.013 +05:30 [INF] CORS policy execution failed.
+2026-07-08 20:17:35.016 +05:30 [INF] Request origin http://localhost:5278 does not have permission to access the resource.
+2026-07-08 20:17:35.131 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-08 20:17:35.213 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GACHSLApi.DTOs.LoginRequestDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-08 20:17:38.690 +05:30 [INF] Executed DbCommand (97ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FlatNumber`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-08 20:17:40.145 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `RefreshTokens` (`CreatedOn`, `ExpiryDate`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `RefreshTokenId`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `RefreshTokenId` = LAST_INSERT_ID();
+2026-07-08 20:17:40.235 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.LoginResponseDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-08 20:17:40.259 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.Login (GACHSLApi) in 5029.9489ms
+2026-07-08 20:17:40.264 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-08 20:17:40.287 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/login - 200 null application/json; charset=utf-8 5293.2603ms
+2026-07-08 20:18:33.431 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Documents - multipart/form-data; boundary=----WebKitFormBoundarywxlQdQ9DtQNFeKzm 589266
+2026-07-08 20:18:33.466 +05:30 [INF] CORS policy execution failed.
+2026-07-08 20:18:33.622 +05:30 [INF] Request origin http://localhost:5278 does not have permission to access the resource.
+2026-07-08 20:18:33.897 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.Create (GACHSLApi)'
+2026-07-08 20:18:33.918 +05:30 [INF] Route matched with {action = "Create", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(GACHSLApi.DTOs.Document.CreateDocumentDto) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-08 20:18:57.028 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.Create (GACHSLApi) in 23105.9538ms
+2026-07-08 20:18:57.036 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.Create (GACHSLApi)'
+2026-07-08 20:43:02.169 +05:30 [INF] User profile is available. Using 'C:\Users\ashvi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-08 20:43:03.135 +05:30 [INF] Now listening on: http://localhost:5278
+2026-07-08 20:43:03.614 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-08 20:43:03.615 +05:30 [INF] Hosting environment: Development
+2026-07-08 20:43:03.617 +05:30 [INF] Content root path: C:\ASHVIN\PERSONAL\gokulaccord\GACHSLApi
+2026-07-08 20:43:08.223 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/index.html - null null
+2026-07-08 20:43:08.816 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 20:43:09.017 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 283.5163ms
+2026-07-08 20:43:09.371 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-08 20:43:09.958 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 586.4371ms
+2026-07-08 20:43:10.221 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/index.html - 200 null text/html;charset=utf-8 2027.6314ms
+2026-07-08 20:43:10.346 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 20:43:10.349 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_vs/browserLink - null null
+2026-07-08 20:43:10.356 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 10.2231ms
+2026-07-08 20:43:10.533 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 184.194ms
+2026-07-08 20:43:10.600 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-08 20:43:10.623 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 22.7981ms
+2026-07-08 20:43:29.360 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/login - application/json 62
+2026-07-08 20:43:29.373 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-08 20:43:29.378 +05:30 [INF] CORS policy execution failed.
+2026-07-08 20:43:29.381 +05:30 [INF] Request origin http://localhost:5278 does not have permission to access the resource.
+2026-07-08 20:43:29.570 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-08 20:43:29.628 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GACHSLApi.DTOs.LoginRequestDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-08 20:43:33.351 +05:30 [INF] Executed DbCommand (152ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FlatNumber`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-08 20:43:34.657 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `RefreshTokens` (`CreatedOn`, `ExpiryDate`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `RefreshTokenId`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `RefreshTokenId` = LAST_INSERT_ID();
+2026-07-08 20:43:34.763 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.LoginResponseDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-08 20:43:34.789 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.Login (GACHSLApi) in 5150.8312ms
+2026-07-08 20:43:34.794 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-08 20:43:34.811 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/login - 200 null application/json; charset=utf-8 5451.6298ms
+2026-07-08 20:44:23.709 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Documents - multipart/form-data; boundary=----WebKitFormBoundaryVAlmByvI1Dhp41cD 462283
+2026-07-08 20:44:23.805 +05:30 [INF] CORS policy execution failed.
+2026-07-08 20:44:23.832 +05:30 [INF] Request origin http://localhost:5278 does not have permission to access the resource.
+2026-07-08 20:44:23.962 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.Create (GACHSLApi)'
+2026-07-08 20:44:23.979 +05:30 [INF] Route matched with {action = "Create", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(GACHSLApi.DTOs.Document.CreateDocumentDto) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-08 20:44:47.629 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.Create (GACHSLApi) in 23645.4998ms
+2026-07-08 20:44:47.637 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.Create (GACHSLApi)'
+2026-07-08 20:45:05.772 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Documents - 500 null application/json 42063.4532ms
+2026-07-08 20:45:08.403 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Documents - multipart/form-data; boundary=----WebKitFormBoundaryaHKUzdhTfOWfSC7X 462283
+2026-07-08 20:46:05.516 +05:30 [INF] CORS policy execution failed.
+2026-07-08 20:46:05.518 +05:30 [INF] Request origin http://localhost:5278 does not have permission to access the resource.
+2026-07-08 20:46:05.536 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.Create (GACHSLApi)'
+2026-07-08 20:46:05.539 +05:30 [INF] Route matched with {action = "Create", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(GACHSLApi.DTOs.Document.CreateDocumentDto) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-08 20:46:10.899 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.Create (GACHSLApi) in 5356.6581ms
+2026-07-08 20:46:10.904 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.Create (GACHSLApi)'
+2026-07-08 20:46:11.048 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Documents - 500 null application/json 62644.1024ms
+2026-07-08 20:52:35.228 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Documents - multipart/form-data; boundary=----WebKitFormBoundaryh3Gb65OgcMM7OzUc 462283
+2026-07-08 20:52:35.244 +05:30 [INF] CORS policy execution failed.
+2026-07-08 20:52:35.246 +05:30 [INF] Request origin http://localhost:5278 does not have permission to access the resource.
+2026-07-08 20:52:35.253 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.Create (GACHSLApi)'
+2026-07-08 20:52:35.255 +05:30 [INF] Route matched with {action = "Create", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(GACHSLApi.DTOs.Document.CreateDocumentDto) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-08 20:52:41.132 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.Create (GACHSLApi) in 5871.8261ms
+2026-07-08 20:52:41.138 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.Create (GACHSLApi)'
+2026-07-08 20:52:41.262 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Documents - 500 null application/json 6034.7913ms

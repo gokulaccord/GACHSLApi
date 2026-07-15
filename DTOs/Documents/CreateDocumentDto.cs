@@ -15,8 +15,7 @@ namespace GACHSLApi.DTOs.Document
         public int CategoryId { get; set; }
 
         [Required]
-        [MaxLength(200)]
-        public string GoogleDriveFileId { get; set; } = string.Empty;
+        public IFormFile File { get; set; } = null!;
 
         public DateTime PublishDate { get; set; } = DateTime.UtcNow;
 

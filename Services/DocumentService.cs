@@ -9,10 +9,14 @@ namespace GACHSLApi.Services
     public class DocumentService : IDocumentService
     {
         private readonly IDocumentRepository _documentRepository;
+        private readonly IGoogleDriveService _googleDriveService;
 
-        public DocumentService(IDocumentRepository documentRepository)
+        public DocumentService(
+            IDocumentRepository documentRepository,
+            IGoogleDriveService googleDriveService)
         {
             _documentRepository = documentRepository;
+            _googleDriveService = googleDriveService;
         }
 
         public async Task<ApiResponse<List<DocumentDto>>> GetAllAsync(DocumentQueryDto query)
@@ -34,10 +38,40 @@ namespace GACHSLApi.Services
                     .Where(d => d.IsActive == query.IsActive.Value)
                     .ToList();
             }
+            foreach (var d in documents)
+            {
+                Console.WriteLine($"DB -> ID={d.DocumentId}, GoogleDriveFileId='{d.GoogleDriveFileId}'");
+            }
+            var result = documents.Select(document => new DocumentDto
+            {
+                DocumentId = document.DocumentId,
+                Title = document.Title,
+                Description = document.Description,
 
-            var result = documents
-     .Select(DocumentMapper.ToDto)
-     .ToList();
+                CategoryId = document.CategoryId,
+                CategoryName = document.Category?.CategoryName,
+
+                GoogleDriveFileId = document.GoogleDriveFileId,
+
+                PublishDate = document.PublishDate,
+                DisplayOrder = document.DisplayOrder,
+                IsActive = document.IsActive,
+
+                FileName = document.FileName,
+                FileExtension = document.FileExtension,
+                MimeType = document.MimeType,
+                FileSize = document.FileSize,
+
+                ViewUrl = _googleDriveService.GetViewUrl(document.GoogleDriveFileId),
+                DownloadUrl = _googleDriveService.GetDownloadUrl(document.GoogleDriveFileId)
+            }).ToList();
+
+            foreach (var doc in result)
+            {
+                doc.ViewUrl = _googleDriveService.GetViewUrl(doc.GoogleDriveFileId);
+
+                doc.DownloadUrl = _googleDriveService.GetDownloadUrl(doc.GoogleDriveFileId);
+            }
 
             return new ApiResponse<List<DocumentDto>>(
                 true,
@@ -56,32 +90,128 @@ namespace GACHSLApi.Services
                     null);
             }
 
-            var dto = DocumentMapper.ToDto(document);
+            var dto = new DocumentDto
+            {
+                DocumentId = document.DocumentId,
+                Title = document.Title,
+                Description = document.Description,
+
+                CategoryId = document.CategoryId,
+                CategoryName = document.Category?.CategoryName,
+
+                GoogleDriveFileId = document.GoogleDriveFileId,
+
+                PublishDate = document.PublishDate,
+                DisplayOrder = document.DisplayOrder,
+                IsActive = document.IsActive,
+
+                FileName = document.FileName,
+                FileExtension = document.FileExtension,
+                MimeType = document.MimeType,
+                FileSize = document.FileSize,
+
+                ViewUrl = _googleDriveService.GetViewUrl(document.GoogleDriveFileId),
+                DownloadUrl = _googleDriveService.GetDownloadUrl(document.GoogleDriveFileId)
+            };
+
+            dto.ViewUrl = _googleDriveService.GetViewUrl(dto.GoogleDriveFileId);
+
+            dto.DownloadUrl = _googleDriveService.GetDownloadUrl(dto.GoogleDriveFileId);
 
             return new ApiResponse<DocumentDto>(
                 true,
                 "Document retrieved successfully.",
                 dto);
         }
-        public async Task<ApiResponse<object>> CreateAsync(CreateDocumentDto dto, int createdBy)
+        public async Task<ApiResponse<object>> CreateAsync(
+     CreateDocumentDto dto,
+     int createdBy)
         {
+            // Validate file
+            if (dto.File == null || dto.File.Length == 0)
+            {
+                return new ApiResponse<object>(
+                    false,
+                    "Please select a file.",
+                    null);
+            }
+            // Validate file type
+            var allowedExtensions = new[]
+            {
+        ".pdf",
+        ".doc",
+        ".docx",
+        ".xls",
+        ".xlsx",
+        ".jpg",
+        ".jpeg",
+        ".png"
+    };
+
+            var extension = Path.GetExtension(dto.File.FileName).ToLowerInvariant();
+
+            if (!allowedExtensions.Contains(extension))
+            {
+                return new ApiResponse<object>(
+                    false,
+                    "Only PDF, Word, Excel and Image files are allowed.",
+                    null);
+            }
+            string fileId;
+
+            try
+            {
+                Console.WriteLine("Uploading PDF to Google Drive...");
+
+                fileId = await _googleDriveService.UploadFileAsync(dto.File);
+
+                Console.WriteLine("Google Drive File ID: " + fileId);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Google Drive Error:");
+                Console.WriteLine(ex.ToString());
+
+                throw;
+            }
             var document = new Document
             {
                 Title = dto.Title,
                 Description = dto.Description,
                 CategoryId = dto.CategoryId,
-                GoogleDriveFileId = dto.GoogleDriveFileId,
+
+                GoogleDriveFileId = fileId,
+
+                FileName = dto.File.FileName,
+                FileExtension = Path.GetExtension(dto.File.FileName),
+                MimeType = dto.File.ContentType,
+                FileSize = dto.File.Length,
+
                 PublishDate = dto.PublishDate,
                 DisplayOrder = dto.DisplayOrder,
+
                 IsActive = true,
 
-                // IMPORTANT
                 CreatedBy = createdBy,
                 CreatedOn = DateTime.UtcNow
             };
 
-            await _documentRepository.AddAsync(document);
-            await _documentRepository.SaveChangesAsync();
+            try
+            {
+                Console.WriteLine("Saving document to database...");
+
+                await _documentRepository.AddAsync(document);
+                await _documentRepository.SaveChangesAsync();
+
+                Console.WriteLine("Database save successful");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Database Error:");
+                Console.WriteLine(ex.ToString());
+
+                throw;
+            }
 
             return new ApiResponse<object>(
                 true,
@@ -104,7 +234,7 @@ namespace GACHSLApi.Services
             document.Title = dto.Title;
             document.Description = dto.Description;
             document.CategoryId = dto.CategoryId;
-            document.GoogleDriveFileId = dto.GoogleDriveFileId;
+            //document.GoogleDriveFileId = dto.GoogleDriveFileId;
             document.PublishDate = dto.PublishDate;
             document.DisplayOrder = dto.DisplayOrder;
             document.IsActive = dto.IsActive;
@@ -128,6 +258,8 @@ namespace GACHSLApi.Services
                     "Document not found.",
                     null);
             }
+
+            await _googleDriveService.DeleteFileAsync(document.GoogleDriveFileId);
 
             await _documentRepository.DeleteAsync(document);
             await _documentRepository.SaveChangesAsync();

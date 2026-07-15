@@ -1,13 +1,14 @@
 ﻿using GACHSLApi.DTOs.Document;
 using GACHSLApi.Interfaces;
+using GACHSLApi.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
 namespace GACHSLApi.Controllers
 {
-    [ApiController]
     [Route("api/[controller]")]
+    [ApiController]
     public class DocumentsController : ControllerBase
     {
         private readonly IDocumentService _documentService;
@@ -39,22 +40,56 @@ namespace GACHSLApi.Controllers
             return Ok(result);
         }
 
-        // POST: api/documents
+        //// POST: api/documents
+        //[HttpPost]
+        //[Authorize(Roles = "Admin")]
+        //public async Task<IActionResult> Create([FromForm] CreateDocumentDto dto)
+        //{
+        //    int createdBy = int.Parse(
+        //        User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+
+        //    var result = await _documentService.CreateAsync(dto, createdBy);
+
+        //    if (!result.Success)
+        //        return BadRequest(result);
+
+        //    return Ok(result);
+        //}
+
+
         [HttpPost]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Create([FromBody] CreateDocumentDto dto)
+        public async Task<IActionResult> Create([FromForm] CreateDocumentDto dto)
         {
-            int createdBy = int.Parse(
-                User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+            try
+            {
+                var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
 
-            var result = await _documentService.CreateAsync(dto, createdBy);
+                if (userIdClaim == null)
+                {
+                    return BadRequest(new
+                    {
+                        Success = false,
+                        Message = "NameIdentifier claim not found."
+                    });
+                }
 
-            if (!result.Success)
-                return BadRequest(result);
+                int createdBy = int.Parse(userIdClaim.Value);
 
-            return Ok(result);
+                var result = await _documentService.CreateAsync(dto, createdBy);
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    Success = false,
+                    Message = ex.Message,
+                    InnerException = ex.InnerException?.Message
+                });
+            }
         }
-
         // PUT: api/documents/{id}
         [HttpPut("{id}")]
         [Authorize(Roles = "Admin")]
@@ -80,5 +115,21 @@ namespace GACHSLApi.Controllers
 
             return Ok(result);
         }
+        //[HttpGet("{id}/download")]
+        //[AllowAnonymous]
+        //public async Task<IActionResult> Download(int id)
+        //{
+        //    var document = await _documentService.GetByIdAsync(id);
+
+        //    if (!document.Success || document.Data == null)
+        //        return NotFound();
+
+        //    var stream = await _googleDriveService.DownloadFileAsync(document.Data.GoogleDriveFileId);
+
+        //    return File(
+        //        stream,
+        //        document.Data.MimeType ?? "application/octet-stream",
+        //        document.Data.FileName ?? "Document");
+        //}
     }
 }

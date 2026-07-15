@@ -7,12 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Configurations\GoogleDriveSettings.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="BCrypt.Net-Next" Version="4.2.0" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.1" />
     <PackageReference Include="Google.Apis.Auth" Version="1.75.0" />
     <PackageReference Include="Google.Apis.Drive.v3" Version="1.75.0.4192" />
     <PackageReference Include="MailKit" Version="4.17.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="8.0.13" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.19" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.13" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.13">
@@ -32,7 +37,6 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
-    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>

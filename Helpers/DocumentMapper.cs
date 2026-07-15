@@ -12,9 +12,17 @@ namespace GACHSLApi.Helpers
                 DocumentId = document.DocumentId,
                 Title = document.Title,
                 Description = document.Description,
+
                 CategoryId = document.CategoryId,
                 CategoryName = document.Category?.CategoryName ?? "",
+
                 GoogleDriveFileId = document.GoogleDriveFileId,
+
+                FileName = document.FileName,
+                FileExtension = document.FileExtension,
+                FileSize = document.FileSize,
+                MimeType = document.MimeType,
+
                 PublishDate = document.PublishDate,
                 DisplayOrder = document.DisplayOrder,
                 IsActive = document.IsActive

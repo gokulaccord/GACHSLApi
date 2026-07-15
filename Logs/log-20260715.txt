@@ -1,0 +1,442 @@
+2026-07-15 06:43:59.032 +05:30 [INF] User profile is available. Using 'C:\Users\ashvi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-15 06:44:00.075 +05:30 [INF] Now listening on: http://localhost:5278
+2026-07-15 06:44:00.378 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-15 06:44:00.383 +05:30 [INF] Hosting environment: Development
+2026-07-15 06:44:00.386 +05:30 [INF] Content root path: C:\ASHVIN\PERSONAL\gokulaccord\GACHSLApi
+2026-07-15 06:44:07.536 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/index.html - null null
+2026-07-15 06:44:08.057 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/index.html - 200 null text/html;charset=utf-8 537.9186ms
+2026-07-15 06:44:08.071 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_vs/browserLink - null null
+2026-07-15 06:44:08.076 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-15 06:44:08.096 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 20.2515ms
+2026-07-15 06:44:08.130 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-15 06:44:08.136 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 6.1787ms
+2026-07-15 06:44:08.325 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 254.2112ms
+2026-07-15 06:44:08.357 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-15 06:44:08.406 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 49.1017ms
+2026-07-15 06:44:08.534 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-15 06:44:08.582 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 48.4661ms
+2026-07-15 06:44:28.412 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Auth/login - null null
+2026-07-15 06:44:28.423 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-15 06:44:28.425 +05:30 [INF] CORS policy execution successful.
+2026-07-15 06:44:28.430 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Auth/login - 204 null null 17.8119ms
+2026-07-15 06:44:28.437 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/login - application/json 53
+2026-07-15 06:44:28.447 +05:30 [INF] CORS policy execution successful.
+2026-07-15 06:44:28.640 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-15 06:44:28.698 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GACHSLApi.DTOs.LoginRequestDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-15 06:44:32.216 +05:30 [INF] Executed DbCommand (204ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FlatNumber`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-15 06:44:33.275 +05:30 [INF] Executed DbCommand (45ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `RefreshTokens` (`CreatedOn`, `ExpiryDate`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `RefreshTokenId`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `RefreshTokenId` = LAST_INSERT_ID();
+2026-07-15 06:44:33.377 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.LoginResponseDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-15 06:44:33.399 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.Login (GACHSLApi) in 4683.3469ms
+2026-07-15 06:44:33.405 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-15 06:44:33.420 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/login - 200 null application/json; charset=utf-8 4984.2296ms
+2026-07-15 06:44:33.485 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - null null
+2026-07-15 06:44:33.493 +05:30 [INF] CORS policy execution successful.
+2026-07-15 06:44:33.498 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - 204 null null 12.9887ms
+2026-07-15 06:44:33.509 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - null null
+2026-07-15 06:44:33.520 +05:30 [INF] CORS policy execution successful.
+2026-07-15 06:44:33.620 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-15 06:44:33.630 +05:30 [INF] Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller GACHSLApi.Controllers.DashboardController (GACHSLApi).
+2026-07-15 06:44:33.813 +05:30 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+2026-07-15 06:44:33.837 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsOwner`
+2026-07-15 06:44:33.864 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsOwner`)
+2026-07-15 06:44:33.880 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsActive`
+2026-07-15 06:44:33.896 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsActive`)
+2026-07-15 06:44:33.904 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Dashboard.DashboardSummaryDto'.
+2026-07-15 06:44:33.913 +05:30 [INF] Executed action GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi) in 278.0278ms
+2026-07-15 06:44:33.917 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-15 06:44:33.920 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - 200 null application/json; charset=utf-8 411.0768ms
+2026-07-15 06:44:36.507 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Documents - null null
+2026-07-15 06:44:36.512 +05:30 [INF] CORS policy execution successful.
+2026-07-15 06:44:36.514 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Documents - 204 null null 7.3853ms
+2026-07-15 06:44:36.520 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Documents - null null
+2026-07-15 06:44:36.524 +05:30 [INF] CORS policy execution successful.
+2026-07-15 06:44:36.530 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 06:44:36.545 +05:30 [INF] Route matched with {action = "GetAll", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(GACHSLApi.DTOs.Document.DocumentQueryDto) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-15 06:44:37.707 +05:30 [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `d`.`DocumentId`, `d`.`CategoryId`, `d`.`CreatedBy`, `d`.`CreatedOn`, `d`.`Description`, `d`.`DisplayOrder`, `d`.`FileExtension`, `d`.`FileName`, `d`.`FileSize`, `d`.`GoogleDriveFileId`, `d`.`IsActive`, `d`.`IsPublished`, `d`.`MimeType`, `d`.`PublishDate`, `d`.`Title`, `d`.`UpdatedOn`, `d0`.`CategoryId`, `d0`.`CategoryName`, `d0`.`IsActive`
+FROM `Documents` AS `d`
+INNER JOIN `DocumentCategories` AS `d0` ON `d`.`CategoryId` = `d0`.`CategoryId`
+ORDER BY `d`.`DisplayOrder`, `d`.`PublishDate` DESC
+2026-07-15 06:44:37.794 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Document.DocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 06:44:37.817 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi) in 1266.537ms
+2026-07-15 06:44:37.822 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 06:44:37.826 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Documents - 200 null application/json; charset=utf-8 1305.7223ms
+2026-07-15 06:44:42.814 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/DocumentCategories - null null
+2026-07-15 06:44:42.820 +05:30 [INF] CORS policy execution successful.
+2026-07-15 06:44:42.823 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/DocumentCategories - 204 null null 8.8825ms
+2026-07-15 06:44:42.830 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/DocumentCategories - null null
+2026-07-15 06:44:42.836 +05:30 [INF] CORS policy execution successful.
+2026-07-15 06:44:42.839 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentCategoriesController.Get (GACHSLApi)'
+2026-07-15 06:44:42.848 +05:30 [INF] Route matched with {action = "Get", controller = "DocumentCategories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get() on controller GACHSLApi.Controllers.DocumentCategoriesController (GACHSLApi).
+2026-07-15 06:44:42.899 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `d`.`CategoryId`, `d`.`CategoryName`, `d`.`IsActive`
+FROM `DocumentCategories` AS `d`
+WHERE `d`.`IsActive`
+ORDER BY `d`.`CategoryName`
+2026-07-15 06:44:42.905 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GACHSLApi.Entities.DocumentCategory, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-15 06:44:42.912 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentCategoriesController.Get (GACHSLApi) in 59.139ms
+2026-07-15 06:44:42.918 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentCategoriesController.Get (GACHSLApi)'
+2026-07-15 06:44:42.920 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/DocumentCategories - 200 null application/json; charset=utf-8 89.2477ms
+2026-07-15 06:45:36.696 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Documents - null null
+2026-07-15 06:45:36.707 +05:30 [INF] CORS policy execution successful.
+2026-07-15 06:45:36.711 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Documents - 204 null null 14.6858ms
+2026-07-15 06:45:36.724 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Documents - multipart/form-data; boundary=----WebKitFormBoundaryFBHVBos0VQTKLct2 2949891
+2026-07-15 06:45:36.794 +05:30 [INF] CORS policy execution successful.
+2026-07-15 06:45:36.831 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.Create (GACHSLApi)'
+2026-07-15 06:45:36.900 +05:30 [INF] Route matched with {action = "Create", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(GACHSLApi.DTOs.Document.CreateDocumentDto) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-15 06:45:42.133 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = Int64), @p8='?' (Size = 4000), @p9='?' (DbType = Boolean), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime), @p13='?' (Size = 4000), @p14='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Documents` (`CategoryId`, `CreatedBy`, `CreatedOn`, `Description`, `DisplayOrder`, `FileExtension`, `FileName`, `FileSize`, `GoogleDriveFileId`, `IsActive`, `IsPublished`, `MimeType`, `PublishDate`, `Title`, `UpdatedOn`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+SELECT `DocumentId`
+FROM `Documents`
+WHERE ROW_COUNT() = 1 AND `DocumentId` = LAST_INSERT_ID();
+2026-07-15 06:45:42.151 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 06:45:42.158 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.Create (GACHSLApi) in 5251.78ms
+2026-07-15 06:45:42.161 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.Create (GACHSLApi)'
+2026-07-15 06:45:42.166 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Documents - 200 null application/json; charset=utf-8 5441.5379ms
+2026-07-15 06:45:42.175 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Documents - null null
+2026-07-15 06:45:42.179 +05:30 [INF] CORS policy execution successful.
+2026-07-15 06:45:42.181 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Documents - 204 null null 6.8163ms
+2026-07-15 06:45:42.187 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Documents - null null
+2026-07-15 06:45:42.192 +05:30 [INF] CORS policy execution successful.
+2026-07-15 06:45:42.195 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 06:45:42.197 +05:30 [INF] Route matched with {action = "GetAll", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(GACHSLApi.DTOs.Document.DocumentQueryDto) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-15 06:45:42.421 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `d`.`DocumentId`, `d`.`CategoryId`, `d`.`CreatedBy`, `d`.`CreatedOn`, `d`.`Description`, `d`.`DisplayOrder`, `d`.`FileExtension`, `d`.`FileName`, `d`.`FileSize`, `d`.`GoogleDriveFileId`, `d`.`IsActive`, `d`.`IsPublished`, `d`.`MimeType`, `d`.`PublishDate`, `d`.`Title`, `d`.`UpdatedOn`, `d0`.`CategoryId`, `d0`.`CategoryName`, `d0`.`IsActive`
+FROM `Documents` AS `d`
+INNER JOIN `DocumentCategories` AS `d0` ON `d`.`CategoryId` = `d0`.`CategoryId`
+ORDER BY `d`.`DisplayOrder`, `d`.`PublishDate` DESC
+2026-07-15 06:45:42.434 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Document.DocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 06:45:42.441 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi) in 237.9752ms
+2026-07-15 06:45:42.444 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 06:45:42.447 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Documents - 200 null application/json; charset=utf-8 259.3378ms
+2026-07-15 06:56:25.195 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Documents - null null
+2026-07-15 06:56:25.215 +05:30 [INF] CORS policy execution successful.
+2026-07-15 06:56:25.220 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Documents - 204 null null 24.2171ms
+2026-07-15 06:56:25.245 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Documents - null null
+2026-07-15 06:56:25.260 +05:30 [INF] CORS policy execution successful.
+2026-07-15 06:56:25.263 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 06:56:25.268 +05:30 [INF] Route matched with {action = "GetAll", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(GACHSLApi.DTOs.Document.DocumentQueryDto) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-15 06:56:25.572 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `d`.`DocumentId`, `d`.`CategoryId`, `d`.`CreatedBy`, `d`.`CreatedOn`, `d`.`Description`, `d`.`DisplayOrder`, `d`.`FileExtension`, `d`.`FileName`, `d`.`FileSize`, `d`.`GoogleDriveFileId`, `d`.`IsActive`, `d`.`IsPublished`, `d`.`MimeType`, `d`.`PublishDate`, `d`.`Title`, `d`.`UpdatedOn`, `d0`.`CategoryId`, `d0`.`CategoryName`, `d0`.`IsActive`
+FROM `Documents` AS `d`
+INNER JOIN `DocumentCategories` AS `d0` ON `d`.`CategoryId` = `d0`.`CategoryId`
+ORDER BY `d`.`DisplayOrder`, `d`.`PublishDate` DESC
+2026-07-15 06:56:25.587 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Document.DocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 06:56:25.593 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi) in 314.8576ms
+2026-07-15 06:56:25.599 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 06:56:25.602 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Documents - 200 null application/json; charset=utf-8 357.4062ms
+2026-07-15 06:57:11.066 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Documents - null null
+2026-07-15 06:57:11.078 +05:30 [INF] CORS policy execution successful.
+2026-07-15 06:57:11.081 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Documents - 204 null null 14.3533ms
+2026-07-15 06:57:11.092 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Documents - null null
+2026-07-15 06:57:11.097 +05:30 [INF] CORS policy execution successful.
+2026-07-15 06:57:11.100 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 06:57:11.103 +05:30 [INF] Route matched with {action = "GetAll", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(GACHSLApi.DTOs.Document.DocumentQueryDto) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-15 06:57:11.303 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `d`.`DocumentId`, `d`.`CategoryId`, `d`.`CreatedBy`, `d`.`CreatedOn`, `d`.`Description`, `d`.`DisplayOrder`, `d`.`FileExtension`, `d`.`FileName`, `d`.`FileSize`, `d`.`GoogleDriveFileId`, `d`.`IsActive`, `d`.`IsPublished`, `d`.`MimeType`, `d`.`PublishDate`, `d`.`Title`, `d`.`UpdatedOn`, `d0`.`CategoryId`, `d0`.`CategoryName`, `d0`.`IsActive`
+FROM `Documents` AS `d`
+INNER JOIN `DocumentCategories` AS `d0` ON `d`.`CategoryId` = `d0`.`CategoryId`
+ORDER BY `d`.`DisplayOrder`, `d`.`PublishDate` DESC
+2026-07-15 06:57:11.318 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Document.DocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 06:57:11.322 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi) in 212.5343ms
+2026-07-15 06:57:11.327 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 06:57:11.332 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Documents - 200 null application/json; charset=utf-8 239.5794ms
+2026-07-15 06:57:15.668 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Documents - null null
+2026-07-15 06:57:15.703 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 06:57:15.709 +05:30 [INF] Route matched with {action = "GetAll", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(GACHSLApi.DTOs.Document.DocumentQueryDto) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-15 06:57:15.917 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `d`.`DocumentId`, `d`.`CategoryId`, `d`.`CreatedBy`, `d`.`CreatedOn`, `d`.`Description`, `d`.`DisplayOrder`, `d`.`FileExtension`, `d`.`FileName`, `d`.`FileSize`, `d`.`GoogleDriveFileId`, `d`.`IsActive`, `d`.`IsPublished`, `d`.`MimeType`, `d`.`PublishDate`, `d`.`Title`, `d`.`UpdatedOn`, `d0`.`CategoryId`, `d0`.`CategoryName`, `d0`.`IsActive`
+FROM `Documents` AS `d`
+INNER JOIN `DocumentCategories` AS `d0` ON `d`.`CategoryId` = `d0`.`CategoryId`
+ORDER BY `d`.`DisplayOrder`, `d`.`PublishDate` DESC
+2026-07-15 06:57:15.930 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Document.DocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 06:57:15.936 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi) in 216.4776ms
+2026-07-15 06:57:15.941 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 06:57:15.945 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Documents - 200 null application/json; charset=utf-8 277.5022ms
+2026-07-15 06:57:16.007 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/favicon.ico - null null
+2026-07-15 06:57:16.019 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/favicon.ico - 404 0 null 12.1819ms
+2026-07-15 06:57:16.032 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5278/favicon.ico, Response status code: 404
+2026-07-15 06:58:14.076 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Documents - null null
+2026-07-15 06:58:14.080 +05:30 [INF] CORS policy execution successful.
+2026-07-15 06:58:14.081 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Documents - 204 null null 5.3814ms
+2026-07-15 06:58:14.091 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Documents - null null
+2026-07-15 06:58:14.096 +05:30 [INF] CORS policy execution successful.
+2026-07-15 06:58:14.098 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 06:58:14.100 +05:30 [INF] Route matched with {action = "GetAll", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(GACHSLApi.DTOs.Document.DocumentQueryDto) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-15 06:58:14.281 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `d`.`DocumentId`, `d`.`CategoryId`, `d`.`CreatedBy`, `d`.`CreatedOn`, `d`.`Description`, `d`.`DisplayOrder`, `d`.`FileExtension`, `d`.`FileName`, `d`.`FileSize`, `d`.`GoogleDriveFileId`, `d`.`IsActive`, `d`.`IsPublished`, `d`.`MimeType`, `d`.`PublishDate`, `d`.`Title`, `d`.`UpdatedOn`, `d0`.`CategoryId`, `d0`.`CategoryName`, `d0`.`IsActive`
+FROM `Documents` AS `d`
+INNER JOIN `DocumentCategories` AS `d0` ON `d`.`CategoryId` = `d0`.`CategoryId`
+ORDER BY `d`.`DisplayOrder`, `d`.`PublishDate` DESC
+2026-07-15 06:58:14.292 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Document.DocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 06:58:14.297 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi) in 194.7879ms
+2026-07-15 06:58:14.302 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 06:58:14.307 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Documents - 200 null application/json; charset=utf-8 215.6944ms
+2026-07-15 06:58:15.192 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Documents - null null
+2026-07-15 06:58:15.199 +05:30 [INF] CORS policy execution successful.
+2026-07-15 06:58:15.202 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 06:58:15.206 +05:30 [INF] Route matched with {action = "GetAll", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(GACHSLApi.DTOs.Document.DocumentQueryDto) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-15 06:58:15.388 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `d`.`DocumentId`, `d`.`CategoryId`, `d`.`CreatedBy`, `d`.`CreatedOn`, `d`.`Description`, `d`.`DisplayOrder`, `d`.`FileExtension`, `d`.`FileName`, `d`.`FileSize`, `d`.`GoogleDriveFileId`, `d`.`IsActive`, `d`.`IsPublished`, `d`.`MimeType`, `d`.`PublishDate`, `d`.`Title`, `d`.`UpdatedOn`, `d0`.`CategoryId`, `d0`.`CategoryName`, `d0`.`IsActive`
+FROM `Documents` AS `d`
+INNER JOIN `DocumentCategories` AS `d0` ON `d`.`CategoryId` = `d0`.`CategoryId`
+ORDER BY `d`.`DisplayOrder`, `d`.`PublishDate` DESC
+2026-07-15 06:58:15.394 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Document.DocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 06:58:15.405 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi) in 194.0087ms
+2026-07-15 06:58:15.408 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 06:58:15.410 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Documents - 499 null application/json; charset=utf-8 218.3967ms
+2026-07-15 06:58:15.493 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Documents - null null
+2026-07-15 06:58:15.499 +05:30 [INF] CORS policy execution successful.
+2026-07-15 06:58:15.502 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 06:58:15.505 +05:30 [INF] Route matched with {action = "GetAll", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(GACHSLApi.DTOs.Document.DocumentQueryDto) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-15 06:58:15.677 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `d`.`DocumentId`, `d`.`CategoryId`, `d`.`CreatedBy`, `d`.`CreatedOn`, `d`.`Description`, `d`.`DisplayOrder`, `d`.`FileExtension`, `d`.`FileName`, `d`.`FileSize`, `d`.`GoogleDriveFileId`, `d`.`IsActive`, `d`.`IsPublished`, `d`.`MimeType`, `d`.`PublishDate`, `d`.`Title`, `d`.`UpdatedOn`, `d0`.`CategoryId`, `d0`.`CategoryName`, `d0`.`IsActive`
+FROM `Documents` AS `d`
+INNER JOIN `DocumentCategories` AS `d0` ON `d`.`CategoryId` = `d0`.`CategoryId`
+ORDER BY `d`.`DisplayOrder`, `d`.`PublishDate` DESC
+2026-07-15 06:58:15.683 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Document.DocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 06:58:15.688 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi) in 178.873ms
+2026-07-15 06:58:15.691 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 06:58:15.693 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Documents - 499 null application/json; charset=utf-8 200.7857ms
+2026-07-15 06:58:15.734 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Documents - null null
+2026-07-15 06:58:15.744 +05:30 [INF] CORS policy execution successful.
+2026-07-15 06:58:15.747 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 06:58:15.750 +05:30 [INF] Route matched with {action = "GetAll", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(GACHSLApi.DTOs.Document.DocumentQueryDto) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-15 06:58:15.884 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Documents - null null
+2026-07-15 06:58:15.895 +05:30 [INF] CORS policy execution successful.
+2026-07-15 06:58:15.899 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 06:58:15.902 +05:30 [INF] Route matched with {action = "GetAll", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(GACHSLApi.DTOs.Document.DocumentQueryDto) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-15 06:58:15.916 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `d`.`DocumentId`, `d`.`CategoryId`, `d`.`CreatedBy`, `d`.`CreatedOn`, `d`.`Description`, `d`.`DisplayOrder`, `d`.`FileExtension`, `d`.`FileName`, `d`.`FileSize`, `d`.`GoogleDriveFileId`, `d`.`IsActive`, `d`.`IsPublished`, `d`.`MimeType`, `d`.`PublishDate`, `d`.`Title`, `d`.`UpdatedOn`, `d0`.`CategoryId`, `d0`.`CategoryName`, `d0`.`IsActive`
+FROM `Documents` AS `d`
+INNER JOIN `DocumentCategories` AS `d0` ON `d`.`CategoryId` = `d0`.`CategoryId`
+ORDER BY `d`.`DisplayOrder`, `d`.`PublishDate` DESC
+2026-07-15 06:58:15.927 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Document.DocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 06:58:15.932 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi) in 175.0177ms
+2026-07-15 06:58:15.940 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 06:58:15.949 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Documents - 499 null application/json; charset=utf-8 214.8824ms
+2026-07-15 06:58:16.089 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `d`.`DocumentId`, `d`.`CategoryId`, `d`.`CreatedBy`, `d`.`CreatedOn`, `d`.`Description`, `d`.`DisplayOrder`, `d`.`FileExtension`, `d`.`FileName`, `d`.`FileSize`, `d`.`GoogleDriveFileId`, `d`.`IsActive`, `d`.`IsPublished`, `d`.`MimeType`, `d`.`PublishDate`, `d`.`Title`, `d`.`UpdatedOn`, `d0`.`CategoryId`, `d0`.`CategoryName`, `d0`.`IsActive`
+FROM `Documents` AS `d`
+INNER JOIN `DocumentCategories` AS `d0` ON `d`.`CategoryId` = `d0`.`CategoryId`
+ORDER BY `d`.`DisplayOrder`, `d`.`PublishDate` DESC
+2026-07-15 06:58:16.097 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Document.DocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 06:58:16.102 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi) in 193.6703ms
+2026-07-15 06:58:16.104 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 06:58:16.106 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Documents - 200 null application/json; charset=utf-8 221.6264ms
+2026-07-15 06:59:32.421 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Documents - null null
+2026-07-15 06:59:32.427 +05:30 [INF] CORS policy execution successful.
+2026-07-15 06:59:32.429 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Documents - 204 null null 8.4247ms
+2026-07-15 06:59:32.436 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Documents - null null
+2026-07-15 06:59:32.445 +05:30 [INF] CORS policy execution successful.
+2026-07-15 06:59:32.448 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 06:59:32.451 +05:30 [INF] Route matched with {action = "GetAll", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(GACHSLApi.DTOs.Document.DocumentQueryDto) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-15 06:59:32.625 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `d`.`DocumentId`, `d`.`CategoryId`, `d`.`CreatedBy`, `d`.`CreatedOn`, `d`.`Description`, `d`.`DisplayOrder`, `d`.`FileExtension`, `d`.`FileName`, `d`.`FileSize`, `d`.`GoogleDriveFileId`, `d`.`IsActive`, `d`.`IsPublished`, `d`.`MimeType`, `d`.`PublishDate`, `d`.`Title`, `d`.`UpdatedOn`, `d0`.`CategoryId`, `d0`.`CategoryName`, `d0`.`IsActive`
+FROM `Documents` AS `d`
+INNER JOIN `DocumentCategories` AS `d0` ON `d`.`CategoryId` = `d0`.`CategoryId`
+ORDER BY `d`.`DisplayOrder`, `d`.`PublishDate` DESC
+2026-07-15 06:59:32.640 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Document.DocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 06:59:32.644 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi) in 188.0657ms
+2026-07-15 06:59:32.645 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 06:59:32.648 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Documents - 200 null application/json; charset=utf-8 211.4528ms
+2026-07-15 07:00:29.566 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/index.html - null null
+2026-07-15 07:00:29.592 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/index.html - 200 null text/html;charset=utf-8 25.8813ms
+2026-07-15 07:00:29.686 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-15 07:00:29.694 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 8.0379ms
+2026-07-15 07:00:29.708 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_vs/browserLink - null null
+2026-07-15 07:00:29.746 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 38.3809ms
+2026-07-15 07:00:30.003 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-15 07:00:30.040 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 37.0143ms
+2026-07-15 07:00:59.554 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Documents - null null
+2026-07-15 07:00:59.563 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 07:00:59.566 +05:30 [INF] Route matched with {action = "GetAll", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(GACHSLApi.DTOs.Document.DocumentQueryDto) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-15 07:00:59.734 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `d`.`DocumentId`, `d`.`CategoryId`, `d`.`CreatedBy`, `d`.`CreatedOn`, `d`.`Description`, `d`.`DisplayOrder`, `d`.`FileExtension`, `d`.`FileName`, `d`.`FileSize`, `d`.`GoogleDriveFileId`, `d`.`IsActive`, `d`.`IsPublished`, `d`.`MimeType`, `d`.`PublishDate`, `d`.`Title`, `d`.`UpdatedOn`, `d0`.`CategoryId`, `d0`.`CategoryName`, `d0`.`IsActive`
+FROM `Documents` AS `d`
+INNER JOIN `DocumentCategories` AS `d0` ON `d`.`CategoryId` = `d0`.`CategoryId`
+ORDER BY `d`.`DisplayOrder`, `d`.`PublishDate` DESC
+2026-07-15 07:00:59.742 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Document.DocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 07:00:59.745 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi) in 175.8899ms
+2026-07-15 07:00:59.747 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 07:00:59.749 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Documents - 200 null application/json; charset=utf-8 194.704ms
+2026-07-15 07:07:57.457 +05:30 [INF] User profile is available. Using 'C:\Users\ashvi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-15 07:07:58.689 +05:30 [INF] Now listening on: http://localhost:5278
+2026-07-15 07:07:58.913 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-15 07:07:58.946 +05:30 [INF] Hosting environment: Development
+2026-07-15 07:07:58.950 +05:30 [INF] Content root path: C:\ASHVIN\PERSONAL\gokulaccord\GACHSLApi
+2026-07-15 07:08:00.750 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/index.html - null null
+2026-07-15 07:08:00.784 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-15 07:08:00.875 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 87.9153ms
+2026-07-15 07:08:01.008 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-15 07:08:01.098 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 89.9633ms
+2026-07-15 07:08:01.188 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/index.html - 200 null text/html;charset=utf-8 453.0721ms
+2026-07-15 07:08:01.201 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-15 07:08:01.203 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_vs/browserLink - null null
+2026-07-15 07:08:01.209 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 8.575ms
+2026-07-15 07:08:01.270 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 67.3662ms
+2026-07-15 07:08:01.300 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-15 07:08:01.337 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 37.2448ms
+2026-07-15 07:08:39.676 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Documents - null null
+2026-07-15 07:08:39.691 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-15 07:08:39.695 +05:30 [INF] CORS policy execution successful.
+2026-07-15 07:08:39.701 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Documents - 204 null null 24.9069ms
+2026-07-15 07:08:39.720 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Documents - null null
+2026-07-15 07:08:39.733 +05:30 [INF] CORS policy execution successful.
+2026-07-15 07:08:40.086 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 07:08:40.146 +05:30 [INF] Route matched with {action = "GetAll", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(GACHSLApi.DTOs.Document.DocumentQueryDto) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-15 07:08:44.643 +05:30 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `d`.`DocumentId`, `d`.`CategoryId`, `d`.`CreatedBy`, `d`.`CreatedOn`, `d`.`Description`, `d`.`DisplayOrder`, `d`.`FileExtension`, `d`.`FileName`, `d`.`FileSize`, `d`.`GoogleDriveFileId`, `d`.`IsActive`, `d`.`IsPublished`, `d`.`MimeType`, `d`.`PublishDate`, `d`.`Title`, `d`.`UpdatedOn`, `d0`.`CategoryId`, `d0`.`CategoryName`, `d0`.`IsActive`
+FROM `Documents` AS `d`
+INNER JOIN `DocumentCategories` AS `d0` ON `d`.`CategoryId` = `d0`.`CategoryId`
+ORDER BY `d`.`DisplayOrder`, `d`.`PublishDate` DESC
+2026-07-15 07:08:44.936 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Document.DocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 07:08:44.974 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi) in 4814.3457ms
+2026-07-15 07:08:44.981 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 07:08:45.003 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Documents - 200 null application/json; charset=utf-8 5282.5748ms
+2026-07-15 07:09:36.537 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Auth/login - null null
+2026-07-15 07:09:36.547 +05:30 [INF] CORS policy execution successful.
+2026-07-15 07:09:36.550 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Auth/login - 204 null null 13.2501ms
+2026-07-15 07:09:36.569 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/login - application/json 53
+2026-07-15 07:09:36.581 +05:30 [INF] CORS policy execution successful.
+2026-07-15 07:09:36.587 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-15 07:09:36.601 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GACHSLApi.DTOs.LoginRequestDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-15 07:09:37.273 +05:30 [INF] Executed DbCommand (290ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FlatNumber`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-15 07:09:38.214 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `RefreshTokens` (`CreatedOn`, `ExpiryDate`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `RefreshTokenId`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `RefreshTokenId` = LAST_INSERT_ID();
+2026-07-15 07:09:38.309 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.LoginResponseDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-15 07:09:38.319 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.Login (GACHSLApi) in 1701.7359ms
+2026-07-15 07:09:38.323 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-15 07:09:38.328 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/login - 200 null application/json; charset=utf-8 1758.8898ms
+2026-07-15 07:09:38.386 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - null null
+2026-07-15 07:09:38.392 +05:30 [INF] CORS policy execution successful.
+2026-07-15 07:09:38.394 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - 204 null null 7.7087ms
+2026-07-15 07:09:38.401 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - null null
+2026-07-15 07:09:38.407 +05:30 [INF] CORS policy execution successful.
+2026-07-15 07:09:38.424 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-15 07:09:38.434 +05:30 [INF] Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller GACHSLApi.Controllers.DashboardController (GACHSLApi).
+2026-07-15 07:09:38.647 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+2026-07-15 07:09:38.680 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsOwner`
+2026-07-15 07:09:38.724 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsOwner`)
+2026-07-15 07:09:38.744 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsActive`
+2026-07-15 07:09:38.762 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsActive`)
+2026-07-15 07:09:38.768 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Dashboard.DashboardSummaryDto'.
+2026-07-15 07:09:38.776 +05:30 [INF] Executed action GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi) in 331.0514ms
+2026-07-15 07:09:38.780 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-15 07:09:38.783 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - 200 null application/json; charset=utf-8 381.3712ms
+2026-07-15 07:09:47.905 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Documents - null null
+2026-07-15 07:09:47.912 +05:30 [INF] CORS policy execution successful.
+2026-07-15 07:09:47.915 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Documents - 204 null null 10.0214ms
+2026-07-15 07:09:47.924 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Documents - null null
+2026-07-15 07:09:47.933 +05:30 [INF] CORS policy execution successful.
+2026-07-15 07:09:47.935 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 07:09:47.938 +05:30 [INF] Route matched with {action = "GetAll", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(GACHSLApi.DTOs.Document.DocumentQueryDto) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-15 07:09:48.147 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `d`.`DocumentId`, `d`.`CategoryId`, `d`.`CreatedBy`, `d`.`CreatedOn`, `d`.`Description`, `d`.`DisplayOrder`, `d`.`FileExtension`, `d`.`FileName`, `d`.`FileSize`, `d`.`GoogleDriveFileId`, `d`.`IsActive`, `d`.`IsPublished`, `d`.`MimeType`, `d`.`PublishDate`, `d`.`Title`, `d`.`UpdatedOn`, `d0`.`CategoryId`, `d0`.`CategoryName`, `d0`.`IsActive`
+FROM `Documents` AS `d`
+INNER JOIN `DocumentCategories` AS `d0` ON `d`.`CategoryId` = `d0`.`CategoryId`
+ORDER BY `d`.`DisplayOrder`, `d`.`PublishDate` DESC
+2026-07-15 07:09:48.157 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Document.DocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 07:09:48.161 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi) in 218.4143ms
+2026-07-15 07:09:48.164 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 07:09:48.167 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Documents - 200 null application/json; charset=utf-8 242.319ms
+2026-07-15 07:16:41.907 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/index.html - null null
+2026-07-15 07:16:41.933 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/index.html - 200 null text/html;charset=utf-8 26.6683ms
+2026-07-15 07:16:41.949 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-15 07:16:41.949 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_vs/browserLink - null null
+2026-07-15 07:16:41.960 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 11.5587ms
+2026-07-15 07:16:41.992 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 42.3105ms
+2026-07-15 07:16:42.068 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-15 07:16:42.096 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 28.8179ms
+2026-07-15 07:17:04.180 +05:30 [INF] User profile is available. Using 'C:\Users\ashvi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-15 07:17:04.419 +05:30 [INF] Now listening on: http://localhost:5278
+2026-07-15 07:17:04.551 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-15 07:17:04.553 +05:30 [INF] Hosting environment: Development
+2026-07-15 07:17:04.556 +05:30 [INF] Content root path: C:\ASHVIN\PERSONAL\gokulaccord\GACHSLApi
+2026-07-15 07:17:06.313 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/index.html - null null
+2026-07-15 07:17:06.631 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-15 07:17:06.655 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 24.1659ms
+2026-07-15 07:17:06.823 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/index.html - 200 null text/html;charset=utf-8 526.3149ms
+2026-07-15 07:17:06.844 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-15 07:17:06.848 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/_vs/browserLink - null null
+2026-07-15 07:17:06.855 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 11.2269ms
+2026-07-15 07:17:06.917 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-15 07:17:06.935 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 87.433ms
+2026-07-15 07:17:06.977 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 60.8595ms
+2026-07-15 07:17:06.980 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - null null
+2026-07-15 07:17:07.055 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 74.9321ms
+2026-07-15 07:17:15.926 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Documents - null null
+2026-07-15 07:17:15.942 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-15 07:17:16.036 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 07:17:16.096 +05:30 [INF] Route matched with {action = "GetAll", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(GACHSLApi.DTOs.Document.DocumentQueryDto) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-15 07:17:19.132 +05:30 [INF] Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `d`.`DocumentId`, `d`.`CategoryId`, `d`.`CreatedBy`, `d`.`CreatedOn`, `d`.`Description`, `d`.`DisplayOrder`, `d`.`FileExtension`, `d`.`FileName`, `d`.`FileSize`, `d`.`GoogleDriveFileId`, `d`.`IsActive`, `d`.`IsPublished`, `d`.`MimeType`, `d`.`PublishDate`, `d`.`Title`, `d`.`UpdatedOn`, `d0`.`CategoryId`, `d0`.`CategoryName`, `d0`.`IsActive`
+FROM `Documents` AS `d`
+INNER JOIN `DocumentCategories` AS `d0` ON `d`.`CategoryId` = `d0`.`CategoryId`
+ORDER BY `d`.`DisplayOrder`, `d`.`PublishDate` DESC
+2026-07-15 07:17:19.361 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Document.DocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 07:17:19.398 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi) in 3290.7837ms
+2026-07-15 07:17:19.402 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 07:17:19.420 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Documents - 200 null application/json; charset=utf-8 3493.9747ms
+2026-07-15 07:17:30.941 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Documents - null null
+2026-07-15 07:17:30.957 +05:30 [INF] CORS policy execution successful.
+2026-07-15 07:17:30.963 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Documents - 204 null null 21.9979ms
+2026-07-15 07:17:30.972 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Documents - null null
+2026-07-15 07:17:30.979 +05:30 [INF] CORS policy execution successful.
+2026-07-15 07:17:31.130 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 07:17:31.134 +05:30 [INF] Route matched with {action = "GetAll", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(GACHSLApi.DTOs.Document.DocumentQueryDto) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-15 07:17:31.427 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `d`.`DocumentId`, `d`.`CategoryId`, `d`.`CreatedBy`, `d`.`CreatedOn`, `d`.`Description`, `d`.`DisplayOrder`, `d`.`FileExtension`, `d`.`FileName`, `d`.`FileSize`, `d`.`GoogleDriveFileId`, `d`.`IsActive`, `d`.`IsPublished`, `d`.`MimeType`, `d`.`PublishDate`, `d`.`Title`, `d`.`UpdatedOn`, `d0`.`CategoryId`, `d0`.`CategoryName`, `d0`.`IsActive`
+FROM `Documents` AS `d`
+INNER JOIN `DocumentCategories` AS `d0` ON `d`.`CategoryId` = `d0`.`CategoryId`
+ORDER BY `d`.`DisplayOrder`, `d`.`PublishDate` DESC
+2026-07-15 07:17:31.437 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Document.DocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 07:17:31.443 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi) in 302.0433ms
+2026-07-15 07:17:31.446 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 07:17:31.448 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Documents - 200 null application/json; charset=utf-8 475.5672ms

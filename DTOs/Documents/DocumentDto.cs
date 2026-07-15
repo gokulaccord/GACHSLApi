@@ -19,5 +19,17 @@
         public int DisplayOrder { get; set; }
 
         public bool IsActive { get; set; }
+        public string? ViewUrl { get; set; }
+
+        public string? DownloadUrl { get; set; }
+
+        public string? FileName { get; set; }
+
+        public string? FileExtension { get; set; }
+
+        public long FileSize { get; set; }
+
+        public string? MimeType { get; set; }
+
     }
 }

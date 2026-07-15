@@ -33,3 +33,21 @@ Thumbs.db
 
 GoogleDrive/
 *.json
+
+# Local configuration
+appsettings.Development.json
+
+# Google OAuth Tokens
+Tokens/
+
+# Google Credentials
+GoogleDrive/
+
+# Visual Studio
+.vs/
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
