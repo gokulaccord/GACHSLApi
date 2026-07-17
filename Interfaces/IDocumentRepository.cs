@@ -8,6 +8,8 @@ namespace GACHSLApi.Interfaces
 
         Task<Document?> GetByIdAsync(int id);
 
+        Task<List<Document>> GetLookupAsync();
+
         Task AddAsync(Document document);
 
         Task UpdateAsync(Document document);

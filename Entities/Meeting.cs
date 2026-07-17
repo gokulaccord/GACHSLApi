@@ -21,6 +21,8 @@ namespace GACHSLApi.Entities
         [Required]
         public TimeSpan MeetingTime { get; set; }
 
+        public string? Minutes { get; set; }
+
         [Required]
         [MaxLength(200)]
         public string Venue { get; set; } = string.Empty;

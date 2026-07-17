@@ -25,5 +25,6 @@ namespace GACHSLApi.DTOs.Meeting
         public string Status { get; set; } = string.Empty;
 
         public bool IsActive { get; set; }
+        public string? Minutes { get; set; }
     }
 }

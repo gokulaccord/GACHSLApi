@@ -67,5 +67,12 @@ namespace GACHSLApi.Controllers
 
             return Ok(result);
         }
+        [HttpGet("available")]
+        public async Task<IActionResult> GetAvailableMembers([FromQuery] int? consentId)
+        {
+            var members = await _memberService.GetAvailableMembersAsync(consentId);
+
+            return Ok(members);
+        }
     }
 }

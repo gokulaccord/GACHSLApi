@@ -125,7 +125,8 @@ builder.Services.AddScoped<IDocumentRepository, DocumentRepository>();
 builder.Services.AddScoped<IMeetingDocumentRepository, MeetingDocumentRepository>();
 builder.Services.AddScoped<IDashboardRepository, DashboardRepository>();
 builder.Services.AddScoped<IMeetingDocumentService, MeetingDocumentService>();
-
+builder.Services.AddScoped<IConsentRepository, ConsentRepository>();
+builder.Services.AddScoped<IConsentService, ConsentService>();
 // =======================
 // Services
 // =======================

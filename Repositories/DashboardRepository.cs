@@ -18,30 +18,51 @@ namespace GACHSLApi.Repositories
         {
             var totalMembers = await _context.Members.CountAsync();
 
-            var owners = await _context.Members
-                .CountAsync(m => m.IsOwner);
-
-            var tenants = await _context.Members
-                .CountAsync(m => !m.IsOwner);
-
             var activeMembers = await _context.Members
-                .CountAsync(m => m.IsActive);
+                .CountAsync(x => x.IsActive);
+            Console.WriteLine($"TOTAL MEMBERS : {totalMembers}");
+            Console.WriteLine($"ACTIVE MEMBERS : {activeMembers}");
+            var totalMeetings = await _context.Meetings.CountAsync();
 
-            var inactiveMembers = await _context.Members
-                .CountAsync(m => !m.IsActive);
+            var totalDocuments = await _context.Documents
+                .CountAsync(x => x.IsActive);
 
+            var totalNotices = await _context.Notices
+                .CountAsync(x => x.IsActive);
+
+            var consentYes = await _context.Consents
+                .CountAsync(x => x.ConsentStatus == 1);
+
+            var consentNo = await _context.Consents
+                .CountAsync(x => x.ConsentStatus == 2);
+
+            var consentPending = await _context.Consents
+                .CountAsync(x => x.ConsentStatus == 0);
+
+            decimal consentPercentage = 0;
+
+            if (totalMembers > 0)
+            {
+                consentPercentage = Math.Round(
+                    (decimal)consentYes * 100 / totalMembers,
+                    2);
+            }
+            var database = _context.Database.GetDbConnection().Database;
+
+           
+            Console.WriteLine("DATABASE USED : " + database);
+            Console.WriteLine("MEMBERS COUNT : " + totalMembers);
             return new DashboardSummaryDto
             {
                 TotalMembers = totalMembers,
-                Owners = owners,
-                Tenants = tenants,
                 ActiveMembers = activeMembers,
-                InactiveMembers = inactiveMembers,
-
-                // These will be replaced once the Flats module is created
-                TotalFlats = totalMembers,
-                OccupiedFlats = totalMembers,
-                VacantFlats = 0
+                TotalMeetings = totalMeetings,
+                TotalDocuments = totalDocuments,
+                TotalNotices = totalNotices,
+                ConsentYes = consentYes,
+                ConsentNo = consentNo,
+                ConsentPending = consentPending,
+                ConsentPercentage = consentPercentage
             };
         }
     }

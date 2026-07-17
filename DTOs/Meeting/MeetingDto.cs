@@ -21,5 +21,6 @@
         public bool IsActive { get; set; }
 
         public DateTime CreatedOn { get; set; }
+        public string? Minutes { get; set; }
     }
 }

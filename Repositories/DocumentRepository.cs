@@ -51,5 +51,12 @@ namespace GACHSLApi.Repositories
         {
             await _context.SaveChangesAsync();
         }
+        public async Task<List<Document>> GetLookupAsync()
+        {
+            return await _context.Documents
+                .AsNoTracking()
+                .OrderBy(d => d.Title)
+                .ToListAsync();
+        }
     }
 }

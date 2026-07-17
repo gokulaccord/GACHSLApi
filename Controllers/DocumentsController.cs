@@ -131,5 +131,12 @@ namespace GACHSLApi.Controllers
                 document.Data.MimeType!,
                 document.Data.FileName);
         }
+        [HttpGet("lookup")]
+        public async Task<IActionResult> GetLookup()
+        {
+            var documents = await _documentService.GetLookupAsync();
+
+            return Ok(documents);
+        }
     }
 }

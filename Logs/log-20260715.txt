@@ -3936,3 +3936,1414 @@ ORDER BY `m`.`DisplayOrder`, `m`.`CreatedOn` DESC
 2026-07-15 22:57:22.431 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi) in 195.6452ms
 2026-07-15 22:57:22.435 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
 2026-07-15 22:57:22.438 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/1 - 200 null application/json; charset=utf-8 223.3442ms
+2026-07-15 23:14:24.183 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - null null
+2026-07-15 23:14:24.201 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:14:24.205 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - 204 null null 21.6681ms
+2026-07-15 23:14:24.222 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Meetings - null null
+2026-07-15 23:14:24.230 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:14:24.234 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:14:24.237 +05:30 [INF] Route matched with {action = "GetAll", controller = "Meetings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MeetingsController (GACHSLApi).
+2026-07-15 23:14:24.350 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MeetingId`, `m`.`CreatedOn`, `m`.`Description`, `m`.`IsActive`, `m`.`MeetingDate`, `m`.`MeetingTime`, `m`.`MeetingTitle`, `m`.`MeetingType`, `m`.`Status`, `m`.`UpdatedOn`, `m`.`Venue`
+FROM `Meetings` AS `m`
+ORDER BY `m`.`MeetingDate` DESC, `m`.`MeetingTime` DESC
+2026-07-15 23:14:24.362 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Meeting.MeetingDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:14:24.370 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi) in 128.8474ms
+2026-07-15 23:14:24.376 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:14:24.381 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Meetings - 200 null application/json; charset=utf-8 158.942ms
+2026-07-15 23:14:32.575 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/3 - null null
+2026-07-15 23:14:32.585 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:14:32.587 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/3 - 204 null null 12.7479ms
+2026-07-15 23:14:32.593 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/3 - null null
+2026-07-15 23:14:32.600 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:14:32.604 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:14:32.608 +05:30 [INF] Route matched with {action = "GetByMeeting", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByMeeting(Int32) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:14:32.802 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@__meetingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`CreatedBy`, `m`.`CreatedOn`, `m`.`Description`, `m`.`DisplayOrder`, `m`.`FileName`, `m`.`FileSize`, `m`.`GoogleDriveFileId`, `m`.`IsActive`, `m`.`MeetingId`, `m`.`MimeType`, `m`.`OriginalFileName`, `m`.`UpdatedBy`, `m`.`UpdatedOn`
+FROM `MeetingDocuments` AS `m`
+WHERE `m`.`MeetingId` = @__meetingId_0
+ORDER BY `m`.`DisplayOrder`, `m`.`CreatedOn` DESC
+2026-07-15 23:14:32.815 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.MeetingDocument.MeetingDocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:14:32.821 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi) in 206.004ms
+2026-07-15 23:14:32.825 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:14:32.829 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/3 - 200 null application/json; charset=utf-8 235.5135ms
+2026-07-15 23:18:33.993 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - null null
+2026-07-15 23:18:34.005 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:18:34.009 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - 204 null null 15.3252ms
+2026-07-15 23:18:34.025 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - null null
+2026-07-15 23:18:34.031 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:18:34.036 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-15 23:18:34.039 +05:30 [INF] Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller GACHSLApi.Controllers.DashboardController (GACHSLApi).
+2026-07-15 23:18:34.143 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+2026-07-15 23:18:34.159 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsOwner`
+2026-07-15 23:18:34.172 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsOwner`)
+2026-07-15 23:18:34.183 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsActive`
+2026-07-15 23:18:34.197 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsActive`)
+2026-07-15 23:18:34.204 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Dashboard.DashboardSummaryDto'.
+2026-07-15 23:18:34.207 +05:30 [INF] Executed action GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi) in 161.3726ms
+2026-07-15 23:18:34.209 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-15 23:18:34.211 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - 200 null application/json; charset=utf-8 185.1726ms
+2026-07-15 23:18:39.771 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Auth/login - null null
+2026-07-15 23:18:39.779 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:18:39.781 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Auth/login - 204 null null 10.1573ms
+2026-07-15 23:18:39.793 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/login - application/json 57
+2026-07-15 23:18:39.802 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:18:39.807 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-15 23:18:39.811 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GACHSLApi.DTOs.LoginRequestDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-15 23:18:39.881 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FlatNumber`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-15 23:18:40.180 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.LoginResponseDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-15 23:18:40.187 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.Login (GACHSLApi) in 370.3534ms
+2026-07-15 23:18:40.189 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-15 23:18:40.193 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/login - 401 null application/json; charset=utf-8 400.1908ms
+2026-07-15 23:18:46.839 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Auth/login - null null
+2026-07-15 23:18:46.847 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:18:46.849 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Auth/login - 204 null null 10.3657ms
+2026-07-15 23:18:46.859 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Auth/login - application/json 53
+2026-07-15 23:18:46.866 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:18:46.868 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-15 23:18:46.870 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GACHSLApi.DTOs.LoginRequestDto) on controller GACHSLApi.Controllers.AuthController (GACHSLApi).
+2026-07-15 23:18:46.912 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`CreatedOn`, `u`.`Email`, `u`.`FlatNumber`, `u`.`FullName`, `u`.`IsActive`, `u`.`PasswordHash`, `u`.`Role`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2026-07-15 23:18:47.212 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `RefreshTokens` (`CreatedOn`, `ExpiryDate`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `RefreshTokenId`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `RefreshTokenId` = LAST_INSERT_ID();
+2026-07-15 23:18:47.239 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.LoginResponseDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-15 23:18:47.241 +05:30 [INF] Executed action GACHSLApi.Controllers.AuthController.Login (GACHSLApi) in 365.6088ms
+2026-07-15 23:18:47.245 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.AuthController.Login (GACHSLApi)'
+2026-07-15 23:18:47.249 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Auth/login - 200 null application/json; charset=utf-8 389.947ms
+2026-07-15 23:18:47.261 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - null null
+2026-07-15 23:18:47.267 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:18:47.269 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - 204 null null 8.7496ms
+2026-07-15 23:18:47.280 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - null null
+2026-07-15 23:18:47.286 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:18:47.288 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-15 23:18:47.292 +05:30 [INF] Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller GACHSLApi.Controllers.DashboardController (GACHSLApi).
+2026-07-15 23:18:47.334 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+2026-07-15 23:18:47.349 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsOwner`
+2026-07-15 23:18:47.362 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsOwner`)
+2026-07-15 23:18:47.378 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsActive`
+2026-07-15 23:18:47.394 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsActive`)
+2026-07-15 23:18:47.402 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Dashboard.DashboardSummaryDto'.
+2026-07-15 23:18:47.405 +05:30 [INF] Executed action GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi) in 107.9996ms
+2026-07-15 23:18:47.408 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-15 23:18:47.410 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - 200 null application/json; charset=utf-8 129.869ms
+2026-07-15 23:18:50.083 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/SocietySettings - null null
+2026-07-15 23:18:50.090 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:18:50.092 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/SocietySettings - 204 null null 9.1447ms
+2026-07-15 23:18:50.099 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/SocietySettings - null null
+2026-07-15 23:18:50.105 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:18:50.108 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.SocietySettingsController.Get (GACHSLApi)'
+2026-07-15 23:18:50.117 +05:30 [INF] Route matched with {action = "Get", controller = "SocietySettings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get() on controller GACHSLApi.Controllers.SocietySettingsController (GACHSLApi).
+2026-07-15 23:18:50.368 +05:30 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2026-07-15 23:18:50.387 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`CreatedOn`, `s`.`CurrentStage`, `s`.`DeveloperName`, `s`.`Email`, `s`.`LogoUrl`, `s`.`PMCName`, `s`.`Phone`, `s`.`RegistrationNumber`, `s`.`SocietyName`, `s`.`SocietyShortName`, `s`.`TotalFlats`, `s`.`TotalShops`, `s`.`TotalStages`, `s`.`UpdatedOn`
+FROM `SocietySettings` AS `s`
+LIMIT 1
+2026-07-15 23:18:50.454 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.SocietySettings.SocietySettingsDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-15 23:18:50.466 +05:30 [INF] Executed action GACHSLApi.Controllers.SocietySettingsController.Get (GACHSLApi) in 343.3942ms
+2026-07-15 23:18:50.470 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.SocietySettingsController.Get (GACHSLApi)'
+2026-07-15 23:18:50.473 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/SocietySettings - 200 null application/json; charset=utf-8 374.5164ms
+2026-07-15 23:18:51.075 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Members - null null
+2026-07-15 23:18:51.081 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:18:51.083 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Members - 204 null null 8.1954ms
+2026-07-15 23:18:51.090 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Members - null null
+2026-07-15 23:18:51.095 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:18:51.099 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-15 23:18:51.107 +05:30 [INF] Route matched with {action = "GetAll", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-15 23:18:51.149 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MemberId`, `m`.`CreatedOn`, `m`.`Email`, `m`.`FlatNumber`, `m`.`FullName`, `m`.`IsActive`, `m`.`IsOwner`, `m`.`Phone`, `m`.`UserId`
+FROM `Members` AS `m`
+2026-07-15 23:18:51.193 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Member.MemberDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:18:51.210 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi) in 97.2133ms
+2026-07-15 23:18:51.216 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-15 23:18:51.218 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Members - 200 null application/json; charset=utf-8 127.6252ms
+2026-07-15 23:19:14.888 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Members/61 - null null
+2026-07-15 23:19:14.913 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:19:14.918 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Members/61 - 204 null null 29.8097ms
+2026-07-15 23:19:14.928 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5278/api/Members/61 - application/json 154
+2026-07-15 23:19:14.936 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:19:14.940 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.Update (GACHSLApi)'
+2026-07-15 23:19:14.952 +05:30 [INF] Route matched with {action = "Update", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, GACHSLApi.DTOs.Member.UpdateMemberDto) on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-15 23:19:15.033 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MemberId`, `m`.`CreatedOn`, `m`.`Email`, `m`.`FlatNumber`, `m`.`FullName`, `m`.`IsActive`, `m`.`IsOwner`, `m`.`Phone`, `m`.`UserId`
+FROM `Members` AS `m`
+WHERE `m`.`MemberId` = @__id_0
+LIMIT 1
+2026-07-15 23:19:15.092 +05:30 [ERR] Failed executing DbCommand (10ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = DateTime), @p1='?' (Size = 100), @p2='?' (Size = 10), @p3='?' (Size = 100), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (Size = -1), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Members` SET `CreatedOn` = @p0, `Email` = @p1, `FlatNumber` = @p2, `FullName` = @p3, `IsActive` = @p4, `IsOwner` = @p5, `Phone` = @p6, `UserId` = @p7
+WHERE `MemberId` = @p8;
+SELECT ROW_COUNT();
+2026-07-15 23:19:15.130 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'GACHSLApi.Data.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> MySqlConnector.MySqlException (0x80004005): Data too long for column 'Phone' at row 1
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 894
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 483
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 350
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> MySqlConnector.MySqlException (0x80004005): Data too long for column 'Phone' at row 1
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 894
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 483
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 350
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2026-07-15 23:19:15.851 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.Update (GACHSLApi) in 892.2502ms
+2026-07-15 23:19:15.861 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.Update (GACHSLApi)'
+2026-07-15 23:19:16.174 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5278/api/Members/61 - 500 null application/json 1246.1668ms
+2026-07-15 23:19:22.277 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Members/61 - null null
+2026-07-15 23:19:22.290 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:19:22.295 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Members/61 - 204 null null 17.2309ms
+2026-07-15 23:19:22.317 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5278/api/Members/61 - application/json 142
+2026-07-15 23:19:22.326 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:19:22.328 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.Update (GACHSLApi)'
+2026-07-15 23:19:22.334 +05:30 [INF] Route matched with {action = "Update", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, GACHSLApi.DTOs.Member.UpdateMemberDto) on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-15 23:19:22.374 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MemberId`, `m`.`CreatedOn`, `m`.`Email`, `m`.`FlatNumber`, `m`.`FullName`, `m`.`IsActive`, `m`.`IsOwner`, `m`.`Phone`, `m`.`UserId`
+FROM `Members` AS `m`
+WHERE `m`.`MemberId` = @__id_0
+LIMIT 1
+2026-07-15 23:19:22.391 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = DateTime), @p1='?' (Size = 100), @p2='?' (Size = 10), @p3='?' (Size = 100), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (Size = 15), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Members` SET `CreatedOn` = @p0, `Email` = @p1, `FlatNumber` = @p2, `FullName` = @p3, `IsActive` = @p4, `IsOwner` = @p5, `Phone` = @p6, `UserId` = @p7
+WHERE `MemberId` = @p8;
+SELECT ROW_COUNT();
+2026-07-15 23:19:22.399 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:19:22.405 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.Update (GACHSLApi) in 67.3662ms
+2026-07-15 23:19:22.409 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.Update (GACHSLApi)'
+2026-07-15 23:19:22.412 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5278/api/Members/61 - 200 null application/json; charset=utf-8 95.3519ms
+2026-07-15 23:19:22.419 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Members - null null
+2026-07-15 23:19:22.425 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:19:22.428 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Members - 204 null null 8.7787ms
+2026-07-15 23:19:22.438 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Members - null null
+2026-07-15 23:19:22.454 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:19:22.457 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-15 23:19:22.460 +05:30 [INF] Route matched with {action = "GetAll", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-15 23:19:22.494 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MemberId`, `m`.`CreatedOn`, `m`.`Email`, `m`.`FlatNumber`, `m`.`FullName`, `m`.`IsActive`, `m`.`IsOwner`, `m`.`Phone`, `m`.`UserId`
+FROM `Members` AS `m`
+2026-07-15 23:19:22.507 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Member.MemberDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:19:22.519 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi) in 51.8953ms
+2026-07-15 23:19:22.525 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-15 23:19:22.530 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Members - 200 null application/json; charset=utf-8 92.4755ms
+2026-07-15 23:19:41.340 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Members/61 - null null
+2026-07-15 23:19:41.350 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:19:41.354 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Members/61 - 204 null null 14.4987ms
+2026-07-15 23:19:41.365 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5278/api/Members/61 - application/json 143
+2026-07-15 23:19:41.375 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:19:41.381 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.Update (GACHSLApi)'
+2026-07-15 23:19:41.385 +05:30 [INF] Route matched with {action = "Update", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, GACHSLApi.DTOs.Member.UpdateMemberDto) on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-15 23:19:41.426 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MemberId`, `m`.`CreatedOn`, `m`.`Email`, `m`.`FlatNumber`, `m`.`FullName`, `m`.`IsActive`, `m`.`IsOwner`, `m`.`Phone`, `m`.`UserId`
+FROM `Members` AS `m`
+WHERE `m`.`MemberId` = @__id_0
+LIMIT 1
+2026-07-15 23:19:41.450 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = DateTime), @p1='?' (Size = 100), @p2='?' (Size = 10), @p3='?' (Size = 100), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (Size = 15), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Members` SET `CreatedOn` = @p0, `Email` = @p1, `FlatNumber` = @p2, `FullName` = @p3, `IsActive` = @p4, `IsOwner` = @p5, `Phone` = @p6, `UserId` = @p7
+WHERE `MemberId` = @p8;
+SELECT ROW_COUNT();
+2026-07-15 23:19:41.456 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:19:41.460 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.Update (GACHSLApi) in 68.3769ms
+2026-07-15 23:19:41.463 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.Update (GACHSLApi)'
+2026-07-15 23:19:41.467 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5278/api/Members/61 - 200 null application/json; charset=utf-8 102.3596ms
+2026-07-15 23:19:41.474 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Members - null null
+2026-07-15 23:19:41.479 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:19:41.481 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Members - 204 null null 6.7552ms
+2026-07-15 23:19:41.490 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Members - null null
+2026-07-15 23:19:41.498 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:19:41.500 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-15 23:19:41.503 +05:30 [INF] Route matched with {action = "GetAll", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-15 23:19:41.534 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MemberId`, `m`.`CreatedOn`, `m`.`Email`, `m`.`FlatNumber`, `m`.`FullName`, `m`.`IsActive`, `m`.`IsOwner`, `m`.`Phone`, `m`.`UserId`
+FROM `Members` AS `m`
+2026-07-15 23:19:41.543 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Member.MemberDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:19:41.546 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi) in 37.682ms
+2026-07-15 23:19:41.548 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-15 23:19:41.551 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Members - 200 null application/json; charset=utf-8 60.6469ms
+2026-07-15 23:20:05.778 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Members/61 - null null
+2026-07-15 23:20:05.794 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:20:05.797 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Members/61 - 204 null null 18.6533ms
+2026-07-15 23:20:05.807 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5278/api/Members/61 - application/json 142
+2026-07-15 23:20:05.815 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:20:05.818 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.Update (GACHSLApi)'
+2026-07-15 23:20:05.828 +05:30 [INF] Route matched with {action = "Update", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, GACHSLApi.DTOs.Member.UpdateMemberDto) on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-15 23:20:05.874 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MemberId`, `m`.`CreatedOn`, `m`.`Email`, `m`.`FlatNumber`, `m`.`FullName`, `m`.`IsActive`, `m`.`IsOwner`, `m`.`Phone`, `m`.`UserId`
+FROM `Members` AS `m`
+WHERE `m`.`MemberId` = @__id_0
+LIMIT 1
+2026-07-15 23:20:05.924 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = DateTime), @p1='?' (Size = 100), @p2='?' (Size = 10), @p3='?' (Size = 100), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (Size = 15), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Members` SET `CreatedOn` = @p0, `Email` = @p1, `FlatNumber` = @p2, `FullName` = @p3, `IsActive` = @p4, `IsOwner` = @p5, `Phone` = @p6, `UserId` = @p7
+WHERE `MemberId` = @p8;
+SELECT ROW_COUNT();
+2026-07-15 23:20:05.938 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:20:05.943 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.Update (GACHSLApi) in 107.4836ms
+2026-07-15 23:20:05.948 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.Update (GACHSLApi)'
+2026-07-15 23:20:05.951 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5278/api/Members/61 - 200 null application/json; charset=utf-8 144.1476ms
+2026-07-15 23:20:05.960 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Members - null null
+2026-07-15 23:20:05.968 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:20:05.969 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Members - 204 null null 8.8011ms
+2026-07-15 23:20:05.979 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Members - null null
+2026-07-15 23:20:05.985 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:20:05.993 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-15 23:20:05.996 +05:30 [INF] Route matched with {action = "GetAll", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-15 23:20:06.033 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MemberId`, `m`.`CreatedOn`, `m`.`Email`, `m`.`FlatNumber`, `m`.`FullName`, `m`.`IsActive`, `m`.`IsOwner`, `m`.`Phone`, `m`.`UserId`
+FROM `Members` AS `m`
+2026-07-15 23:20:06.038 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Member.MemberDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:20:06.042 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi) in 37.9813ms
+2026-07-15 23:20:06.046 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-15 23:20:06.049 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Members - 200 null application/json; charset=utf-8 69.6478ms
+2026-07-15 23:20:54.025 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Members - null null
+2026-07-15 23:20:54.040 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:20:54.043 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Members - 204 null null 18.5283ms
+2026-07-15 23:20:54.061 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Members - application/json 136
+2026-07-15 23:20:54.069 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:20:54.072 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.Create (GACHSLApi)'
+2026-07-15 23:20:54.086 +05:30 [INF] Route matched with {action = "Create", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(GACHSLApi.DTOs.Member.CreateMemberDto) on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-15 23:20:54.399 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 100), @p2='?' (Size = 20), @p3='?' (Size = 100), @p4='?' (DbType = Boolean), @p5='?' (Size = 255), @p6='?' (Size = 4000), @p7='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Users` (`CreatedOn`, `Email`, `FlatNumber`, `FullName`, `IsActive`, `PasswordHash`, `Role`, `Username`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT `UserId`
+FROM `Users`
+WHERE ROW_COUNT() = 1 AND `UserId` = LAST_INSERT_ID();
+2026-07-15 23:20:54.447 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 100), @p2='?' (Size = 10), @p3='?' (Size = 100), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (Size = 15), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Members` (`CreatedOn`, `Email`, `FlatNumber`, `FullName`, `IsActive`, `IsOwner`, `Phone`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT `MemberId`
+FROM `Members`
+WHERE ROW_COUNT() = 1 AND `MemberId` = LAST_INSERT_ID();
+2026-07-15 23:20:54.463 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:20:54.467 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.Create (GACHSLApi) in 374.0811ms
+2026-07-15 23:20:54.472 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.Create (GACHSLApi)'
+2026-07-15 23:20:54.475 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Members - 200 null application/json; charset=utf-8 414.1915ms
+2026-07-15 23:20:54.483 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Members - null null
+2026-07-15 23:20:54.491 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:20:54.495 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-15 23:20:54.497 +05:30 [INF] Route matched with {action = "GetAll", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-15 23:20:54.532 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MemberId`, `m`.`CreatedOn`, `m`.`Email`, `m`.`FlatNumber`, `m`.`FullName`, `m`.`IsActive`, `m`.`IsOwner`, `m`.`Phone`, `m`.`UserId`
+FROM `Members` AS `m`
+2026-07-15 23:20:54.541 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Member.MemberDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:20:54.545 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi) in 43.7204ms
+2026-07-15 23:20:54.547 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-15 23:20:54.550 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Members - 200 null application/json; charset=utf-8 66.6192ms
+2026-07-15 23:21:00.225 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - null null
+2026-07-15 23:21:00.233 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:21:00.235 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - 204 null null 10.4862ms
+2026-07-15 23:21:00.245 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - null null
+2026-07-15 23:21:00.252 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:21:00.255 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-15 23:21:00.259 +05:30 [INF] Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller GACHSLApi.Controllers.DashboardController (GACHSLApi).
+2026-07-15 23:21:00.293 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+2026-07-15 23:21:00.306 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsOwner`
+2026-07-15 23:21:00.317 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsOwner`)
+2026-07-15 23:21:00.328 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsActive`
+2026-07-15 23:21:00.339 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsActive`)
+2026-07-15 23:21:00.344 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Dashboard.DashboardSummaryDto'.
+2026-07-15 23:21:00.346 +05:30 [INF] Executed action GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi) in 83.9756ms
+2026-07-15 23:21:00.349 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-15 23:21:00.352 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - 200 null application/json; charset=utf-8 107.3898ms
+2026-07-15 23:21:04.736 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Members - null null
+2026-07-15 23:21:04.744 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:21:04.747 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Members - 204 null null 10.8077ms
+2026-07-15 23:21:04.755 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Members - null null
+2026-07-15 23:21:04.760 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:21:04.762 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-15 23:21:04.765 +05:30 [INF] Route matched with {action = "GetAll", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-15 23:21:04.796 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MemberId`, `m`.`CreatedOn`, `m`.`Email`, `m`.`FlatNumber`, `m`.`FullName`, `m`.`IsActive`, `m`.`IsOwner`, `m`.`Phone`, `m`.`UserId`
+FROM `Members` AS `m`
+2026-07-15 23:21:04.803 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Member.MemberDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:21:04.808 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi) in 37.2488ms
+2026-07-15 23:21:04.811 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-15 23:21:04.813 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Members - 200 null application/json; charset=utf-8 57.722ms
+2026-07-15 23:21:12.470 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Members/171 - null null
+2026-07-15 23:21:12.483 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:21:12.486 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Members/171 - 204 null null 15.8351ms
+2026-07-15 23:21:12.498 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5278/api/Members/171 - null null
+2026-07-15 23:21:12.505 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:21:12.509 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.Delete (GACHSLApi)'
+2026-07-15 23:21:12.523 +05:30 [INF] Route matched with {action = "Delete", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-15 23:21:12.566 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MemberId`, `m`.`CreatedOn`, `m`.`Email`, `m`.`FlatNumber`, `m`.`FullName`, `m`.`IsActive`, `m`.`IsOwner`, `m`.`Phone`, `m`.`UserId`
+FROM `Members` AS `m`
+WHERE `m`.`MemberId` = @__id_0
+LIMIT 1
+2026-07-15 23:21:12.595 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+DELETE FROM `Members`
+WHERE `MemberId` = @p0;
+SELECT ROW_COUNT();
+2026-07-15 23:21:12.604 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:21:12.611 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.Delete (GACHSLApi) in 80.2536ms
+2026-07-15 23:21:12.615 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.Delete (GACHSLApi)'
+2026-07-15 23:21:12.619 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5278/api/Members/171 - 200 null application/json; charset=utf-8 120.9833ms
+2026-07-15 23:21:12.628 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Members - null null
+2026-07-15 23:21:12.636 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:21:12.638 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Members - 204 null null 9.5967ms
+2026-07-15 23:21:12.648 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Members - null null
+2026-07-15 23:21:12.655 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:21:12.658 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-15 23:21:12.660 +05:30 [INF] Route matched with {action = "GetAll", controller = "Members"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MembersController (GACHSLApi).
+2026-07-15 23:21:12.687 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MemberId`, `m`.`CreatedOn`, `m`.`Email`, `m`.`FlatNumber`, `m`.`FullName`, `m`.`IsActive`, `m`.`IsOwner`, `m`.`Phone`, `m`.`UserId`
+FROM `Members` AS `m`
+2026-07-15 23:21:12.695 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Member.MemberDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:21:12.698 +05:30 [INF] Executed action GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi) in 31.917ms
+2026-07-15 23:21:12.702 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MembersController.GetAll (GACHSLApi)'
+2026-07-15 23:21:12.704 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Members - 200 null application/json; charset=utf-8 56.7479ms
+2026-07-15 23:21:14.070 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - null null
+2026-07-15 23:21:14.077 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:21:14.078 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/dashboard/summary - 204 null null 8.866ms
+2026-07-15 23:21:14.088 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - null null
+2026-07-15 23:21:14.093 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:21:14.096 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-15 23:21:14.100 +05:30 [INF] Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller GACHSLApi.Controllers.DashboardController (GACHSLApi).
+2026-07-15 23:21:14.134 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+2026-07-15 23:21:14.146 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsOwner`
+2026-07-15 23:21:14.157 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsOwner`)
+2026-07-15 23:21:14.169 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE `m`.`IsActive`
+2026-07-15 23:21:14.179 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Members` AS `m`
+WHERE NOT (`m`.`IsActive`)
+2026-07-15 23:21:14.186 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.DTOs.Dashboard.DashboardSummaryDto'.
+2026-07-15 23:21:14.188 +05:30 [INF] Executed action GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi) in 81.6078ms
+2026-07-15 23:21:14.190 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DashboardController.GetSummary (GACHSLApi)'
+2026-07-15 23:21:14.192 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/dashboard/summary - 200 null application/json; charset=utf-8 104.2192ms
+2026-07-15 23:21:21.540 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Documents - null null
+2026-07-15 23:21:21.547 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:21:21.550 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Documents - 204 null null 10.8042ms
+2026-07-15 23:21:21.557 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Documents - null null
+2026-07-15 23:21:21.568 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:21:21.571 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 23:21:21.575 +05:30 [INF] Route matched with {action = "GetAll", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(GACHSLApi.DTOs.Document.DocumentQueryDto) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-15 23:21:21.772 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `d`.`DocumentId`, `d`.`CategoryId`, `d`.`CreatedBy`, `d`.`CreatedOn`, `d`.`Description`, `d`.`DisplayOrder`, `d`.`FileExtension`, `d`.`FileName`, `d`.`FileSize`, `d`.`GoogleDriveFileId`, `d`.`IsActive`, `d`.`IsPublished`, `d`.`MimeType`, `d`.`PublishDate`, `d`.`Title`, `d`.`UpdatedOn`, `d0`.`CategoryId`, `d0`.`CategoryName`, `d0`.`IsActive`
+FROM `Documents` AS `d`
+INNER JOIN `DocumentCategories` AS `d0` ON `d`.`CategoryId` = `d0`.`CategoryId`
+ORDER BY `d`.`DisplayOrder`, `d`.`PublishDate` DESC
+2026-07-15 23:21:21.787 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Document.DocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:21:21.794 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi) in 212.044ms
+2026-07-15 23:21:21.800 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 23:21:21.806 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Documents - 200 null application/json; charset=utf-8 248.4068ms
+2026-07-15 23:21:24.850 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/DocumentCategories - null null
+2026-07-15 23:21:24.855 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:21:24.857 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/DocumentCategories - 204 null null 6.9412ms
+2026-07-15 23:21:24.864 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/DocumentCategories - null null
+2026-07-15 23:21:24.874 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:21:24.876 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentCategoriesController.Get (GACHSLApi)'
+2026-07-15 23:21:24.879 +05:30 [INF] Route matched with {action = "Get", controller = "DocumentCategories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get() on controller GACHSLApi.Controllers.DocumentCategoriesController (GACHSLApi).
+2026-07-15 23:21:24.917 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `d`.`CategoryId`, `d`.`CategoryName`, `d`.`IsActive`
+FROM `DocumentCategories` AS `d`
+WHERE `d`.`IsActive`
+ORDER BY `d`.`CategoryName`
+2026-07-15 23:21:24.924 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GACHSLApi.Entities.DocumentCategory, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-15 23:21:24.928 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentCategoriesController.Get (GACHSLApi) in 45.0913ms
+2026-07-15 23:21:24.932 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentCategoriesController.Get (GACHSLApi)'
+2026-07-15 23:21:24.935 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/DocumentCategories - 200 null application/json; charset=utf-8 71.267ms
+2026-07-15 23:21:43.973 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Documents - null null
+2026-07-15 23:21:43.979 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:21:43.981 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Documents - 204 null null 8.422ms
+2026-07-15 23:21:43.995 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/Documents - multipart/form-data; boundary=----WebKitFormBoundaryym3mAmMDU0BR1hZr 172969
+2026-07-15 23:21:44.003 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:21:44.006 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.Create (GACHSLApi)'
+2026-07-15 23:21:44.019 +05:30 [INF] Route matched with {action = "Create", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(GACHSLApi.DTOs.Document.CreateDocumentDto) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-15 23:21:46.929 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = Int64), @p8='?' (Size = 4000), @p9='?' (DbType = Boolean), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime), @p13='?' (Size = 4000), @p14='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Documents` (`CategoryId`, `CreatedBy`, `CreatedOn`, `Description`, `DisplayOrder`, `FileExtension`, `FileName`, `FileSize`, `GoogleDriveFileId`, `IsActive`, `IsPublished`, `MimeType`, `PublishDate`, `Title`, `UpdatedOn`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+SELECT `DocumentId`
+FROM `Documents`
+WHERE ROW_COUNT() = 1 AND `DocumentId` = LAST_INSERT_ID();
+2026-07-15 23:21:46.947 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:21:46.952 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.Create (GACHSLApi) in 2926.4086ms
+2026-07-15 23:21:46.956 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.Create (GACHSLApi)'
+2026-07-15 23:21:46.960 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/Documents - 200 null application/json; charset=utf-8 2965.1233ms
+2026-07-15 23:21:46.970 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Documents - null null
+2026-07-15 23:21:46.976 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:21:46.978 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 23:21:46.981 +05:30 [INF] Route matched with {action = "GetAll", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(GACHSLApi.DTOs.Document.DocumentQueryDto) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-15 23:21:47.164 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `d`.`DocumentId`, `d`.`CategoryId`, `d`.`CreatedBy`, `d`.`CreatedOn`, `d`.`Description`, `d`.`DisplayOrder`, `d`.`FileExtension`, `d`.`FileName`, `d`.`FileSize`, `d`.`GoogleDriveFileId`, `d`.`IsActive`, `d`.`IsPublished`, `d`.`MimeType`, `d`.`PublishDate`, `d`.`Title`, `d`.`UpdatedOn`, `d0`.`CategoryId`, `d0`.`CategoryName`, `d0`.`IsActive`
+FROM `Documents` AS `d`
+INNER JOIN `DocumentCategories` AS `d0` ON `d`.`CategoryId` = `d0`.`CategoryId`
+ORDER BY `d`.`DisplayOrder`, `d`.`PublishDate` DESC
+2026-07-15 23:21:47.172 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Document.DocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:21:47.176 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi) in 190.9553ms
+2026-07-15 23:21:47.181 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 23:21:47.185 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Documents - 200 null application/json; charset=utf-8 215.141ms
+2026-07-15 23:22:01.462 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/DocumentCategories - null null
+2026-07-15 23:22:01.468 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Documents/8 - null null
+2026-07-15 23:22:01.471 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:22:01.478 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:22:01.480 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/DocumentCategories - 204 null null 18.9341ms
+2026-07-15 23:22:01.482 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Documents/8 - 204 null null 15.2999ms
+2026-07-15 23:22:01.489 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/DocumentCategories - null null
+2026-07-15 23:22:01.498 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Documents/8 - null null
+2026-07-15 23:22:01.503 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:22:01.511 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:22:01.512 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentCategoriesController.Get (GACHSLApi)'
+2026-07-15 23:22:01.514 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.GetById (GACHSLApi)'
+2026-07-15 23:22:01.517 +05:30 [INF] Route matched with {action = "Get", controller = "DocumentCategories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get() on controller GACHSLApi.Controllers.DocumentCategoriesController (GACHSLApi).
+2026-07-15 23:22:01.519 +05:30 [INF] Route matched with {action = "GetById", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int32) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-15 23:22:01.559 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `d`.`CategoryId`, `d`.`CategoryName`, `d`.`IsActive`
+FROM `DocumentCategories` AS `d`
+WHERE `d`.`IsActive`
+ORDER BY `d`.`CategoryName`
+2026-07-15 23:22:01.572 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GACHSLApi.Entities.DocumentCategory, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-15 23:22:01.576 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentCategoriesController.Get (GACHSLApi) in 51.8214ms
+2026-07-15 23:22:01.580 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentCategoriesController.Get (GACHSLApi)'
+2026-07-15 23:22:01.584 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/DocumentCategories - 200 null application/json; charset=utf-8 95.118ms
+2026-07-15 23:22:01.715 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `d`.`DocumentId`, `d`.`CategoryId`, `d`.`CreatedBy`, `d`.`CreatedOn`, `d`.`Description`, `d`.`DisplayOrder`, `d`.`FileExtension`, `d`.`FileName`, `d`.`FileSize`, `d`.`GoogleDriveFileId`, `d`.`IsActive`, `d`.`IsPublished`, `d`.`MimeType`, `d`.`PublishDate`, `d`.`Title`, `d`.`UpdatedOn`, `d0`.`CategoryId`, `d0`.`CategoryName`, `d0`.`IsActive`
+FROM `Documents` AS `d`
+INNER JOIN `DocumentCategories` AS `d0` ON `d`.`CategoryId` = `d0`.`CategoryId`
+WHERE `d`.`DocumentId` = @__id_0
+LIMIT 1
+2026-07-15 23:22:01.726 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[GACHSLApi.DTOs.Document.DocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-15 23:22:01.730 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.GetById (GACHSLApi) in 198.8606ms
+2026-07-15 23:22:01.736 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.GetById (GACHSLApi)'
+2026-07-15 23:22:01.740 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Documents/8 - 200 null application/json; charset=utf-8 242.2513ms
+2026-07-15 23:22:08.773 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Documents - null null
+2026-07-15 23:22:08.778 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:22:08.782 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Documents - 204 null null 8.8239ms
+2026-07-15 23:22:08.793 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Documents - null null
+2026-07-15 23:22:08.801 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:22:08.803 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 23:22:08.806 +05:30 [INF] Route matched with {action = "GetAll", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(GACHSLApi.DTOs.Document.DocumentQueryDto) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-15 23:22:09.015 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `d`.`DocumentId`, `d`.`CategoryId`, `d`.`CreatedBy`, `d`.`CreatedOn`, `d`.`Description`, `d`.`DisplayOrder`, `d`.`FileExtension`, `d`.`FileName`, `d`.`FileSize`, `d`.`GoogleDriveFileId`, `d`.`IsActive`, `d`.`IsPublished`, `d`.`MimeType`, `d`.`PublishDate`, `d`.`Title`, `d`.`UpdatedOn`, `d0`.`CategoryId`, `d0`.`CategoryName`, `d0`.`IsActive`
+FROM `Documents` AS `d`
+INNER JOIN `DocumentCategories` AS `d0` ON `d`.`CategoryId` = `d0`.`CategoryId`
+ORDER BY `d`.`DisplayOrder`, `d`.`PublishDate` DESC
+2026-07-15 23:22:09.026 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Document.DocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:22:09.034 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi) in 221.1966ms
+2026-07-15 23:22:09.040 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 23:22:09.046 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Documents - 200 null application/json; charset=utf-8 253.2977ms
+2026-07-15 23:22:13.314 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Documents/8 - null null
+2026-07-15 23:22:13.322 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:22:13.325 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Documents/8 - 204 null null 10.8752ms
+2026-07-15 23:22:13.337 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5278/api/Documents/8 - null null
+2026-07-15 23:22:13.343 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:22:13.346 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.Delete (GACHSLApi)'
+2026-07-15 23:22:13.353 +05:30 [INF] Route matched with {action = "Delete", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-15 23:22:13.559 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `d`.`DocumentId`, `d`.`CategoryId`, `d`.`CreatedBy`, `d`.`CreatedOn`, `d`.`Description`, `d`.`DisplayOrder`, `d`.`FileExtension`, `d`.`FileName`, `d`.`FileSize`, `d`.`GoogleDriveFileId`, `d`.`IsActive`, `d`.`IsPublished`, `d`.`MimeType`, `d`.`PublishDate`, `d`.`Title`, `d`.`UpdatedOn`, `d0`.`CategoryId`, `d0`.`CategoryName`, `d0`.`IsActive`
+FROM `Documents` AS `d`
+INNER JOIN `DocumentCategories` AS `d0` ON `d`.`CategoryId` = `d0`.`CategoryId`
+WHERE `d`.`DocumentId` = @__id_0
+LIMIT 1
+2026-07-15 23:22:14.367 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+DELETE FROM `Documents`
+WHERE `DocumentId` = @p0;
+SELECT ROW_COUNT();
+2026-07-15 23:22:14.375 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:22:14.377 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.Delete (GACHSLApi) in 1017.9732ms
+2026-07-15 23:22:14.382 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.Delete (GACHSLApi)'
+2026-07-15 23:22:14.386 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5278/api/Documents/8 - 200 null application/json; charset=utf-8 1048.8894ms
+2026-07-15 23:22:14.400 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Documents - null null
+2026-07-15 23:22:14.407 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:22:14.410 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Documents - 204 null null 10.5854ms
+2026-07-15 23:22:14.420 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Documents - null null
+2026-07-15 23:22:14.428 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:22:14.430 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 23:22:14.433 +05:30 [INF] Route matched with {action = "GetAll", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(GACHSLApi.DTOs.Document.DocumentQueryDto) on controller GACHSLApi.Controllers.DocumentsController (GACHSLApi).
+2026-07-15 23:22:14.624 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `d`.`DocumentId`, `d`.`CategoryId`, `d`.`CreatedBy`, `d`.`CreatedOn`, `d`.`Description`, `d`.`DisplayOrder`, `d`.`FileExtension`, `d`.`FileName`, `d`.`FileSize`, `d`.`GoogleDriveFileId`, `d`.`IsActive`, `d`.`IsPublished`, `d`.`MimeType`, `d`.`PublishDate`, `d`.`Title`, `d`.`UpdatedOn`, `d0`.`CategoryId`, `d0`.`CategoryName`, `d0`.`IsActive`
+FROM `Documents` AS `d`
+INNER JOIN `DocumentCategories` AS `d0` ON `d`.`CategoryId` = `d0`.`CategoryId`
+ORDER BY `d`.`DisplayOrder`, `d`.`PublishDate` DESC
+2026-07-15 23:22:14.647 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Document.DocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:22:14.656 +05:30 [INF] Executed action GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi) in 217.9791ms
+2026-07-15 23:22:14.663 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.DocumentsController.GetAll (GACHSLApi)'
+2026-07-15 23:22:14.670 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Documents - 200 null application/json; charset=utf-8 250.1807ms
+2026-07-15 23:22:19.315 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - null null
+2026-07-15 23:22:19.321 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:22:19.324 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - 204 null null 9.0223ms
+2026-07-15 23:22:19.331 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Meetings - null null
+2026-07-15 23:22:19.339 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:22:19.341 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:22:19.343 +05:30 [INF] Route matched with {action = "GetAll", controller = "Meetings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MeetingsController (GACHSLApi).
+2026-07-15 23:22:19.379 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MeetingId`, `m`.`CreatedOn`, `m`.`Description`, `m`.`IsActive`, `m`.`MeetingDate`, `m`.`MeetingTime`, `m`.`MeetingTitle`, `m`.`MeetingType`, `m`.`Status`, `m`.`UpdatedOn`, `m`.`Venue`
+FROM `Meetings` AS `m`
+ORDER BY `m`.`MeetingDate` DESC, `m`.`MeetingTime` DESC
+2026-07-15 23:22:19.388 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Meeting.MeetingDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:22:19.392 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi) in 45.6365ms
+2026-07-15 23:22:19.397 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:22:19.401 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Meetings - 200 null application/json; charset=utf-8 69.7056ms
+2026-07-15 23:24:01.649 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - null null
+2026-07-15 23:24:01.656 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:24:01.658 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - 204 null null 9.4533ms
+2026-07-15 23:24:01.667 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Meetings - null null
+2026-07-15 23:24:01.674 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:24:01.676 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:24:01.678 +05:30 [INF] Route matched with {action = "GetAll", controller = "Meetings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MeetingsController (GACHSLApi).
+2026-07-15 23:24:01.720 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MeetingId`, `m`.`CreatedOn`, `m`.`Description`, `m`.`IsActive`, `m`.`MeetingDate`, `m`.`MeetingTime`, `m`.`MeetingTitle`, `m`.`MeetingType`, `m`.`Status`, `m`.`UpdatedOn`, `m`.`Venue`
+FROM `Meetings` AS `m`
+ORDER BY `m`.`MeetingDate` DESC, `m`.`MeetingTime` DESC
+2026-07-15 23:24:01.738 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Meeting.MeetingDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:24:01.744 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi) in 61.1305ms
+2026-07-15 23:24:01.750 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:24:01.756 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Meetings - 200 null application/json; charset=utf-8 88.4885ms
+2026-07-15 23:25:25.599 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - null null
+2026-07-15 23:25:25.612 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:25:25.615 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - 204 null null 16.075ms
+2026-07-15 23:25:25.628 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Meetings - null null
+2026-07-15 23:25:25.633 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:25:25.636 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:25:25.640 +05:30 [INF] Route matched with {action = "GetAll", controller = "Meetings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MeetingsController (GACHSLApi).
+2026-07-15 23:25:25.679 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MeetingId`, `m`.`CreatedOn`, `m`.`Description`, `m`.`IsActive`, `m`.`MeetingDate`, `m`.`MeetingTime`, `m`.`MeetingTitle`, `m`.`MeetingType`, `m`.`Status`, `m`.`UpdatedOn`, `m`.`Venue`
+FROM `Meetings` AS `m`
+ORDER BY `m`.`MeetingDate` DESC, `m`.`MeetingTime` DESC
+2026-07-15 23:25:25.695 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Meeting.MeetingDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:25:25.700 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi) in 52.8712ms
+2026-07-15 23:25:25.703 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:25:25.706 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Meetings - 200 null application/json; charset=utf-8 77.5794ms
+2026-07-15 23:26:37.431 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - null null
+2026-07-15 23:26:37.439 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:26:37.442 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - 204 null null 10.779ms
+2026-07-15 23:26:37.455 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Meetings - null null
+2026-07-15 23:26:37.464 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:26:37.467 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:26:37.471 +05:30 [INF] Route matched with {action = "GetAll", controller = "Meetings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MeetingsController (GACHSLApi).
+2026-07-15 23:26:37.532 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MeetingId`, `m`.`CreatedOn`, `m`.`Description`, `m`.`IsActive`, `m`.`MeetingDate`, `m`.`MeetingTime`, `m`.`MeetingTitle`, `m`.`MeetingType`, `m`.`Status`, `m`.`UpdatedOn`, `m`.`Venue`
+FROM `Meetings` AS `m`
+ORDER BY `m`.`MeetingDate` DESC, `m`.`MeetingTime` DESC
+2026-07-15 23:26:37.545 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Meeting.MeetingDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:26:37.550 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi) in 72.8679ms
+2026-07-15 23:26:37.554 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:26:37.556 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Meetings - 200 null application/json; charset=utf-8 100.9171ms
+2026-07-15 23:26:40.877 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/1 - null null
+2026-07-15 23:26:40.884 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:26:40.886 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/1 - 204 null null 9.1216ms
+2026-07-15 23:26:40.893 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/1 - null null
+2026-07-15 23:26:40.901 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:26:40.904 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:26:40.908 +05:30 [INF] Route matched with {action = "GetByMeeting", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByMeeting(Int32) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:26:41.104 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__meetingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`CreatedBy`, `m`.`CreatedOn`, `m`.`Description`, `m`.`DisplayOrder`, `m`.`FileName`, `m`.`FileSize`, `m`.`GoogleDriveFileId`, `m`.`IsActive`, `m`.`MeetingId`, `m`.`MimeType`, `m`.`OriginalFileName`, `m`.`UpdatedBy`, `m`.`UpdatedOn`
+FROM `MeetingDocuments` AS `m`
+WHERE `m`.`MeetingId` = @__meetingId_0
+ORDER BY `m`.`DisplayOrder`, `m`.`CreatedOn` DESC
+2026-07-15 23:26:41.113 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.MeetingDocument.MeetingDocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:26:41.116 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi) in 203.3826ms
+2026-07-15 23:26:41.119 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:26:41.122 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/1 - 200 null application/json; charset=utf-8 228.8452ms
+2026-07-15 23:32:57.852 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - null null
+2026-07-15 23:32:57.866 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:32:57.868 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - 204 null null 16.3758ms
+2026-07-15 23:32:57.876 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Meetings - null null
+2026-07-15 23:32:57.881 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:32:57.885 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:32:57.888 +05:30 [INF] Route matched with {action = "GetAll", controller = "Meetings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MeetingsController (GACHSLApi).
+2026-07-15 23:32:57.945 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MeetingId`, `m`.`CreatedOn`, `m`.`Description`, `m`.`IsActive`, `m`.`MeetingDate`, `m`.`MeetingTime`, `m`.`MeetingTitle`, `m`.`MeetingType`, `m`.`Status`, `m`.`UpdatedOn`, `m`.`Venue`
+FROM `Meetings` AS `m`
+ORDER BY `m`.`MeetingDate` DESC, `m`.`MeetingTime` DESC
+2026-07-15 23:32:57.950 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Meeting.MeetingDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:32:57.953 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi) in 60.916ms
+2026-07-15 23:32:57.956 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:32:57.960 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Meetings - 200 null application/json; charset=utf-8 84.2056ms
+2026-07-15 23:33:02.712 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Meetings - null null
+2026-07-15 23:33:02.719 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:33:02.722 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:33:02.725 +05:30 [INF] Route matched with {action = "GetAll", controller = "Meetings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MeetingsController (GACHSLApi).
+2026-07-15 23:33:02.764 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MeetingId`, `m`.`CreatedOn`, `m`.`Description`, `m`.`IsActive`, `m`.`MeetingDate`, `m`.`MeetingTime`, `m`.`MeetingTitle`, `m`.`MeetingType`, `m`.`Status`, `m`.`UpdatedOn`, `m`.`Venue`
+FROM `Meetings` AS `m`
+ORDER BY `m`.`MeetingDate` DESC, `m`.`MeetingTime` DESC
+2026-07-15 23:33:02.781 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Meeting.MeetingDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:33:02.788 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi) in 59.663ms
+2026-07-15 23:33:02.792 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:33:02.796 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Meetings - 200 null application/json; charset=utf-8 84.0389ms
+2026-07-15 23:33:04.779 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/3 - null null
+2026-07-15 23:33:04.787 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:33:04.790 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/3 - 204 null null 11.2404ms
+2026-07-15 23:33:04.801 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/3 - null null
+2026-07-15 23:33:04.810 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:33:04.813 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:33:04.816 +05:30 [INF] Route matched with {action = "GetByMeeting", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByMeeting(Int32) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:33:05.012 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__meetingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`CreatedBy`, `m`.`CreatedOn`, `m`.`Description`, `m`.`DisplayOrder`, `m`.`FileName`, `m`.`FileSize`, `m`.`GoogleDriveFileId`, `m`.`IsActive`, `m`.`MeetingId`, `m`.`MimeType`, `m`.`OriginalFileName`, `m`.`UpdatedBy`, `m`.`UpdatedOn`
+FROM `MeetingDocuments` AS `m`
+WHERE `m`.`MeetingId` = @__meetingId_0
+ORDER BY `m`.`DisplayOrder`, `m`.`CreatedOn` DESC
+2026-07-15 23:33:05.025 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.MeetingDocument.MeetingDocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:33:05.028 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi) in 206.8262ms
+2026-07-15 23:33:05.032 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:33:05.037 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/3 - 200 null application/json; charset=utf-8 236.2836ms
+2026-07-15 23:33:10.130 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/1 - null null
+2026-07-15 23:33:10.138 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:33:10.141 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/1 - 204 null null 10.5486ms
+2026-07-15 23:33:10.150 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/1 - null null
+2026-07-15 23:33:10.158 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:33:10.162 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:33:10.166 +05:30 [INF] Route matched with {action = "GetByMeeting", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByMeeting(Int32) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:33:10.356 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@__meetingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`CreatedBy`, `m`.`CreatedOn`, `m`.`Description`, `m`.`DisplayOrder`, `m`.`FileName`, `m`.`FileSize`, `m`.`GoogleDriveFileId`, `m`.`IsActive`, `m`.`MeetingId`, `m`.`MimeType`, `m`.`OriginalFileName`, `m`.`UpdatedBy`, `m`.`UpdatedOn`
+FROM `MeetingDocuments` AS `m`
+WHERE `m`.`MeetingId` = @__meetingId_0
+ORDER BY `m`.`DisplayOrder`, `m`.`CreatedOn` DESC
+2026-07-15 23:33:10.364 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.MeetingDocument.MeetingDocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:33:10.369 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi) in 195.0772ms
+2026-07-15 23:33:10.373 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:33:10.375 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/1 - 200 null application/json; charset=utf-8 225.153ms
+2026-07-15 23:34:11.078 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/1 - null null
+2026-07-15 23:34:11.089 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:34:11.091 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/1 - 204 null null 12.7491ms
+2026-07-15 23:34:11.108 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/1 - null null
+2026-07-15 23:34:11.116 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:34:11.119 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:34:11.123 +05:30 [INF] Route matched with {action = "GetByMeeting", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByMeeting(Int32) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:34:11.371 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@__meetingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`CreatedBy`, `m`.`CreatedOn`, `m`.`Description`, `m`.`DisplayOrder`, `m`.`FileName`, `m`.`FileSize`, `m`.`GoogleDriveFileId`, `m`.`IsActive`, `m`.`MeetingId`, `m`.`MimeType`, `m`.`OriginalFileName`, `m`.`UpdatedBy`, `m`.`UpdatedOn`
+FROM `MeetingDocuments` AS `m`
+WHERE `m`.`MeetingId` = @__meetingId_0
+ORDER BY `m`.`DisplayOrder`, `m`.`CreatedOn` DESC
+2026-07-15 23:34:11.385 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.MeetingDocument.MeetingDocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:34:11.389 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi) in 259.6628ms
+2026-07-15 23:34:11.394 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:34:11.398 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/1 - 200 null application/json; charset=utf-8 289.4018ms
+2026-07-15 23:35:29.528 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - null null
+2026-07-15 23:35:29.538 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:35:29.541 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - 204 null null 13.7808ms
+2026-07-15 23:35:29.561 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Meetings - null null
+2026-07-15 23:35:29.574 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:35:29.578 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:35:29.581 +05:30 [INF] Route matched with {action = "GetAll", controller = "Meetings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MeetingsController (GACHSLApi).
+2026-07-15 23:35:29.628 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MeetingId`, `m`.`CreatedOn`, `m`.`Description`, `m`.`IsActive`, `m`.`MeetingDate`, `m`.`MeetingTime`, `m`.`MeetingTitle`, `m`.`MeetingType`, `m`.`Status`, `m`.`UpdatedOn`, `m`.`Venue`
+FROM `Meetings` AS `m`
+ORDER BY `m`.`MeetingDate` DESC, `m`.`MeetingTime` DESC
+2026-07-15 23:35:29.646 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Meeting.MeetingDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:35:29.651 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi) in 63.3334ms
+2026-07-15 23:35:29.655 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:35:29.659 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Meetings - 200 null application/json; charset=utf-8 98.5049ms
+2026-07-15 23:35:35.727 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/1 - null null
+2026-07-15 23:35:35.735 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:35:35.738 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/1 - 204 null null 11.0247ms
+2026-07-15 23:35:35.748 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/1 - null null
+2026-07-15 23:35:35.753 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:35:35.757 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:35:35.760 +05:30 [INF] Route matched with {action = "GetByMeeting", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByMeeting(Int32) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:35:35.965 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__meetingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`CreatedBy`, `m`.`CreatedOn`, `m`.`Description`, `m`.`DisplayOrder`, `m`.`FileName`, `m`.`FileSize`, `m`.`GoogleDriveFileId`, `m`.`IsActive`, `m`.`MeetingId`, `m`.`MimeType`, `m`.`OriginalFileName`, `m`.`UpdatedBy`, `m`.`UpdatedOn`
+FROM `MeetingDocuments` AS `m`
+WHERE `m`.`MeetingId` = @__meetingId_0
+ORDER BY `m`.`DisplayOrder`, `m`.`CreatedOn` DESC
+2026-07-15 23:35:35.974 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.MeetingDocument.MeetingDocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:35:35.980 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi) in 213.0945ms
+2026-07-15 23:35:35.985 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:35:35.990 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/1 - 200 null application/json; charset=utf-8 241.5087ms
+2026-07-15 23:40:05.067 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - null null
+2026-07-15 23:40:05.074 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:40:05.076 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - 204 null null 8.7252ms
+2026-07-15 23:40:05.083 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Meetings - null null
+2026-07-15 23:40:05.093 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:40:05.095 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:40:05.099 +05:30 [INF] Route matched with {action = "GetAll", controller = "Meetings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MeetingsController (GACHSLApi).
+2026-07-15 23:40:05.226 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MeetingId`, `m`.`CreatedOn`, `m`.`Description`, `m`.`IsActive`, `m`.`MeetingDate`, `m`.`MeetingTime`, `m`.`MeetingTitle`, `m`.`MeetingType`, `m`.`Status`, `m`.`UpdatedOn`, `m`.`Venue`
+FROM `Meetings` AS `m`
+ORDER BY `m`.`MeetingDate` DESC, `m`.`MeetingTime` DESC
+2026-07-15 23:40:05.236 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Meeting.MeetingDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:40:05.240 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi) in 134.3622ms
+2026-07-15 23:40:05.244 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:40:05.247 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Meetings - 200 null application/json; charset=utf-8 164.4815ms
+2026-07-15 23:40:15.513 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - null null
+2026-07-15 23:40:15.522 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:40:15.524 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - 204 null null 10.5348ms
+2026-07-15 23:40:15.531 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Meetings - null null
+2026-07-15 23:40:15.540 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:40:15.542 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:40:15.544 +05:30 [INF] Route matched with {action = "GetAll", controller = "Meetings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MeetingsController (GACHSLApi).
+2026-07-15 23:40:15.585 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MeetingId`, `m`.`CreatedOn`, `m`.`Description`, `m`.`IsActive`, `m`.`MeetingDate`, `m`.`MeetingTime`, `m`.`MeetingTitle`, `m`.`MeetingType`, `m`.`Status`, `m`.`UpdatedOn`, `m`.`Venue`
+FROM `Meetings` AS `m`
+ORDER BY `m`.`MeetingDate` DESC, `m`.`MeetingTime` DESC
+2026-07-15 23:40:15.592 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Meeting.MeetingDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:40:15.594 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi) in 47.0221ms
+2026-07-15 23:40:15.597 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:40:15.598 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Meetings - 200 null application/json; charset=utf-8 67.8406ms
+2026-07-15 23:40:17.308 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/1 - null null
+2026-07-15 23:40:17.315 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:40:17.320 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/1 - 204 null null 9.5588ms
+2026-07-15 23:40:17.326 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/1 - null null
+2026-07-15 23:40:17.334 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:40:17.337 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:40:17.340 +05:30 [INF] Route matched with {action = "GetByMeeting", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByMeeting(Int32) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:40:17.574 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@__meetingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`CreatedBy`, `m`.`CreatedOn`, `m`.`Description`, `m`.`DisplayOrder`, `m`.`FileName`, `m`.`FileSize`, `m`.`GoogleDriveFileId`, `m`.`IsActive`, `m`.`MeetingId`, `m`.`MimeType`, `m`.`OriginalFileName`, `m`.`UpdatedBy`, `m`.`UpdatedOn`
+FROM `MeetingDocuments` AS `m`
+WHERE `m`.`MeetingId` = @__meetingId_0
+ORDER BY `m`.`DisplayOrder`, `m`.`CreatedOn` DESC
+2026-07-15 23:40:17.585 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.MeetingDocument.MeetingDocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:40:17.589 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi) in 245.0768ms
+2026-07-15 23:40:17.593 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:40:17.595 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/1 - 200 null application/json; charset=utf-8 269.7395ms
+2026-07-15 23:40:28.140 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/3 - null null
+2026-07-15 23:40:28.149 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:40:28.152 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/3 - 204 null null 11.2401ms
+2026-07-15 23:40:28.160 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/3 - null null
+2026-07-15 23:40:28.168 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:40:28.170 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:40:28.173 +05:30 [INF] Route matched with {action = "GetByMeeting", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByMeeting(Int32) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:40:28.349 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__meetingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`CreatedBy`, `m`.`CreatedOn`, `m`.`Description`, `m`.`DisplayOrder`, `m`.`FileName`, `m`.`FileSize`, `m`.`GoogleDriveFileId`, `m`.`IsActive`, `m`.`MeetingId`, `m`.`MimeType`, `m`.`OriginalFileName`, `m`.`UpdatedBy`, `m`.`UpdatedOn`
+FROM `MeetingDocuments` AS `m`
+WHERE `m`.`MeetingId` = @__meetingId_0
+ORDER BY `m`.`DisplayOrder`, `m`.`CreatedOn` DESC
+2026-07-15 23:40:28.359 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.MeetingDocument.MeetingDocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:40:28.363 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi) in 184.8541ms
+2026-07-15 23:40:28.368 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:40:28.371 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/3 - 200 null application/json; charset=utf-8 211.2618ms
+2026-07-15 23:42:17.925 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - null null
+2026-07-15 23:42:17.942 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:42:17.948 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - 204 null null 20.7988ms
+2026-07-15 23:42:17.972 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Meetings - null null
+2026-07-15 23:42:17.988 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:42:17.992 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:42:17.999 +05:30 [INF] Route matched with {action = "GetAll", controller = "Meetings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MeetingsController (GACHSLApi).
+2026-07-15 23:42:18.076 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MeetingId`, `m`.`CreatedOn`, `m`.`Description`, `m`.`IsActive`, `m`.`MeetingDate`, `m`.`MeetingTime`, `m`.`MeetingTitle`, `m`.`MeetingType`, `m`.`Status`, `m`.`UpdatedOn`, `m`.`Venue`
+FROM `Meetings` AS `m`
+ORDER BY `m`.`MeetingDate` DESC, `m`.`MeetingTime` DESC
+2026-07-15 23:42:18.084 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Meeting.MeetingDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:42:18.090 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi) in 82.4465ms
+2026-07-15 23:42:18.097 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:42:18.101 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Meetings - 200 null application/json; charset=utf-8 128.3885ms
+2026-07-15 23:42:24.311 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - null null
+2026-07-15 23:42:24.318 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:42:24.320 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - 204 null null 9.0455ms
+2026-07-15 23:42:24.332 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Meetings - null null
+2026-07-15 23:42:24.339 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:42:24.341 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:42:24.345 +05:30 [INF] Route matched with {action = "GetAll", controller = "Meetings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MeetingsController (GACHSLApi).
+2026-07-15 23:42:24.392 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MeetingId`, `m`.`CreatedOn`, `m`.`Description`, `m`.`IsActive`, `m`.`MeetingDate`, `m`.`MeetingTime`, `m`.`MeetingTitle`, `m`.`MeetingType`, `m`.`Status`, `m`.`UpdatedOn`, `m`.`Venue`
+FROM `Meetings` AS `m`
+ORDER BY `m`.`MeetingDate` DESC, `m`.`MeetingTime` DESC
+2026-07-15 23:42:24.413 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Meeting.MeetingDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:42:24.420 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi) in 69.266ms
+2026-07-15 23:42:24.425 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:42:24.428 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Meetings - 200 null application/json; charset=utf-8 96.6445ms
+2026-07-15 23:42:25.775 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/1 - null null
+2026-07-15 23:42:25.780 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:42:25.782 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/1 - 204 null null 7.3ms
+2026-07-15 23:42:25.787 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/1 - null null
+2026-07-15 23:42:25.795 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:42:25.798 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:42:25.801 +05:30 [INF] Route matched with {action = "GetByMeeting", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByMeeting(Int32) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:42:26.315 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__meetingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`CreatedBy`, `m`.`CreatedOn`, `m`.`Description`, `m`.`DisplayOrder`, `m`.`FileName`, `m`.`FileSize`, `m`.`GoogleDriveFileId`, `m`.`IsActive`, `m`.`MeetingId`, `m`.`MimeType`, `m`.`OriginalFileName`, `m`.`UpdatedBy`, `m`.`UpdatedOn`
+FROM `MeetingDocuments` AS `m`
+WHERE `m`.`MeetingId` = @__meetingId_0
+ORDER BY `m`.`DisplayOrder`, `m`.`CreatedOn` DESC
+2026-07-15 23:42:26.323 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.MeetingDocument.MeetingDocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:42:26.327 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi) in 520.181ms
+2026-07-15 23:42:26.331 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:42:26.333 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/1 - 200 null application/json; charset=utf-8 546.0784ms
+2026-07-15 23:42:41.145 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/1 - null null
+2026-07-15 23:42:41.157 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:42:41.159 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/1 - 204 null null 13.2243ms
+2026-07-15 23:42:41.166 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/1 - null null
+2026-07-15 23:42:41.172 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:42:41.175 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:42:41.178 +05:30 [INF] Route matched with {action = "GetByMeeting", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByMeeting(Int32) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:42:41.384 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__meetingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`CreatedBy`, `m`.`CreatedOn`, `m`.`Description`, `m`.`DisplayOrder`, `m`.`FileName`, `m`.`FileSize`, `m`.`GoogleDriveFileId`, `m`.`IsActive`, `m`.`MeetingId`, `m`.`MimeType`, `m`.`OriginalFileName`, `m`.`UpdatedBy`, `m`.`UpdatedOn`
+FROM `MeetingDocuments` AS `m`
+WHERE `m`.`MeetingId` = @__meetingId_0
+ORDER BY `m`.`DisplayOrder`, `m`.`CreatedOn` DESC
+2026-07-15 23:42:41.391 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.MeetingDocument.MeetingDocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:42:41.394 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi) in 211.8645ms
+2026-07-15 23:42:41.397 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:42:41.399 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/1 - 200 null application/json; charset=utf-8 232.8359ms
+2026-07-15 23:43:43.901 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - null null
+2026-07-15 23:43:43.908 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:43:43.911 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - 204 null null 10.7681ms
+2026-07-15 23:43:43.925 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Meetings - null null
+2026-07-15 23:43:43.935 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:43:43.939 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:43:43.944 +05:30 [INF] Route matched with {action = "GetAll", controller = "Meetings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MeetingsController (GACHSLApi).
+2026-07-15 23:43:43.989 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MeetingId`, `m`.`CreatedOn`, `m`.`Description`, `m`.`IsActive`, `m`.`MeetingDate`, `m`.`MeetingTime`, `m`.`MeetingTitle`, `m`.`MeetingType`, `m`.`Status`, `m`.`UpdatedOn`, `m`.`Venue`
+FROM `Meetings` AS `m`
+ORDER BY `m`.`MeetingDate` DESC, `m`.`MeetingTime` DESC
+2026-07-15 23:43:44.003 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Meeting.MeetingDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:43:44.006 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi) in 55.2719ms
+2026-07-15 23:43:44.009 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:43:44.011 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Meetings - 200 null application/json; charset=utf-8 86.3699ms
+2026-07-15 23:43:47.638 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/3 - null null
+2026-07-15 23:43:47.646 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:43:47.647 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/3 - 204 null null 9.0007ms
+2026-07-15 23:43:47.654 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/3 - null null
+2026-07-15 23:43:47.662 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:43:47.665 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:43:47.672 +05:30 [INF] Route matched with {action = "GetByMeeting", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByMeeting(Int32) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:43:47.831 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__meetingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`CreatedBy`, `m`.`CreatedOn`, `m`.`Description`, `m`.`DisplayOrder`, `m`.`FileName`, `m`.`FileSize`, `m`.`GoogleDriveFileId`, `m`.`IsActive`, `m`.`MeetingId`, `m`.`MimeType`, `m`.`OriginalFileName`, `m`.`UpdatedBy`, `m`.`UpdatedOn`
+FROM `MeetingDocuments` AS `m`
+WHERE `m`.`MeetingId` = @__meetingId_0
+ORDER BY `m`.`DisplayOrder`, `m`.`CreatedOn` DESC
+2026-07-15 23:43:47.838 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.MeetingDocument.MeetingDocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:43:47.843 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi) in 164.9943ms
+2026-07-15 23:43:47.847 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:43:47.849 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/3 - 200 null application/json; charset=utf-8 194.9767ms
+2026-07-15 23:45:25.593 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - null null
+2026-07-15 23:45:25.603 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:45:25.605 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - 204 null null 12.3761ms
+2026-07-15 23:45:25.617 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Meetings - null null
+2026-07-15 23:45:25.622 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:45:25.624 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:45:25.626 +05:30 [INF] Route matched with {action = "GetAll", controller = "Meetings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MeetingsController (GACHSLApi).
+2026-07-15 23:45:25.665 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MeetingId`, `m`.`CreatedOn`, `m`.`Description`, `m`.`IsActive`, `m`.`MeetingDate`, `m`.`MeetingTime`, `m`.`MeetingTitle`, `m`.`MeetingType`, `m`.`Status`, `m`.`UpdatedOn`, `m`.`Venue`
+FROM `Meetings` AS `m`
+ORDER BY `m`.`MeetingDate` DESC, `m`.`MeetingTime` DESC
+2026-07-15 23:45:25.676 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Meeting.MeetingDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:45:25.683 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi) in 52.531ms
+2026-07-15 23:45:25.687 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:45:25.690 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Meetings - 200 null application/json; charset=utf-8 73.6401ms
+2026-07-15 23:45:26.704 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/3 - null null
+2026-07-15 23:45:26.712 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:45:26.714 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/3 - 204 null null 10.3395ms
+2026-07-15 23:45:26.722 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/3 - null null
+2026-07-15 23:45:26.729 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:45:26.733 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:45:26.736 +05:30 [INF] Route matched with {action = "GetByMeeting", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByMeeting(Int32) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:45:26.980 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__meetingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`CreatedBy`, `m`.`CreatedOn`, `m`.`Description`, `m`.`DisplayOrder`, `m`.`FileName`, `m`.`FileSize`, `m`.`GoogleDriveFileId`, `m`.`IsActive`, `m`.`MeetingId`, `m`.`MimeType`, `m`.`OriginalFileName`, `m`.`UpdatedBy`, `m`.`UpdatedOn`
+FROM `MeetingDocuments` AS `m`
+WHERE `m`.`MeetingId` = @__meetingId_0
+ORDER BY `m`.`DisplayOrder`, `m`.`CreatedOn` DESC
+2026-07-15 23:45:26.988 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.MeetingDocument.MeetingDocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:45:26.993 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi) in 249.8463ms
+2026-07-15 23:45:26.998 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:45:27.001 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/3 - 200 null application/json; charset=utf-8 279.848ms
+2026-07-15 23:45:41.189 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/3 - null null
+2026-07-15 23:45:41.199 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:45:41.203 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/3 - 204 null null 14.1747ms
+2026-07-15 23:45:41.215 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5278/api/MeetingDocuments/3 - null null
+2026-07-15 23:45:41.223 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:45:41.226 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.Delete (GACHSLApi)'
+2026-07-15 23:45:41.229 +05:30 [INF] Route matched with {action = "Delete", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:45:41.416 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`CreatedBy`, `m`.`CreatedOn`, `m`.`Description`, `m`.`DisplayOrder`, `m`.`FileName`, `m`.`FileSize`, `m`.`GoogleDriveFileId`, `m`.`IsActive`, `m`.`MeetingId`, `m`.`MimeType`, `m`.`OriginalFileName`, `m`.`UpdatedBy`, `m`.`UpdatedOn`
+FROM `MeetingDocuments` AS `m`
+WHERE `m`.`Id` = @__id_0
+LIMIT 1
+2026-07-15 23:45:42.235 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+DELETE FROM `MeetingDocuments`
+WHERE `Id` = @p0;
+SELECT ROW_COUNT();
+2026-07-15 23:45:42.246 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:45:42.250 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.Delete (GACHSLApi) in 1016.2581ms
+2026-07-15 23:45:42.254 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.Delete (GACHSLApi)'
+2026-07-15 23:45:42.257 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5278/api/MeetingDocuments/3 - 200 null application/json; charset=utf-8 1041.7983ms
+2026-07-15 23:45:42.265 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/3 - null null
+2026-07-15 23:45:42.270 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:45:42.273 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/3 - 204 null null 7.6859ms
+2026-07-15 23:45:42.281 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/3 - null null
+2026-07-15 23:45:42.288 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:45:42.291 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:45:42.293 +05:30 [INF] Route matched with {action = "GetByMeeting", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByMeeting(Int32) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:45:42.566 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__meetingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`CreatedBy`, `m`.`CreatedOn`, `m`.`Description`, `m`.`DisplayOrder`, `m`.`FileName`, `m`.`FileSize`, `m`.`GoogleDriveFileId`, `m`.`IsActive`, `m`.`MeetingId`, `m`.`MimeType`, `m`.`OriginalFileName`, `m`.`UpdatedBy`, `m`.`UpdatedOn`
+FROM `MeetingDocuments` AS `m`
+WHERE `m`.`MeetingId` = @__meetingId_0
+ORDER BY `m`.`DisplayOrder`, `m`.`CreatedOn` DESC
+2026-07-15 23:45:42.575 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.MeetingDocument.MeetingDocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:45:42.581 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi) in 282.5856ms
+2026-07-15 23:45:42.585 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:45:42.591 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/3 - 200 null application/json; charset=utf-8 309.6081ms
+2026-07-15 23:45:47.933 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments - null null
+2026-07-15 23:45:47.939 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:45:47.941 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments - 204 null null 8.0802ms
+2026-07-15 23:45:47.947 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/MeetingDocuments - multipart/form-data; boundary=----WebKitFormBoundaryb4ByK8yxwmnMYBcV 172734
+2026-07-15 23:45:47.955 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:45:47.958 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.Create (GACHSLApi)'
+2026-07-15 23:45:47.961 +05:30 [INF] Route matched with {action = "Create", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(GACHSLApi.DTOs.MeetingDocument.CreateMeetingDocumentDto) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:45:50.888 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (DbType = Int64), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = Int32), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Int32), @p12='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `MeetingDocuments` (`CreatedBy`, `CreatedOn`, `Description`, `DisplayOrder`, `FileName`, `FileSize`, `GoogleDriveFileId`, `IsActive`, `MeetingId`, `MimeType`, `OriginalFileName`, `UpdatedBy`, `UpdatedOn`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+SELECT `Id`
+FROM `MeetingDocuments`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-07-15 23:45:50.908 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:45:50.912 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.Create (GACHSLApi) in 2948.7858ms
+2026-07-15 23:45:50.916 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.Create (GACHSLApi)'
+2026-07-15 23:45:50.920 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/MeetingDocuments - 200 null application/json; charset=utf-8 2972.964ms
+2026-07-15 23:45:50.930 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/3 - null null
+2026-07-15 23:45:50.936 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:45:50.938 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/3 - 204 null null 8.2663ms
+2026-07-15 23:45:50.948 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/3 - null null
+2026-07-15 23:45:50.957 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:45:50.961 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:45:50.964 +05:30 [INF] Route matched with {action = "GetByMeeting", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByMeeting(Int32) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:45:51.208 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__meetingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`CreatedBy`, `m`.`CreatedOn`, `m`.`Description`, `m`.`DisplayOrder`, `m`.`FileName`, `m`.`FileSize`, `m`.`GoogleDriveFileId`, `m`.`IsActive`, `m`.`MeetingId`, `m`.`MimeType`, `m`.`OriginalFileName`, `m`.`UpdatedBy`, `m`.`UpdatedOn`
+FROM `MeetingDocuments` AS `m`
+WHERE `m`.`MeetingId` = @__meetingId_0
+ORDER BY `m`.`DisplayOrder`, `m`.`CreatedOn` DESC
+2026-07-15 23:45:51.216 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.MeetingDocument.MeetingDocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:45:51.221 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi) in 251.5329ms
+2026-07-15 23:45:51.227 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:45:51.230 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/3 - 200 null application/json; charset=utf-8 281.9213ms
+2026-07-15 23:45:56.417 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments - null null
+2026-07-15 23:45:56.423 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:45:56.424 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments - 204 null null 6.541ms
+2026-07-15 23:45:56.429 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/MeetingDocuments - multipart/form-data; boundary=----WebKitFormBoundaryWayLXd0BHD9UOEPl 38747
+2026-07-15 23:45:56.433 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:45:56.435 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.Create (GACHSLApi)'
+2026-07-15 23:45:56.436 +05:30 [INF] Route matched with {action = "Create", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(GACHSLApi.DTOs.MeetingDocument.CreateMeetingDocumentDto) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:45:59.417 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (DbType = Int64), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = Int32), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Int32), @p12='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `MeetingDocuments` (`CreatedBy`, `CreatedOn`, `Description`, `DisplayOrder`, `FileName`, `FileSize`, `GoogleDriveFileId`, `IsActive`, `MeetingId`, `MimeType`, `OriginalFileName`, `UpdatedBy`, `UpdatedOn`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+SELECT `Id`
+FROM `MeetingDocuments`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-07-15 23:45:59.451 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:45:59.454 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.Create (GACHSLApi) in 3014.4312ms
+2026-07-15 23:45:59.459 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.Create (GACHSLApi)'
+2026-07-15 23:45:59.462 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/MeetingDocuments - 200 null application/json; charset=utf-8 3033.0693ms
+2026-07-15 23:45:59.470 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/3 - null null
+2026-07-15 23:45:59.478 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:45:59.480 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/3 - 204 null null 10.2633ms
+2026-07-15 23:45:59.492 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/3 - null null
+2026-07-15 23:45:59.499 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:45:59.502 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:45:59.505 +05:30 [INF] Route matched with {action = "GetByMeeting", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByMeeting(Int32) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:45:59.687 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__meetingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`CreatedBy`, `m`.`CreatedOn`, `m`.`Description`, `m`.`DisplayOrder`, `m`.`FileName`, `m`.`FileSize`, `m`.`GoogleDriveFileId`, `m`.`IsActive`, `m`.`MeetingId`, `m`.`MimeType`, `m`.`OriginalFileName`, `m`.`UpdatedBy`, `m`.`UpdatedOn`
+FROM `MeetingDocuments` AS `m`
+WHERE `m`.`MeetingId` = @__meetingId_0
+ORDER BY `m`.`DisplayOrder`, `m`.`CreatedOn` DESC
+2026-07-15 23:45:59.703 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.MeetingDocument.MeetingDocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:45:59.709 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi) in 196.9555ms
+2026-07-15 23:45:59.713 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:45:59.717 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/3 - 200 null application/json; charset=utf-8 224.6785ms
+2026-07-15 23:49:01.936 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - null null
+2026-07-15 23:49:01.952 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:49:01.954 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - 204 null null 17.9341ms
+2026-07-15 23:49:01.969 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Meetings - null null
+2026-07-15 23:49:01.978 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:49:01.981 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:49:01.984 +05:30 [INF] Route matched with {action = "GetAll", controller = "Meetings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MeetingsController (GACHSLApi).
+2026-07-15 23:49:02.050 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MeetingId`, `m`.`CreatedOn`, `m`.`Description`, `m`.`IsActive`, `m`.`MeetingDate`, `m`.`MeetingTime`, `m`.`MeetingTitle`, `m`.`MeetingType`, `m`.`Status`, `m`.`UpdatedOn`, `m`.`Venue`
+FROM `Meetings` AS `m`
+ORDER BY `m`.`MeetingDate` DESC, `m`.`MeetingTime` DESC
+2026-07-15 23:49:02.076 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Meeting.MeetingDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:49:02.084 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi) in 94.6644ms
+2026-07-15 23:49:02.093 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:49:02.096 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Meetings - 200 null application/json; charset=utf-8 126.508ms
+2026-07-15 23:50:23.326 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - null null
+2026-07-15 23:50:23.345 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:50:23.346 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - 204 null null 19.907ms
+2026-07-15 23:50:23.354 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Meetings - null null
+2026-07-15 23:50:23.359 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:50:23.362 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:50:23.366 +05:30 [INF] Route matched with {action = "GetAll", controller = "Meetings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MeetingsController (GACHSLApi).
+2026-07-15 23:50:23.419 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MeetingId`, `m`.`CreatedOn`, `m`.`Description`, `m`.`IsActive`, `m`.`MeetingDate`, `m`.`MeetingTime`, `m`.`MeetingTitle`, `m`.`MeetingType`, `m`.`Status`, `m`.`UpdatedOn`, `m`.`Venue`
+FROM `Meetings` AS `m`
+ORDER BY `m`.`MeetingDate` DESC, `m`.`MeetingTime` DESC
+2026-07-15 23:50:23.429 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Meeting.MeetingDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:50:23.432 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi) in 60.5776ms
+2026-07-15 23:50:23.438 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:50:23.440 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Meetings - 200 null application/json; charset=utf-8 86.8446ms
+2026-07-15 23:50:30.356 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - null null
+2026-07-15 23:50:30.361 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:50:30.363 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - 204 null null 6.5265ms
+2026-07-15 23:50:30.368 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Meetings - null null
+2026-07-15 23:50:30.373 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:50:30.374 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:50:30.376 +05:30 [INF] Route matched with {action = "GetAll", controller = "Meetings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MeetingsController (GACHSLApi).
+2026-07-15 23:50:30.412 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MeetingId`, `m`.`CreatedOn`, `m`.`Description`, `m`.`IsActive`, `m`.`MeetingDate`, `m`.`MeetingTime`, `m`.`MeetingTitle`, `m`.`MeetingType`, `m`.`Status`, `m`.`UpdatedOn`, `m`.`Venue`
+FROM `Meetings` AS `m`
+ORDER BY `m`.`MeetingDate` DESC, `m`.`MeetingTime` DESC
+2026-07-15 23:50:30.421 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Meeting.MeetingDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:50:30.427 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi) in 47.4156ms
+2026-07-15 23:50:30.430 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:50:30.433 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Meetings - 200 null application/json; charset=utf-8 65.2161ms
+2026-07-15 23:50:31.942 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/3 - null null
+2026-07-15 23:50:31.949 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:50:31.951 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/3 - 204 null null 8.8334ms
+2026-07-15 23:50:31.958 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/3 - null null
+2026-07-15 23:50:31.965 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:50:31.968 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:50:31.971 +05:30 [INF] Route matched with {action = "GetByMeeting", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByMeeting(Int32) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:50:32.183 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__meetingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`CreatedBy`, `m`.`CreatedOn`, `m`.`Description`, `m`.`DisplayOrder`, `m`.`FileName`, `m`.`FileSize`, `m`.`GoogleDriveFileId`, `m`.`IsActive`, `m`.`MeetingId`, `m`.`MimeType`, `m`.`OriginalFileName`, `m`.`UpdatedBy`, `m`.`UpdatedOn`
+FROM `MeetingDocuments` AS `m`
+WHERE `m`.`MeetingId` = @__meetingId_0
+ORDER BY `m`.`DisplayOrder`, `m`.`CreatedOn` DESC
+2026-07-15 23:50:32.192 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.MeetingDocument.MeetingDocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:50:32.196 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi) in 219.2593ms
+2026-07-15 23:50:32.200 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:50:32.204 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/3 - 200 null application/json; charset=utf-8 245.4742ms
+2026-07-15 23:50:46.800 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/5 - null null
+2026-07-15 23:50:46.820 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:50:46.822 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/5 - 204 null null 21.7195ms
+2026-07-15 23:50:46.831 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5278/api/MeetingDocuments/5 - null null
+2026-07-15 23:50:46.838 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:50:46.842 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.Delete (GACHSLApi)'
+2026-07-15 23:50:46.845 +05:30 [INF] Route matched with {action = "Delete", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:50:47.007 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`CreatedBy`, `m`.`CreatedOn`, `m`.`Description`, `m`.`DisplayOrder`, `m`.`FileName`, `m`.`FileSize`, `m`.`GoogleDriveFileId`, `m`.`IsActive`, `m`.`MeetingId`, `m`.`MimeType`, `m`.`OriginalFileName`, `m`.`UpdatedBy`, `m`.`UpdatedOn`
+FROM `MeetingDocuments` AS `m`
+WHERE `m`.`Id` = @__id_0
+LIMIT 1
+2026-07-15 23:50:47.665 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+DELETE FROM `MeetingDocuments`
+WHERE `Id` = @p0;
+SELECT ROW_COUNT();
+2026-07-15 23:50:47.671 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:50:47.675 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.Delete (GACHSLApi) in 824.2384ms
+2026-07-15 23:50:47.683 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.Delete (GACHSLApi)'
+2026-07-15 23:50:47.688 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5278/api/MeetingDocuments/5 - 200 null application/json; charset=utf-8 856.3425ms
+2026-07-15 23:50:47.703 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/3 - null null
+2026-07-15 23:50:47.729 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:50:47.734 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/3 - 204 null null 31.5547ms
+2026-07-15 23:50:47.749 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/3 - null null
+2026-07-15 23:50:47.759 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:50:47.762 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:50:47.764 +05:30 [INF] Route matched with {action = "GetByMeeting", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByMeeting(Int32) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:50:47.940 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__meetingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`CreatedBy`, `m`.`CreatedOn`, `m`.`Description`, `m`.`DisplayOrder`, `m`.`FileName`, `m`.`FileSize`, `m`.`GoogleDriveFileId`, `m`.`IsActive`, `m`.`MeetingId`, `m`.`MimeType`, `m`.`OriginalFileName`, `m`.`UpdatedBy`, `m`.`UpdatedOn`
+FROM `MeetingDocuments` AS `m`
+WHERE `m`.`MeetingId` = @__meetingId_0
+ORDER BY `m`.`DisplayOrder`, `m`.`CreatedOn` DESC
+2026-07-15 23:50:47.948 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.MeetingDocument.MeetingDocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:50:47.952 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi) in 184.2701ms
+2026-07-15 23:50:47.956 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:50:47.958 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/3 - 200 null application/json; charset=utf-8 208.8996ms
+2026-07-15 23:50:51.676 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/1 - null null
+2026-07-15 23:50:51.684 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:50:51.686 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/1 - 204 null null 9.6524ms
+2026-07-15 23:50:51.695 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/1 - null null
+2026-07-15 23:50:51.703 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:50:51.706 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:50:51.709 +05:30 [INF] Route matched with {action = "GetByMeeting", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByMeeting(Int32) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:50:51.911 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__meetingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`CreatedBy`, `m`.`CreatedOn`, `m`.`Description`, `m`.`DisplayOrder`, `m`.`FileName`, `m`.`FileSize`, `m`.`GoogleDriveFileId`, `m`.`IsActive`, `m`.`MeetingId`, `m`.`MimeType`, `m`.`OriginalFileName`, `m`.`UpdatedBy`, `m`.`UpdatedOn`
+FROM `MeetingDocuments` AS `m`
+WHERE `m`.`MeetingId` = @__meetingId_0
+ORDER BY `m`.`DisplayOrder`, `m`.`CreatedOn` DESC
+2026-07-15 23:50:51.926 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.MeetingDocument.MeetingDocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:50:51.931 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi) in 214.53ms
+2026-07-15 23:50:51.935 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:50:51.947 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/1 - 200 null application/json; charset=utf-8 252.5452ms
+2026-07-15 23:52:23.754 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - null null
+2026-07-15 23:52:23.759 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:52:23.760 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - 204 null null 6.7484ms
+2026-07-15 23:52:23.768 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Meetings - null null
+2026-07-15 23:52:23.773 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:52:23.775 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:52:23.778 +05:30 [INF] Route matched with {action = "GetAll", controller = "Meetings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MeetingsController (GACHSLApi).
+2026-07-15 23:52:23.819 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MeetingId`, `m`.`CreatedOn`, `m`.`Description`, `m`.`IsActive`, `m`.`MeetingDate`, `m`.`MeetingTime`, `m`.`MeetingTitle`, `m`.`MeetingType`, `m`.`Status`, `m`.`UpdatedOn`, `m`.`Venue`
+FROM `Meetings` AS `m`
+ORDER BY `m`.`MeetingDate` DESC, `m`.`MeetingTime` DESC
+2026-07-15 23:52:23.838 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Meeting.MeetingDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:52:23.844 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi) in 61.9304ms
+2026-07-15 23:52:23.847 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:52:23.851 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Meetings - 200 null application/json; charset=utf-8 83.2501ms
+2026-07-15 23:52:25.462 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/3 - null null
+2026-07-15 23:52:25.469 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:52:25.472 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/3 - 204 null null 10.9816ms
+2026-07-15 23:52:25.480 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/3 - null null
+2026-07-15 23:52:25.490 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:52:25.493 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:52:25.497 +05:30 [INF] Route matched with {action = "GetByMeeting", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByMeeting(Int32) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:52:25.686 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__meetingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`CreatedBy`, `m`.`CreatedOn`, `m`.`Description`, `m`.`DisplayOrder`, `m`.`FileName`, `m`.`FileSize`, `m`.`GoogleDriveFileId`, `m`.`IsActive`, `m`.`MeetingId`, `m`.`MimeType`, `m`.`OriginalFileName`, `m`.`UpdatedBy`, `m`.`UpdatedOn`
+FROM `MeetingDocuments` AS `m`
+WHERE `m`.`MeetingId` = @__meetingId_0
+ORDER BY `m`.`DisplayOrder`, `m`.`CreatedOn` DESC
+2026-07-15 23:52:25.694 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.MeetingDocument.MeetingDocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:52:25.701 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi) in 196.8444ms
+2026-07-15 23:52:25.705 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:52:25.708 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/3 - 200 null application/json; charset=utf-8 227.7904ms
+2026-07-15 23:52:29.977 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/2 - null null
+2026-07-15 23:52:29.983 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:52:29.987 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/2 - 204 null null 9.5ms
+2026-07-15 23:52:29.994 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/2 - null null
+2026-07-15 23:52:30.004 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:52:30.006 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:52:30.010 +05:30 [INF] Route matched with {action = "GetByMeeting", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByMeeting(Int32) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:52:30.211 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__meetingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`CreatedBy`, `m`.`CreatedOn`, `m`.`Description`, `m`.`DisplayOrder`, `m`.`FileName`, `m`.`FileSize`, `m`.`GoogleDriveFileId`, `m`.`IsActive`, `m`.`MeetingId`, `m`.`MimeType`, `m`.`OriginalFileName`, `m`.`UpdatedBy`, `m`.`UpdatedOn`
+FROM `MeetingDocuments` AS `m`
+WHERE `m`.`MeetingId` = @__meetingId_0
+ORDER BY `m`.`DisplayOrder`, `m`.`CreatedOn` DESC
+2026-07-15 23:52:30.222 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.MeetingDocument.MeetingDocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:52:30.227 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi) in 209.9516ms
+2026-07-15 23:52:30.231 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:52:30.234 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/2 - 200 null application/json; charset=utf-8 239.6587ms
+2026-07-15 23:52:37.388 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/1 - null null
+2026-07-15 23:52:37.396 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:52:37.399 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/1 - 204 null null 10.4087ms
+2026-07-15 23:52:37.408 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/1 - null null
+2026-07-15 23:52:37.416 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:52:37.419 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:52:37.423 +05:30 [INF] Route matched with {action = "GetByMeeting", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByMeeting(Int32) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:52:37.581 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__meetingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`CreatedBy`, `m`.`CreatedOn`, `m`.`Description`, `m`.`DisplayOrder`, `m`.`FileName`, `m`.`FileSize`, `m`.`GoogleDriveFileId`, `m`.`IsActive`, `m`.`MeetingId`, `m`.`MimeType`, `m`.`OriginalFileName`, `m`.`UpdatedBy`, `m`.`UpdatedOn`
+FROM `MeetingDocuments` AS `m`
+WHERE `m`.`MeetingId` = @__meetingId_0
+ORDER BY `m`.`DisplayOrder`, `m`.`CreatedOn` DESC
+2026-07-15 23:52:37.588 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.MeetingDocument.MeetingDocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:52:37.593 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi) in 165.0167ms
+2026-07-15 23:52:37.596 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:52:37.598 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/1 - 200 null application/json; charset=utf-8 190.2552ms
+2026-07-15 23:55:07.931 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments - null null
+2026-07-15 23:55:07.942 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:55:07.944 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments - 204 null null 12.5813ms
+2026-07-15 23:55:07.952 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/MeetingDocuments - multipart/form-data; boundary=----WebKitFormBoundaryoesCI62cLQPCOIlR 172734
+2026-07-15 23:55:07.959 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:55:07.963 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.Create (GACHSLApi)'
+2026-07-15 23:55:07.966 +05:30 [INF] Route matched with {action = "Create", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(GACHSLApi.DTOs.MeetingDocument.CreateMeetingDocumentDto) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:55:10.838 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (DbType = Int64), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = Int32), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Int32), @p12='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `MeetingDocuments` (`CreatedBy`, `CreatedOn`, `Description`, `DisplayOrder`, `FileName`, `FileSize`, `GoogleDriveFileId`, `IsActive`, `MeetingId`, `MimeType`, `OriginalFileName`, `UpdatedBy`, `UpdatedOn`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+SELECT `Id`
+FROM `MeetingDocuments`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-07-15 23:55:10.858 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:55:10.862 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.Create (GACHSLApi) in 2891.8423ms
+2026-07-15 23:55:10.866 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.Create (GACHSLApi)'
+2026-07-15 23:55:10.869 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/MeetingDocuments - 200 null application/json; charset=utf-8 2916.9313ms
+2026-07-15 23:55:10.876 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/1 - null null
+2026-07-15 23:55:10.883 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:55:10.886 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/1 - 204 null null 9.1342ms
+2026-07-15 23:55:10.892 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/1 - null null
+2026-07-15 23:55:10.898 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:55:10.900 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:55:10.903 +05:30 [INF] Route matched with {action = "GetByMeeting", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByMeeting(Int32) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:55:11.070 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__meetingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`CreatedBy`, `m`.`CreatedOn`, `m`.`Description`, `m`.`DisplayOrder`, `m`.`FileName`, `m`.`FileSize`, `m`.`GoogleDriveFileId`, `m`.`IsActive`, `m`.`MeetingId`, `m`.`MimeType`, `m`.`OriginalFileName`, `m`.`UpdatedBy`, `m`.`UpdatedOn`
+FROM `MeetingDocuments` AS `m`
+WHERE `m`.`MeetingId` = @__meetingId_0
+ORDER BY `m`.`DisplayOrder`, `m`.`CreatedOn` DESC
+2026-07-15 23:55:11.078 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.MeetingDocument.MeetingDocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:55:11.082 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi) in 173.7262ms
+2026-07-15 23:55:11.086 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:55:11.091 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/1 - 200 null application/json; charset=utf-8 199.4328ms
+2026-07-15 23:55:17.104 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments - null null
+2026-07-15 23:55:17.109 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:55:17.110 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments - 204 null null 7.9643ms
+2026-07-15 23:55:17.116 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5278/api/MeetingDocuments - multipart/form-data; boundary=----WebKitFormBoundaryfHxjFBMJ6yDfZMuR 589049
+2026-07-15 23:55:17.121 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:55:17.123 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.Create (GACHSLApi)'
+2026-07-15 23:55:17.126 +05:30 [INF] Route matched with {action = "Create", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(GACHSLApi.DTOs.MeetingDocument.CreateMeetingDocumentDto) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:55:20.296 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (DbType = Int64), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = Int32), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Int32), @p12='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `MeetingDocuments` (`CreatedBy`, `CreatedOn`, `Description`, `DisplayOrder`, `FileName`, `FileSize`, `GoogleDriveFileId`, `IsActive`, `MeetingId`, `MimeType`, `OriginalFileName`, `UpdatedBy`, `UpdatedOn`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+SELECT `Id`
+FROM `MeetingDocuments`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-07-15 23:55:20.311 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:55:20.316 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.Create (GACHSLApi) in 3187.3422ms
+2026-07-15 23:55:20.325 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.Create (GACHSLApi)'
+2026-07-15 23:55:20.334 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5278/api/MeetingDocuments - 200 null application/json; charset=utf-8 3217.5332ms
+2026-07-15 23:55:20.347 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/1 - null null
+2026-07-15 23:55:20.356 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:55:20.360 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/1 - 204 null null 12.5474ms
+2026-07-15 23:55:20.366 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/1 - null null
+2026-07-15 23:55:20.374 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:55:20.376 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:55:20.380 +05:30 [INF] Route matched with {action = "GetByMeeting", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByMeeting(Int32) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:55:20.546 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__meetingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`CreatedBy`, `m`.`CreatedOn`, `m`.`Description`, `m`.`DisplayOrder`, `m`.`FileName`, `m`.`FileSize`, `m`.`GoogleDriveFileId`, `m`.`IsActive`, `m`.`MeetingId`, `m`.`MimeType`, `m`.`OriginalFileName`, `m`.`UpdatedBy`, `m`.`UpdatedOn`
+FROM `MeetingDocuments` AS `m`
+WHERE `m`.`MeetingId` = @__meetingId_0
+ORDER BY `m`.`DisplayOrder`, `m`.`CreatedOn` DESC
+2026-07-15 23:55:20.563 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.MeetingDocument.MeetingDocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:55:20.568 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi) in 182.5735ms
+2026-07-15 23:55:20.574 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:55:20.578 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/1 - 200 null application/json; charset=utf-8 211.4231ms
+2026-07-15 23:57:17.511 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - null null
+2026-07-15 23:57:17.519 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:57:17.525 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - 204 null null 14.147ms
+2026-07-15 23:57:17.534 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Meetings - null null
+2026-07-15 23:57:17.541 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:57:17.544 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:57:17.548 +05:30 [INF] Route matched with {action = "GetAll", controller = "Meetings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MeetingsController (GACHSLApi).
+2026-07-15 23:57:17.621 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MeetingId`, `m`.`CreatedOn`, `m`.`Description`, `m`.`IsActive`, `m`.`MeetingDate`, `m`.`MeetingTime`, `m`.`MeetingTitle`, `m`.`MeetingType`, `m`.`Status`, `m`.`UpdatedOn`, `m`.`Venue`
+FROM `Meetings` AS `m`
+ORDER BY `m`.`MeetingDate` DESC, `m`.`MeetingTime` DESC
+2026-07-15 23:57:17.643 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Meeting.MeetingDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:57:17.656 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi) in 101.6664ms
+2026-07-15 23:57:17.665 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:57:17.673 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Meetings - 200 null application/json; charset=utf-8 138.9585ms
+2026-07-15 23:57:19.752 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/1 - null null
+2026-07-15 23:57:19.758 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:57:19.760 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/1 - 204 null null 8.2896ms
+2026-07-15 23:57:19.767 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/1 - null null
+2026-07-15 23:57:19.774 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:57:19.777 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:57:19.779 +05:30 [INF] Route matched with {action = "GetByMeeting", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByMeeting(Int32) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:57:19.967 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__meetingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`CreatedBy`, `m`.`CreatedOn`, `m`.`Description`, `m`.`DisplayOrder`, `m`.`FileName`, `m`.`FileSize`, `m`.`GoogleDriveFileId`, `m`.`IsActive`, `m`.`MeetingId`, `m`.`MimeType`, `m`.`OriginalFileName`, `m`.`UpdatedBy`, `m`.`UpdatedOn`
+FROM `MeetingDocuments` AS `m`
+WHERE `m`.`MeetingId` = @__meetingId_0
+ORDER BY `m`.`DisplayOrder`, `m`.`CreatedOn` DESC
+2026-07-15 23:57:19.984 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.MeetingDocument.MeetingDocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:57:19.988 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi) in 202.7379ms
+2026-07-15 23:57:19.993 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:57:19.995 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/1 - 200 null application/json; charset=utf-8 228.6966ms
+2026-07-15 23:57:27.501 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/3 - null null
+2026-07-15 23:57:27.507 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:57:27.508 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/3 - 204 null null 7.0191ms
+2026-07-15 23:57:27.516 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/3 - null null
+2026-07-15 23:57:27.523 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:57:27.526 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:57:27.530 +05:30 [INF] Route matched with {action = "GetByMeeting", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByMeeting(Int32) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:57:27.735 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__meetingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`CreatedBy`, `m`.`CreatedOn`, `m`.`Description`, `m`.`DisplayOrder`, `m`.`FileName`, `m`.`FileSize`, `m`.`GoogleDriveFileId`, `m`.`IsActive`, `m`.`MeetingId`, `m`.`MimeType`, `m`.`OriginalFileName`, `m`.`UpdatedBy`, `m`.`UpdatedOn`
+FROM `MeetingDocuments` AS `m`
+WHERE `m`.`MeetingId` = @__meetingId_0
+ORDER BY `m`.`DisplayOrder`, `m`.`CreatedOn` DESC
+2026-07-15 23:57:27.742 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.MeetingDocument.MeetingDocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:57:27.749 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi) in 213.7384ms
+2026-07-15 23:57:27.755 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:57:27.761 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/3 - 200 null application/json; charset=utf-8 245.9425ms
+2026-07-15 23:57:56.770 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - null null
+2026-07-15 23:57:56.779 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:57:56.781 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/Meetings - 204 null null 11.4702ms
+2026-07-15 23:57:56.792 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/Meetings - null null
+2026-07-15 23:57:56.796 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:57:56.799 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:57:56.803 +05:30 [INF] Route matched with {action = "GetAll", controller = "Meetings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GACHSLApi.Controllers.MeetingsController (GACHSLApi).
+2026-07-15 23:57:56.855 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MeetingId`, `m`.`CreatedOn`, `m`.`Description`, `m`.`IsActive`, `m`.`MeetingDate`, `m`.`MeetingTime`, `m`.`MeetingTitle`, `m`.`MeetingType`, `m`.`Status`, `m`.`UpdatedOn`, `m`.`Venue`
+FROM `Meetings` AS `m`
+ORDER BY `m`.`MeetingDate` DESC, `m`.`MeetingTime` DESC
+2026-07-15 23:57:56.871 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.Meeting.MeetingDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:57:56.876 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi) in 66.6703ms
+2026-07-15 23:57:56.880 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingsController.GetAll (GACHSLApi)'
+2026-07-15 23:57:56.884 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/Meetings - 200 null application/json; charset=utf-8 92.473ms
+2026-07-15 23:57:58.292 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/1 - null null
+2026-07-15 23:57:58.299 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:57:58.301 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5278/api/MeetingDocuments/meeting/1 - 204 null null 9.8066ms
+2026-07-15 23:57:58.313 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/1 - null null
+2026-07-15 23:57:58.323 +05:30 [INF] CORS policy execution successful.
+2026-07-15 23:57:58.327 +05:30 [INF] Executing endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:57:58.331 +05:30 [INF] Route matched with {action = "GetByMeeting", controller = "MeetingDocuments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByMeeting(Int32) on controller GACHSLApi.Controllers.MeetingDocumentsController (GACHSLApi).
+2026-07-15 23:57:58.562 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__meetingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`CreatedBy`, `m`.`CreatedOn`, `m`.`Description`, `m`.`DisplayOrder`, `m`.`FileName`, `m`.`FileSize`, `m`.`GoogleDriveFileId`, `m`.`IsActive`, `m`.`MeetingId`, `m`.`MimeType`, `m`.`OriginalFileName`, `m`.`UpdatedBy`, `m`.`UpdatedOn`
+FROM `MeetingDocuments` AS `m`
+WHERE `m`.`MeetingId` = @__meetingId_0
+ORDER BY `m`.`DisplayOrder`, `m`.`CreatedOn` DESC
+2026-07-15 23:57:58.586 +05:30 [INF] Executing OkObjectResult, writing value of type 'GACHSLApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[GACHSLApi.DTOs.MeetingDocument.MeetingDocumentDto, GACHSLApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-15 23:57:58.591 +05:30 [INF] Executed action GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi) in 250.8407ms
+2026-07-15 23:57:58.597 +05:30 [INF] Executed endpoint 'GACHSLApi.Controllers.MeetingDocumentsController.GetByMeeting (GACHSLApi)'
+2026-07-15 23:57:58.602 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5278/api/MeetingDocuments/meeting/1 - 200 null application/json; charset=utf-8 288.878ms

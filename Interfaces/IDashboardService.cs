@@ -1,9 +1,10 @@
-﻿using GACHSLApi.DTOs.Dashboard;
+﻿using GACHSLApi.Common;
+using GACHSLApi.DTOs.Dashboard;
 
 namespace GACHSLApi.Interfaces
 {
     public interface IDashboardService
     {
-        Task<DashboardSummaryDto> GetSummaryAsync();
+        Task<ApiResponse<DashboardSummaryDto>> GetSummaryAsync();
     }
 }

@@ -126,5 +126,17 @@ namespace GACHSLApi.Services
 
             return new ApiResponse<object>(true, "Deleted successfully", null);
         }
+
+        public async Task<List<MemberLookupDto>> GetAvailableMembersAsync(int? consentId = null)
+        {
+            var members = await _memberRepository.GetAvailableMembersAsync(consentId);
+
+            return members.Select(m => new MemberLookupDto
+            {
+                MemberId = m.MemberId,
+                FlatNumber = m.FlatNumber,
+                FullName = m.FullName
+            }).ToList();
+        }
     }
 }

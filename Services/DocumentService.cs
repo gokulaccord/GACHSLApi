@@ -280,6 +280,16 @@ namespace GACHSLApi.Services
 
             return await _googleDriveService.DownloadFileAsync(document.GoogleDriveFileId);
         }
+        public async Task<List<DocumentLookupDto>> GetLookupAsync()
+        {
+            var documents = await _documentRepository.GetLookupAsync();
+
+            return documents.Select(d => new DocumentLookupDto
+            {
+                DocumentId = d.DocumentId,
+                Title = d.Title
+            }).ToList();
+        }
     }
     
 }

@@ -25,6 +25,7 @@ namespace GACHSLApi.Services
                 MeetingType = m.MeetingType,
                 MeetingDate = m.MeetingDate,
                 MeetingTime = m.MeetingTime,
+                Minutes= m.Minutes,
                 Venue = m.Venue,
                 Description = m.Description,
                 Status = m.Status,
@@ -51,6 +52,7 @@ namespace GACHSLApi.Services
                 MeetingTime = meeting.MeetingTime,
                 Venue = meeting.Venue,
                 Description = meeting.Description,
+                Minutes = meeting.Minutes,
                 Status = meeting.Status,
                 IsActive = meeting.IsActive,
                 CreatedOn = meeting.CreatedOn
@@ -90,6 +92,7 @@ namespace GACHSLApi.Services
                 MeetingTime = dto.MeetingTime,
                 Venue = dto.Venue,
                 Description = dto.Description,
+                Minutes = dto.Minutes,
                 Status = dto.Status,
                 IsActive = dto.IsActive,
                 CreatedOn = DateTime.UtcNow
@@ -122,6 +125,7 @@ namespace GACHSLApi.Services
             meeting.MeetingTime = dto.MeetingTime;
             meeting.Venue = dto.Venue;
             meeting.Description = dto.Description;
+            meeting.Minutes= dto.Minutes;
             meeting.Status = dto.Status;
             meeting.IsActive = dto.IsActive;
             meeting.UpdatedOn = DateTime.UtcNow;

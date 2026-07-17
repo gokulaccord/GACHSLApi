@@ -10,5 +10,6 @@ namespace GACHSLApi.Interfaces
         Task<ApiResponse<object>> CreateAsync(CreateMemberDto dto);
         Task<ApiResponse<object>> UpdateAsync(int id, UpdateMemberDto dto);
         Task<ApiResponse<object>> DeleteAsync(int id);
+        Task<List<MemberLookupDto>> GetAvailableMembersAsync(int? consentId = null);
     }
 }

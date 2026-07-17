@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GACHSLApi.Controllers
 {
-    [Authorize]
-    [ApiController]
     [Route("api/[controller]")]
+    [ApiController]
+    [Authorize]
     public class DashboardController : ControllerBase
     {
         private readonly IDashboardService _dashboardService;
@@ -19,8 +19,8 @@ namespace GACHSLApi.Controllers
         [HttpGet("summary")]
         public async Task<IActionResult> GetSummary()
         {
-            var summary = await _dashboardService.GetSummaryAsync();
-            return Ok(summary);
+            var response = await _dashboardService.GetSummaryAsync();
+            return Ok(response);
         }
     }
 }

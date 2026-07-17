@@ -24,5 +24,6 @@ namespace GACHSLApi.DTOs.Meeting
         public string Status { get; set; } = "Scheduled";
 
         public bool IsActive { get; set; } = true;
+        public string? Minutes { get; set; }
     }
 }

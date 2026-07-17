@@ -1,4 +1,5 @@
-﻿using GACHSLApi.DTOs.Dashboard;
+﻿using GACHSLApi.Common;
+using GACHSLApi.DTOs.Dashboard;
 using GACHSLApi.Interfaces;
 
 namespace GACHSLApi.Services
@@ -12,9 +13,14 @@ namespace GACHSLApi.Services
             _dashboardRepository = dashboardRepository;
         }
 
-        public async Task<DashboardSummaryDto> GetSummaryAsync()
+        public async Task<ApiResponse<DashboardSummaryDto>> GetSummaryAsync()
         {
-            return await _dashboardRepository.GetSummaryAsync();
+            var summary = await _dashboardRepository.GetSummaryAsync();
+
+            return new ApiResponse<DashboardSummaryDto>(
+                true,
+                "Dashboard summary retrieved successfully.",
+                summary);
         }
     }
 }
